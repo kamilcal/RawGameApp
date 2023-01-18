@@ -7,25 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D27C12912978AD4E00478DD9 /* APIClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12902978AD4E00478DD9 /* APIClients.swift */; };
+		D27C12942978AE9700478DD9 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12932978AE9700478DD9 /* GameModel.swift */; };
+		D27C12962978AECB00478DD9 /* GameListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12952978AECB00478DD9 /* GameListViewModel.swift */; };
+		D27C12992978B1F500478DD9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D27C12982978B1F500478DD9 /* SDWebImage */; };
+		D27C129B2978B77500478DD9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C129A2978B77500478DD9 /* NetworkError.swift */; };
 		D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C504ED29784EF0008A9733 /* AppDelegate.swift */; };
-		D2C504F029784EF0008A9733 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C504EF29784EF0008A9733 /* SceneDelegate.swift */; };
-		D2C504F229784EF0008A9733 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C504F129784EF0008A9733 /* ViewController.swift */; };
 		D2C504F529784EF0008A9733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F329784EF0008A9733 /* Main.storyboard */; };
 		D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */; };
 		D2C504FA29784EF1008A9733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F929784EF1008A9733 /* Assets.xcassets */; };
 		D2C504FD29784EF1008A9733 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504FB29784EF1008A9733 /* LaunchScreen.storyboard */; };
+		D2C5050B29785149008A9733 /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5050A29785149008A9733 /* GameListViewController.swift */; };
+		D2C5050D297851A8008A9733 /* GameListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5050C297851A8008A9733 /* GameListTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D27C12902978AD4E00478DD9 /* APIClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClients.swift; sourceTree = "<group>"; };
+		D27C12932978AE9700478DD9 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		D27C12952978AECB00478DD9 /* GameListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewModel.swift; sourceTree = "<group>"; };
+		D27C129A2978B77500478DD9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		D2C504EA29784EF0008A9733 /* RawGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C504ED29784EF0008A9733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2C504EF29784EF0008A9733 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D2C504F129784EF0008A9733 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2C504F429784EF0008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2C504F729784EF0008A9733 /* RawGameApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RawGameApp.xcdatamodel; sourceTree = "<group>"; };
 		D2C504F929784EF1008A9733 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2C504FC29784EF1008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2C504FE29784EF1008A9733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2C5050A29785149008A9733 /* GameListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
+		D2C5050C297851A8008A9733 /* GameListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,12 +42,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27C12992978B1F500478DD9 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D27C12922978AE6500478DD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D27C12932978AE9700478DD9 /* GameModel.swift */,
+				D27C129A2978B77500478DD9 /* NetworkError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		D2C504E129784EF0008A9733 = {
 			isa = PBXGroup;
 			children = (
@@ -58,16 +77,67 @@
 		D2C504EC29784EF0008A9733 /* RawGameApp */ = {
 			isa = PBXGroup;
 			children = (
-				D2C504ED29784EF0008A9733 /* AppDelegate.swift */,
-				D2C504EF29784EF0008A9733 /* SceneDelegate.swift */,
-				D2C504F129784EF0008A9733 /* ViewController.swift */,
+				D27C12922978AE6500478DD9 /* Models */,
+				D2C5050629785063008A9733 /* Core */,
+				D2C505072978506A008A9733 /* App */,
+				D2C5050529785053008A9733 /* Scene */,
+				D2C505042978503C008A9733 /* Util */,
 				D2C504F329784EF0008A9733 /* Main.storyboard */,
-				D2C504F929784EF1008A9733 /* Assets.xcassets */,
-				D2C504FB29784EF1008A9733 /* LaunchScreen.storyboard */,
-				D2C504FE29784EF1008A9733 /* Info.plist */,
-				D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */,
 			);
 			path = RawGameApp;
+			sourceTree = "<group>";
+		};
+		D2C505042978503C008A9733 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D2C5050529785053008A9733 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				D2C50509297850C1008A9733 /* GameList */,
+				D2C50508297850B5008A9733 /* GameDetail */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		D2C5050629785063008A9733 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				D27C12902978AD4E00478DD9 /* APIClients.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		D2C505072978506A008A9733 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D2C504FB29784EF1008A9733 /* LaunchScreen.storyboard */,
+				D2C504ED29784EF0008A9733 /* AppDelegate.swift */,
+				D2C504FE29784EF1008A9733 /* Info.plist */,
+				D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */,
+				D2C504F929784EF1008A9733 /* Assets.xcassets */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D2C50508297850B5008A9733 /* GameDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GameDetail;
+			sourceTree = "<group>";
+		};
+		D2C50509297850C1008A9733 /* GameList */ = {
+			isa = PBXGroup;
+			children = (
+				D2C5050A29785149008A9733 /* GameListViewController.swift */,
+				D2C5050C297851A8008A9733 /* GameListTableViewCell.swift */,
+				D27C12952978AECB00478DD9 /* GameListViewModel.swift */,
+			);
+			path = GameList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +156,9 @@
 			dependencies = (
 			);
 			name = RawGameApp;
+			packageProductDependencies = (
+				D27C12982978B1F500478DD9 /* SDWebImage */,
+			);
 			productName = RawGameApp;
 			productReference = D2C504EA29784EF0008A9733 /* RawGameApp.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +187,9 @@
 				Base,
 			);
 			mainGroup = D2C504E129784EF0008A9733;
+			packageReferences = (
+				D27C12972978B1F500478DD9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = D2C504EB29784EF0008A9733 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,10 +217,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D27C12962978AECB00478DD9 /* GameListViewModel.swift in Sources */,
+				D27C129B2978B77500478DD9 /* NetworkError.swift in Sources */,
 				D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */,
-				D2C504F229784EF0008A9733 /* ViewController.swift in Sources */,
+				D2C5050B29785149008A9733 /* GameListViewController.swift in Sources */,
 				D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */,
-				D2C504F029784EF0008A9733 /* SceneDelegate.swift in Sources */,
+				D27C12912978AD4E00478DD9 /* APIClients.swift in Sources */,
+				D27C12942978AE9700478DD9 /* GameModel.swift in Sources */,
+				D2C5050D297851A8008A9733 /* GameListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,7 +372,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RawGameApp/Info.plist;
+				INFOPLIST_FILE = RawGameApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +399,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RawGameApp/Info.plist;
+				INFOPLIST_FILE = RawGameApp/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -360,6 +440,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D27C12972978B1F500478DD9 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D27C12982978B1F500478DD9 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D27C12972978B1F500478DD9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */ = {
