@@ -15,7 +15,7 @@ class HomeViewModel {
     init(apiService: APIClients = APIClients()) {
         self.apiService = apiService
     }
-    func fetchGamesData(completion: @escaping (Result<[ResultGame], NetwoerkErrorHandling>) -> Void) {
+    func fetchGamesData(completion: @escaping (Result<[ResultGame], NetworkErrorHandling>) -> Void) {
         self.apiService.fetchGamesData { result in
             switch result {
             case .success(let data):

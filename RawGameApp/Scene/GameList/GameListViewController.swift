@@ -10,6 +10,7 @@ import UIKit
 class GameListViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
     private let viewModel = HomeViewModel()
 
     override func viewDidLoad() {
@@ -51,4 +52,13 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
             cell.configure(with: viewModel.gameResult[indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let detailVc = UIStoryboard.init(name: "Main", bundle: Bundle.main)
+            .instantiateViewController(withIdentifier: "a") as? GameDetailViewController
+        detailVc?.idGame = viewModel.gameResult[indexPath.row].idGame
+        self.navigationController?.pushViewController(detailVc!, animated: true)
+    }
+
 }

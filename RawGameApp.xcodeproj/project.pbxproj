@@ -12,6 +12,9 @@
 		D27C12962978AECB00478DD9 /* GameListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12952978AECB00478DD9 /* GameListViewModel.swift */; };
 		D27C12992978B1F500478DD9 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = D27C12982978B1F500478DD9 /* SDWebImage */; };
 		D27C129B2978B77500478DD9 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C129A2978B77500478DD9 /* NetworkError.swift */; };
+		D27C129F2978C23000478DD9 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C129E2978C23000478DD9 /* GameDetailViewController.swift */; };
+		D27C12A12978C25700478DD9 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */; };
+		D27C12A32978C26F00478DD9 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12A22978C26F00478DD9 /* GameDetailModel.swift */; };
 		D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C504ED29784EF0008A9733 /* AppDelegate.swift */; };
 		D2C504F529784EF0008A9733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F329784EF0008A9733 /* Main.storyboard */; };
 		D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */; };
@@ -26,6 +29,9 @@
 		D27C12932978AE9700478DD9 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		D27C12952978AECB00478DD9 /* GameListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListViewModel.swift; sourceTree = "<group>"; };
 		D27C129A2978B77500478DD9 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		D27C129E2978C23000478DD9 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
+		D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
+		D27C12A22978C26F00478DD9 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		D2C504EA29784EF0008A9733 /* RawGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C504ED29784EF0008A9733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C504F429784EF0008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,6 +132,9 @@
 		D2C50508297850B5008A9733 /* GameDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D27C129E2978C23000478DD9 /* GameDetailViewController.swift */,
+				D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */,
+				D27C12A22978C26F00478DD9 /* GameDetailModel.swift */,
 			);
 			path = GameDetail;
 			sourceTree = "<group>";
@@ -221,7 +230,10 @@
 				D27C129B2978B77500478DD9 /* NetworkError.swift in Sources */,
 				D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */,
 				D2C5050B29785149008A9733 /* GameListViewController.swift in Sources */,
+				D27C129F2978C23000478DD9 /* GameDetailViewController.swift in Sources */,
+				D27C12A12978C25700478DD9 /* GameDetailViewModel.swift in Sources */,
 				D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */,
+				D27C12A32978C26F00478DD9 /* GameDetailModel.swift in Sources */,
 				D27C12912978AD4E00478DD9 /* APIClients.swift in Sources */,
 				D27C12942978AE9700478DD9 /* GameModel.swift in Sources */,
 				D2C5050D297851A8008A9733 /* GameListTableViewCell.swift in Sources */,

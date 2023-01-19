@@ -17,13 +17,13 @@ struct GameModel: Decodable {
 
 // MARK: - GameModel
 struct ResultGame: Decodable {
-    let id: Int
+    let idGame: Int
     let slug, name, released: String
     let tba: Bool
     let backgroundImage: String?
     let rating: Double
     let ratingTop: Int
-    let ratings: [Rating]
+//    let ratings: [Rating]
     let ratingsCount, reviewsTextCount, added: Int
     let metacritic: Int?
     let playtime, suggestionsCount: Int
@@ -33,11 +33,12 @@ struct ResultGame: Decodable {
     let tags: [Genre]
 
     enum CodingKeys: String, CodingKey {
-        case id, slug, name, released, tba
+        case idGame = "id"
+        case slug, name, released, tba
         case backgroundImage = "background_image"
         case rating
         case ratingTop = "rating_top"
-        case ratings
+//        case ratings
         case ratingsCount = "ratings_count"
         case reviewsTextCount = "reviews_text_count"
         case added
@@ -91,19 +92,6 @@ struct Requirements: Codable {
 }
 
 
-// MARK: - Rating
-struct Rating: Codable {
-    let id: Int
-    let title: Title
-    let count: Int
-    let percent: Double
-}
 
-enum Title: String, Codable {
-    case exceptional = "exceptional"
-    case meh = "meh"
-    case recommended = "recommended"
-    case skip = "skip"
-}
 
 
