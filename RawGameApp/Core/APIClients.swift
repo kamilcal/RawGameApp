@@ -13,8 +13,8 @@ class APIClients {
     private var dataTask: URLSessionTask?
     
     
-    func fetchGamesData(completion: @escaping (Result<GameModel, Error>) -> Void) {
-        let placesURL = "\(baseURL)/games?key=\(apiKey)"
+    func fetchGamesData(pageNumber: Int,completion: @escaping (Result<GameModel, Error>) -> Void) {
+        let placesURL = "\(baseURL)/games?key=\(apiKey)&page_size=10&page=\(pageNumber)"
         guard let url = URL(string: placesURL) else {
             return
         }

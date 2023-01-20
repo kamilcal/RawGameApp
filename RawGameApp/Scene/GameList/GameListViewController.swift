@@ -12,12 +12,15 @@ class GameListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
     private let viewModel = HomeViewModel()
+    
+    private var page = 1
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        getGameData()
+        getGameData(with: page)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,8 +29,8 @@ class GameListViewController: UIViewController {
 
     
     
-    private func getGameData() {
-        viewModel.fetchGamesData { [weak self] (result) in
+    private func getGameData(with page: Int) {
+        viewModel.fetchGamesData(with: page) { [weak self] (result) in
             switch result {
             case .success(let data):
                 print(data)
@@ -65,6 +68,18 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
             .instantiateViewController(withIdentifier: "a") as? GameDetailViewController
         detailVc?.id = viewModel.gameResult[indexPath.row].id
         self.navigationController?.pushViewController(detailVc!, animated: true)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let height = scrollView.frame.size.height
+        
+        
+        if offsetY > contentHeight - height {
+            page += 1
+            getGameData(with: page)
+        }
     }
 
 }
