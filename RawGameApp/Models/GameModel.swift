@@ -17,7 +17,7 @@ struct GameModel: Decodable {
 
 // MARK: - GameModel
 struct ResultGame: Decodable {
-    let idGame: Int
+    let id: Int
     let slug, name, released: String
     let tba: Bool
     let backgroundImage: String?
@@ -33,7 +33,7 @@ struct ResultGame: Decodable {
     let tags: [Genre]
 
     enum CodingKeys: String, CodingKey {
-        case idGame = "id"
+        case id
         case slug, name, released, tba
         case backgroundImage = "background_image"
         case rating

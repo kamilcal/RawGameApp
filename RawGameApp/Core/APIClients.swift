@@ -44,8 +44,8 @@ class APIClients {
         dataTask?.resume()
     }
     
-    func fetchGamesDetail(idGame: Int, completion: @escaping (Result<GameDetailModel, Error>) -> Void) {
-        let placesURL = "\(baseURL)/games/\(idGame)?key=\(apiKey)"
+    func fetchGamesDetail(id: Int, completion: @escaping (Result<GameDetailModel, Error>) -> Void) {
+        let placesURL = "\(baseURL)/games/\(id)?key=\(apiKey)"
         guard let url = URL(string: placesURL) else {
             return
         }

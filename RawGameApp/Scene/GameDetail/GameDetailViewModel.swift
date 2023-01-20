@@ -5,17 +5,23 @@
 //  Created by kamilcal on 19.01.2023.
 //
 
-import Foundation
+import UIKit
+
+protocol DetailViewModelProtocol {
+    func addToFavorites() -> Bool
+}
+
 
 class DetailViewModel {
     private let apiService: APIClients
     var gameDetailResult: GameDetailModel?
     var isFavourited: Bool = false
+    private var game: GameDetailModel?
     init(apiService: APIClients = APIClients()) {
         self.apiService = apiService
     }
-    func fetchGamesData(idGame: Int, completion: @escaping (Result<GameDetailModel, NetworkErrorHandling>) -> Void) {
-        self.apiService.fetchGamesDetail(idGame: idGame) { result in
+    func fetchGamesData(id: Int, completion: @escaping (Result<GameDetailModel, NetworkErrorHandling>) -> Void) {
+        self.apiService.fetchGamesDetail(id: id) { result in
             switch result {
             case .success(let data):
                 self.gameDetailResult = data
@@ -27,4 +33,5 @@ class DetailViewModel {
             }
         }
     }
+
 }

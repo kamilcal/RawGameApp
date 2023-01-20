@@ -15,6 +15,8 @@
 		D27C129F2978C23000478DD9 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C129E2978C23000478DD9 /* GameDetailViewController.swift */; };
 		D27C12A12978C25700478DD9 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */; };
 		D27C12A32978C26F00478DD9 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12A22978C26F00478DD9 /* GameDetailModel.swift */; };
+		D2B974E1297A12C500F05037 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974E0297A12C500F05037 /* CoreDataManager.swift */; };
+		D2B974E4297AA76900F05037 /* GameFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974E3297AA76900F05037 /* GameFavoriteModel.swift */; };
 		D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C504ED29784EF0008A9733 /* AppDelegate.swift */; };
 		D2C504F529784EF0008A9733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F329784EF0008A9733 /* Main.storyboard */; };
 		D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */; };
@@ -32,6 +34,8 @@
 		D27C129E2978C23000478DD9 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		D27C12A22978C26F00478DD9 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
+		D2B974E0297A12C500F05037 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		D2B974E3297AA76900F05037 /* GameFavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoriteModel.swift; sourceTree = "<group>"; };
 		D2C504EA29784EF0008A9733 /* RawGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C504ED29784EF0008A9733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C504F429784EF0008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -62,6 +66,14 @@
 				D27C129A2978B77500478DD9 /* NetworkError.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D2B974E2297AA74700F05037 /* GameFavorite */ = {
+			isa = PBXGroup;
+			children = (
+				D2B974E3297AA76900F05037 /* GameFavoriteModel.swift */,
+			);
+			path = GameFavorite;
 			sourceTree = "<group>";
 		};
 		D2C504E129784EF0008A9733 = {
@@ -103,6 +115,7 @@
 		D2C5050529785053008A9733 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				D2B974E2297AA74700F05037 /* GameFavorite */,
 				D2C50509297850C1008A9733 /* GameList */,
 				D2C50508297850B5008A9733 /* GameDetail */,
 			);
@@ -113,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				D27C12902978AD4E00478DD9 /* APIClients.swift */,
+				D2B974E0297A12C500F05037 /* CoreDataManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -232,6 +246,8 @@
 				D2C5050B29785149008A9733 /* GameListViewController.swift in Sources */,
 				D27C129F2978C23000478DD9 /* GameDetailViewController.swift in Sources */,
 				D27C12A12978C25700478DD9 /* GameDetailViewModel.swift in Sources */,
+				D2B974E4297AA76900F05037 /* GameFavoriteModel.swift in Sources */,
+				D2B974E1297A12C500F05037 /* CoreDataManager.swift in Sources */,
 				D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */,
 				D27C12A32978C26F00478DD9 /* GameDetailModel.swift in Sources */,
 				D27C12912978AD4E00478DD9 /* APIClients.swift in Sources */,

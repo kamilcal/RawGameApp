@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -309,6 +310,18 @@
                                 <color key="textColor" red="0.79607843140000001" green="0.92941176469999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nQ-aL-3Ru">
+                                <rect key="frame" x="326.33333333333331" y="367" width="50.666666666666686" height="34.333333333333314"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="suit.heart" catalog="system" symbolScale="large"/>
+                                    <color key="baseForegroundColor" systemColor="systemRedColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="favButtonTapped:" destination="0Zx-i8-EfF" eventType="touchUpInside" id="crH-4s-VFK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Vkb-dC-qdJ"/>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.1647058824" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -317,6 +330,7 @@
                             <constraint firstItem="Fom-gX-kRd" firstAttribute="top" secondItem="Vkb-dC-qdJ" secondAttribute="top" id="0PK-PN-6TS"/>
                             <constraint firstItem="5Xm-qA-yEU" firstAttribute="top" secondItem="Vkb-dC-qdJ" secondAttribute="top" id="2in-w5-RMC"/>
                             <constraint firstItem="Vkb-dC-qdJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wKS-c3-6D6" secondAttribute="trailing" symbolic="YES" id="2vJ-1m-naq"/>
+                            <constraint firstItem="Vkb-dC-qdJ" firstAttribute="trailing" secondItem="6nQ-aL-3Ru" secondAttribute="trailing" constant="16" id="5C1-Rh-aMW"/>
                             <constraint firstItem="wBw-fS-Q04" firstAttribute="trailing" secondItem="Tg9-kI-Ezq" secondAttribute="trailing" id="7NO-DW-nCb"/>
                             <constraint firstItem="ouh-Tm-ydm" firstAttribute="bottom" secondItem="nWz-eN-lMb" secondAttribute="bottom" id="8XY-sE-FeT"/>
                             <constraint firstItem="ON9-F1-LTx" firstAttribute="top" secondItem="KkO-G7-RGs" secondAttribute="bottom" constant="50" id="ANf-id-XQP"/>
@@ -326,6 +340,7 @@
                             <constraint firstItem="Vkb-dC-qdJ" firstAttribute="trailing" secondItem="5Xm-qA-yEU" secondAttribute="trailing" id="Ogx-Sd-3m7"/>
                             <constraint firstItem="Tg9-kI-Ezq" firstAttribute="leading" secondItem="Vkb-dC-qdJ" secondAttribute="leading" constant="16" id="P74-Mx-RUY"/>
                             <constraint firstItem="KkO-G7-RGs" firstAttribute="top" secondItem="Vkb-dC-qdJ" secondAttribute="top" id="Wfy-l1-aKS"/>
+                            <constraint firstItem="6nQ-aL-3Ru" firstAttribute="top" secondItem="KkO-G7-RGs" secondAttribute="bottom" constant="8" symbolic="YES" id="WwM-RV-02A"/>
                             <constraint firstItem="wKS-c3-6D6" firstAttribute="top" secondItem="ON9-F1-LTx" secondAttribute="bottom" constant="20" id="Zz5-Q6-qSW"/>
                             <constraint firstItem="ouh-Tm-ydm" firstAttribute="leading" secondItem="Vkb-dC-qdJ" secondAttribute="leading" constant="108" id="aGQ-77-Dej"/>
                             <constraint firstItem="ouh-Tm-ydm" firstAttribute="top" secondItem="nWz-eN-lMb" secondAttribute="top" id="bo6-T6-p0J"/>
@@ -351,6 +366,7 @@
                         <outlet property="backgroundView" destination="5Xm-qA-yEU" id="LtG-K5-LO4"/>
                         <outlet property="blurView" destination="7o5-EE-VZ8" id="v4I-dK-TJQ"/>
                         <outlet property="downloadLabel" destination="DhM-2A-0e4" id="9Nk-OR-jOq"/>
+                        <outlet property="favButton" destination="6nQ-aL-3Ru" id="MJ7-dE-ihz"/>
                         <outlet property="imageView" destination="0j3-jU-q9L" id="DpC-mS-A1U"/>
                         <outlet property="releasedLabel" destination="5tU-jm-KQB" id="pKg-S8-c1H"/>
                         <outlet property="reviewsLabel" destination="z1W-78-yDu" id="vF7-wn-oSo"/>
@@ -443,8 +459,12 @@
     <resources>
         <image name="bookmark-star" width="64" height="64"/>
         <image name="poster3" width="2000" height="3000"/>
+        <image name="suit.heart" catalog="system" width="128" height="107"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

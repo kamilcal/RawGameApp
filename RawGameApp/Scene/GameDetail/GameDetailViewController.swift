@@ -20,33 +20,52 @@ class GameDetailViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var textView: UITextView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var favButton: UIButton!
     
-    var idGame: Int?
+    var id: Int?
     private let viewModel = DetailViewModel()
+    private lazy var dataManager: CoreDataManager = { return CoreDataManager() }()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.isHidden = true
         getGameDetail()
+        isGameFavourited()
     }
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
     }
     
+    
     private func getGameDetail() {
-        guard let getIdGame = idGame else { return }
-        viewModel.fetchGamesData(idGame: getIdGame) { (result) in
+        guard let getIdGame = id else { return }
+        viewModel.fetchGamesData(id: getIdGame) { (result) in
             switch result {
             case .success(let data):
                 self.scrollView.isHidden = false
-                self.updateTableUI(data)
+                self.updateUI(data)
             case .failure(let error):
                 print("Error on: \(error.localizedDescription)")
             }
         }
     }
-    private func updateTableUI(_ item: GameDetailModel) {
+    
+    @IBAction func favButtonTapped(_ sender: Any) {
+        if viewModel.isFavourited {
+            guard let id = id else { return }
+            removeGameFavourite(id)
+        } else {
+            addToFavouriteGame()
+        }
+        viewModel.isFavourited = !viewModel.isFavourited
+        setIconFavourite()
+    }
+    
+    // MARK: - CoreDataManager
+    
+    private func updateUI(_ item: GameDetailModel) {
         guard let url = URL(string: item.backgroundImage ?? "" ) else { return }
         
         imageView.sd_imageIndicator = SDWebImageActivityIndicator.large
@@ -62,4 +81,54 @@ class GameDetailViewController: UIViewController {
         imageView.layer.cornerRadius = 10
         
     }
+    
+    // MARK: - CoreDataManager
+    
+    
+    private func isGameFavourited() {
+        guard let id = id else { return }
+        dataManager.isFavoritedGame(id) { (isGameAsFavourite) in
+            self.viewModel.isFavourited = isGameAsFavourite
+            DispatchQueue.main.async { self.setIconFavourite() }
+        }
+    }
+    
+    private func setIconFavourite() {
+        if viewModel.isFavourited {
+            favButton.setImage(UIImage(systemName: "suit.heart.fill"), for: .normal)
+        } else {
+            favButton.setImage(UIImage(systemName: "suit.heart"), for: .normal)
+            
+        }
+    }
+    
+    private func addToFavouriteGame() {
+        guard let id = id else { return }
+        let name = viewModel.gameDetailResult?.name ?? ""
+        let releaseDate = viewModel.gameDetailResult?.released ?? ""
+        let description = viewModel.gameDetailResult?.gameDetailModelDescription ?? ""
+        let image = viewModel.gameDetailResult?.backgroundImage ?? ""
+        let added = viewModel.gameDetailResult?.added ?? 0
+        let reviewsCount = viewModel.gameDetailResult?.reviewsCount ?? 0
+        dataManager.addFavouriteGame(gameData: GameFavoriteModel(id: id,
+                                                                 name: name,
+                                                                 gameDetailModelDescription: description,
+                                                                 backgroundImage: image,
+                                                                 added: added,
+                                                                 released: releaseDate,
+                                                                 reviewsCount: reviewsCount)) {
+            DispatchQueue.main.async {
+//                TODO: LOCAL NOT.
+            }
+        }
+    }
+    
+    private func removeGameFavourite(_ idGame: Int) {
+        dataManager.deleteFavouriteGame(idGame) {
+            DispatchQueue.main.async {
+//                TODO: LOCAL NOT.
+            }
+        }
+    }
+    
 }

@@ -57,7 +57,7 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
         
         let detailVc = UIStoryboard.init(name: "Main", bundle: Bundle.main)
             .instantiateViewController(withIdentifier: "a") as? GameDetailViewController
-        detailVc?.idGame = viewModel.gameResult[indexPath.row].idGame
+        detailVc?.id = viewModel.gameResult[indexPath.row].id
         self.navigationController?.pushViewController(detailVc!, animated: true)
     }
 
