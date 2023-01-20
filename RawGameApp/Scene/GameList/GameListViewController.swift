@@ -20,6 +20,12 @@ class GameListViewController: UIViewController {
         getGameData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+
+    
+    
     private func getGameData() {
         viewModel.fetchGamesData { [weak self] (result) in
             switch result {

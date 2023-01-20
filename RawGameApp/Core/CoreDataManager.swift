@@ -8,7 +8,10 @@
 import UIKit
 import CoreData
 
-class CoreDataManager {
+ class CoreDataManager {
+    
+//    private init() {}
+//    static let shared = CoreDataManager()
    
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "RawGameApp")
