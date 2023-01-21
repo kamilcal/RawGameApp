@@ -93,6 +93,36 @@
 			path = GameFavorite;
 			sourceTree = "<group>";
 		};
+		D2B974FB297C255C00F05037 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		D2B974FC297C256400F05037 /* NewGameList */ = {
+			isa = PBXGroup;
+			children = (
+				D2B974FD297C256F00F05037 /* TableViewCell */,
+				D2B97506297C25B700F05037 /* CollectionViewCell */,
+			);
+			path = NewGameList;
+			sourceTree = "<group>";
+		};
+		D2B974FD297C256F00F05037 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		D2B97506297C25B700F05037 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 		D2C504E129784EF0008A9733 = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +162,7 @@
 		D2C5050529785053008A9733 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				D2B974FC297C256400F05037 /* NewGameList */,
 				D2B974E2297AA74700F05037 /* GameFavorite */,
 				D2C50509297850C1008A9733 /* GameList */,
 				D2C50508297850B5008A9733 /* GameDetail */,
@@ -174,6 +205,7 @@
 		D2C50509297850C1008A9733 /* GameList */ = {
 			isa = PBXGroup;
 			children = (
+				D2B974FB297C255C00F05037 /* New Group */,
 				D2C5050A29785149008A9733 /* GameListViewController.swift */,
 				D2C5050C297851A8008A9733 /* GameListTableViewCell.swift */,
 				D27C12952978AECB00478DD9 /* GameListViewModel.swift */,
