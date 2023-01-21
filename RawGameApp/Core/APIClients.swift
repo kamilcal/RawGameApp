@@ -12,6 +12,40 @@ class APIClients {
     private var dataTask: URLSessionTask?
     
     
+    func fetchGroupeData(url: String, completion: @escaping (Result<GameModel, Error>) -> Void) {
+        
+        var url = url
+        
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                completion(.failure(error))
+                print("fetchGamesData DataTask Error: \(error.localizedDescription)")
+            }
+            guard let response = response as? HTTPURLResponse else {
+                print("fetchGamesData: Empty Response")
+                return
+            }
+            print("Response status code: \(response.statusCode)")
+            guard let data = data else {
+                print("fetchGamesData: Empty Data")
+                return
+            }
+            do {
+                let jsonData = try JSONDecoder().decode(GameModel.self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(jsonData))
+                }
+            } catch let error {
+                completion(.failure(error))
+            }
+        }
+        dataTask?.resume()
+    }
+    
     func fetchGamesData(pageNumber: Int,searchText: String?, completion: @escaping (Result<GameModel, Error>) -> Void) {
         
         guard var urlComponents = URLComponents(string: Url.sourceURL) else { return }
