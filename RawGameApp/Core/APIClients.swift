@@ -8,16 +8,26 @@
 import Foundation
 
 class APIClients {
-    private let apiKey = "41673d9d79af427a9faab5f57864ed50"
-    private let baseURL = "https://api.rawg.io/api"
+
     private var dataTask: URLSessionTask?
     
     
-    func fetchGamesData(pageNumber: Int,completion: @escaping (Result<GameModel, Error>) -> Void) {
-        let placesURL = "\(baseURL)/games?key=\(apiKey)&page_size=10&page=\(pageNumber)"
-        guard let url = URL(string: placesURL) else {
+    func fetchGamesData(pageNumber: Int,searchText: String?, completion: @escaping (Result<GameModel, Error>) -> Void) {
+        
+        guard var urlComponents = URLComponents(string: Url.sourceURL) else { return }
+        urlComponents.queryItems = [
+            URLQueryItem(name: APIKey.key, value: APIValue.key),
+            URLQueryItem(name: APIKey.pageLimit, value: APIValue.pageLimit),
+            URLQueryItem(name: APIKey.page, value: String(pageNumber))
+        ]
+        if let searchText = searchText {
+            let searchQueryItem = URLQueryItem(name: APIKey.search, value: searchText)
+            urlComponents.queryItems?.append(searchQueryItem)
+        }
+        guard let url = urlComponents.url else {
             return
         }
+        
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))
@@ -45,8 +55,12 @@ class APIClients {
     }
     
     func fetchGamesDetail(id: Int, completion: @escaping (Result<GameDetailModel, Error>) -> Void) {
-        let placesURL = "\(baseURL)/games/\(id)?key=\(apiKey)"
-        guard let url = URL(string: placesURL) else {
+        guard var urlcomponents = URLComponents(string: Url.sourceURL) else { return }
+        urlcomponents.queryItems = [URLQueryItem(name: APIKey.key, value: APIValue.key)]
+        
+        let urlWithPath = urlcomponents.url?.appendingPathComponent(String(id))
+        
+        guard let url = urlWithPath else {
             return
         }
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in

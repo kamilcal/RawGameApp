@@ -7,33 +7,39 @@
 
 import UIKit
 
-class GameListViewController: UIViewController {
+class GameListViewController: UIViewController, UISearchResultsUpdating {
 
     @IBOutlet var tableView: UITableView!
     @IBOutlet var searchBar: UISearchBar!
-    private let viewModel = HomeViewModel()
-    
+
     private var page = 1
+    private var searchText: String?
 
-
+    private let viewModel = HomeViewModel()
+    var gameResult = [ResultGame]()
+    
+// MARK: - lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        getGameData(with: page)
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
-
+// MARK: - getdata
+    private func setupUI(){
+        setupSearchController()
+        tableView.delegate = self
+        tableView.dataSource = self
+        getGameData(with: page, searchText: nil)
+    }
+// MARK: - getdata
     
-    
-    private func getGameData(with page: Int) {
-        viewModel.fetchGamesData(with: page) { [weak self] (result) in
+    private func getGameData(with page: Int, searchText: String?) {
+        viewModel.fetchGamesData(with: page, searchText: searchText) { [weak self] (result) in
             switch result {
-            case .success(let data):
-                print(data)
+            case .success(_):
                 self?.updateTableUI()
             case .failure(let error):
                 print("Error on: \(error.localizedDescription)")
@@ -46,9 +52,34 @@ class GameListViewController: UIViewController {
             
         }
     }
+// MARK: - searchbar
+
+    private func setupSearchController(){
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Type something here to search"
+        navigationItem.searchController = search
+    }
     
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+        if text.count > 2 {
+            viewModel.fetchGamesData(with: page, searchText: text) { result in
+                switch result {
+                case .success(_):
+                    self.updateTableUI()
+                case .failure(let error):
+                    print("Error on: \(error.localizedDescription)")
+                }
+            }
+            }
+    }
 
 }
+
+// MARK: - delegate- datasource
+
 
 extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
     
@@ -78,8 +109,9 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
         
         if offsetY > contentHeight - height {
             page += 1
-            getGameData(with: page)
+            getGameData(with: page, searchText: nil)
         }
     }
 
 }
+
