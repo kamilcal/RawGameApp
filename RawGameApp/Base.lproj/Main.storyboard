@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XhN-zi-Ce8">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="672"/>
                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.1647058824" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="RR7-00-38U">
@@ -211,7 +211,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0xU-41-7xe">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
                                 <color key="backgroundColor" red="0.0039215686269999999" green="0.1647058824" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="180" id="kXU-on-nTd" customClass="GameListTableViewCell" customModule="RawGameApp" customModuleProvider="target">
@@ -610,10 +610,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Djp-Ih-lLa" kind="relationship" relationship="viewControllers" id="gmg-4X-MW0"/>
-                        <segue destination="isl-Xf-q2S" kind="relationship" relationship="viewControllers" id="OPp-9i-3Sb"/>
-                        <segue destination="jXD-Qk-qvF" kind="relationship" relationship="viewControllers" id="18R-bW-4HK"/>
-                        <segue destination="Ykc-Fy-R3Z" kind="relationship" relationship="viewControllers" id="52d-cP-BE5"/>
+                        <segue destination="jXD-Qk-qvF" kind="relationship" relationship="viewControllers" id="pfI-bX-1qk"/>
+                        <segue destination="isl-Xf-q2S" kind="relationship" relationship="viewControllers" id="30T-Cj-70a"/>
+                        <segue destination="eoM-Tl-pcF" kind="relationship" relationship="viewControllers" id="9GU-58-msc"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cii-H4-x7a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -760,7 +759,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="136" height="220"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OTs-03-BWo">
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OTs-03-BWo">
                                                                         <rect key="frame" x="8" y="8" width="120" height="162"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="162" id="3Tb-8s-1GJ"/>
@@ -916,9 +915,6 @@
             <point key="canvasLocation" x="278" y="-1633"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="flH-lQ-v5k"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="bookmark-star" width="64" height="64"/>
         <image name="chat" width="512" height="512"/>

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MetacriticCollectionViewCell: UICollectionViewCell {
     
@@ -19,6 +20,14 @@ class MetacriticCollectionViewCell: UICollectionViewCell {
         metacriticShadowView.addRoundedCorners()
         metacriticShadowView.backgroundColor = UIColor.white.withAlphaComponent(0.15)
         metacriticImageView.addRoundedCorners()
+    }
+    
+    public func configure(with model: ResultGame) {
+        guard let url = URL(string: model.backgroundImage ?? "") else { return }
+        
+        metacriticImageView.sd_imageIndicator = SDWebImageActivityIndicator.large
+        metacriticImageView.sd_setImage(with: url)
+        metacriticTitleLabel.text = model.name
     }
     
 }

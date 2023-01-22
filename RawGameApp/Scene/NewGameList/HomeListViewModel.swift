@@ -11,16 +11,16 @@ import Foundation
 
 class HomeListViewModel {
     private let apiService: APIClients
-    var popular = [ResultGame]()
+//    var popular = [ResultGame]()
     var gameResult = [ResultGame]()
     init(apiService: APIClients = APIClients()) {
         self.apiService = apiService
     }
-    func fetchGamesGroupedData(completion: @escaping (Result<[ResultGame], NetworkErrorHandling>) -> Void) {
-        self.apiService.fetchGroupeData(url: APIConstant.popularURL) { result in
+    func fetchGamesGroupedData(url: String,completion: @escaping (Result<[ResultGame], NetworkErrorHandling>) -> Void) {
+        self.apiService.fetchGroupeData(url: url) { result in
             switch result {
             case .success(let data):
-                self.popular = data.results
+                self.gameResult = data.results
                 completion(.success(data.results))
             case .failure(let error):
                 completion(.failure(error as? NetworkErrorHandling ?? .apiError))
@@ -28,16 +28,16 @@ class HomeListViewModel {
             }
         }
     }
-    func fetchGamesData(with page: Int,searchText: String?, completion: @escaping (Result<[ResultGame], NetworkErrorHandling>) -> Void) {
-        self.apiService.fetchGamesData(pageNumber: page, searchText: searchText) { result in
-            switch result {
-            case .success(let data):
-                self.gameResult = data.results
-                completion(.success(data.results))
-            case .failure(let error):
-                print("Error processinng json data: \(error)")
-                completion(.failure(error as? NetworkErrorHandling ?? .apiError))
-            }
-        }
-    }
+//    func fetchGamesData(with page: Int,searchText: String?, completion: @escaping (Result<[ResultGame], NetworkErrorHandling>) -> Void) {
+//        self.apiService.fetchGamesData(pageNumber: page, searchText: searchText) { result in
+//            switch result {
+//            case .success(let data):
+//                self.gameResult = data.results
+//                completion(.success(data.results))
+//            case .failure(let error):
+//                print("Error processinng json data: \(error)")
+//                completion(.failure(error as? NetworkErrorHandling ?? .apiError))
+//            }
+//        }
+//    }
 }
