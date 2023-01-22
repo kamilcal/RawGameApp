@@ -28,7 +28,7 @@ class HomeListViewController: UIViewController {
         
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(presentDetailModal(notif:)), name: NSNotification.Name(rawValue: "kamil"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(presentDetailModal(notif:)), name: NSNotification.Name(rawValue: "presentDetail"), object: nil)
     }
     
     @objc func presentDetailModal(notif: NSNotification) {

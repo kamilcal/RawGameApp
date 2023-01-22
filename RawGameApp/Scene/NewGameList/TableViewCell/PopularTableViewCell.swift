@@ -67,7 +67,7 @@ extension PopularTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         if let cell = collectionView.cellForItem(at: indexPath) as? PopularCollectionViewCell {
             let id = viewModel.popular[indexPath.row].id
             print("cell:\(id)")
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kamil"), object: nil, userInfo: ["id": id])
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "presentDetail"), object: nil, userInfo: ["id": id])
         }
     }
    
