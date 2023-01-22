@@ -8,7 +8,7 @@
 import UIKit
 import SDWebImage
 
-class GameListTableViewCell: UITableViewCell {
+class SearchListTableViewCell: UITableViewCell {
 
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var posterImageView: UIImageView!

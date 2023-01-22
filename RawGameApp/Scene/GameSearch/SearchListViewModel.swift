@@ -9,7 +9,7 @@ import Foundation
 
 
 
-class HomeViewModel {
+class SearchListViewModel {
     private let apiService: APIClients
     var gameResult = [ResultGame]()
     init(apiService: APIClients = APIClients()) {

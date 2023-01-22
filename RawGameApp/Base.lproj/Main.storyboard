@@ -203,19 +203,19 @@
             </objects>
             <point key="canvasLocation" x="2124.6376811594205" y="406.47321428571428"/>
         </scene>
-        <!--Game List View Controller-->
+        <!--Search List View Controller-->
         <scene sceneID="VR4-wF-ChE">
             <objects>
-                <viewController id="s7R-P4-J5P" customClass="GameListViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="s7R-P4-J5P" customClass="SearchListViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hk0-7j-Yeh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0xU-41-7xe">
-                                <rect key="frame" x="0.0" y="92" width="414" height="770"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
                                 <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="180" id="kXU-on-nTd" customClass="GameListTableViewCell" customModule="RawGameApp" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="180" id="kXU-on-nTd" customClass="SearchListTableViewCell" customModule="RawGameApp" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="50" width="414" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kXU-on-nTd" id="pGX-oE-99a">
@@ -667,6 +667,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="jXD-Qk-qvF" kind="relationship" relationship="viewControllers" id="pfI-bX-1qk"/>
+                        <segue destination="Djp-Ih-lLa" kind="relationship" relationship="viewControllers" id="0cd-38-UfK"/>
                         <segue destination="isl-Xf-q2S" kind="relationship" relationship="viewControllers" id="30T-Cj-70a"/>
                         <segue destination="eoM-Tl-pcF" kind="relationship" relationship="viewControllers" id="9GU-58-msc"/>
                     </connections>
@@ -983,11 +984,11 @@
             </objects>
             <point key="canvasLocation" x="1186.9565217391305" y="-1633.2589285714284"/>
         </scene>
-        <!--Item 1-->
+        <!--Navigation Controller-->
         <scene sceneID="Iw4-9e-Rmc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Djp-Ih-lLa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Avu-kl-4gd"/>
+                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="Avu-kl-4gd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j35-Pc-IbP">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -1090,6 +1091,7 @@
         <image name="delete" width="47" height="47"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="message" width="512" height="512"/>
         <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
