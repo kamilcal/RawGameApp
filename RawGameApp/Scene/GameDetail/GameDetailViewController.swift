@@ -22,7 +22,12 @@ class GameDetailViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var favButton: UIButton!
     
-    var id: Int?
+    var id: Int? {
+        didSet {
+            print("detail:\(id)")
+            
+        }
+    }
     private let viewModel = DetailViewModel()
     private lazy var dataManager: CoreDataManager = { return CoreDataManager() }()
     
@@ -31,11 +36,13 @@ class GameDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.isHidden = true
-        getGameDetail()
-        isGameFavourited()
+//        isGameFavourited()
     }
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
+        getGameDetail()
+        isGameFavourited()
+
     }
     
     

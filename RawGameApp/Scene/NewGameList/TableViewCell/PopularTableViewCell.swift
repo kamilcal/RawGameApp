@@ -65,8 +65,8 @@ extension PopularTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) as? PopularCollectionViewCell {
-            print(cell.id)
-            guard let id = cell.id else { return }
+            let id = viewModel.popular[indexPath.row].id
+            print("cell:\(id)")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "kamil"), object: nil, userInfo: ["id": id])
         }
     }

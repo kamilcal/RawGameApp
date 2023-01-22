@@ -30,6 +30,7 @@
 		D2B97514297C304D00F05037 /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97513297C304C00F05037 /* UpcomingTableViewCell.swift */; };
 		D2B97516297C3CD900F05037 /* HomeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97515297C3CD900F05037 /* HomeListViewModel.swift */; };
 		D2B97518297C40DC00F05037 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97517297C40DC00F05037 /* UIView.swift */; };
+		D2B97520297D774600F05037 /* GameNoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9751F297D774600F05037 /* GameNoteListViewController.swift */; };
 		D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C504ED29784EF0008A9733 /* AppDelegate.swift */; };
 		D2C504F529784EF0008A9733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F329784EF0008A9733 /* Main.storyboard */; };
 		D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */; };
@@ -62,6 +63,7 @@
 		D2B97513297C304C00F05037 /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		D2B97515297C3CD900F05037 /* HomeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewModel.swift; sourceTree = "<group>"; };
 		D2B97517297C40DC00F05037 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		D2B9751F297D774600F05037 /* GameNoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteListViewController.swift; sourceTree = "<group>"; };
 		D2C504EA29784EF0008A9733 /* RawGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C504ED29784EF0008A9733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C504F429784EF0008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -151,6 +153,21 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		D2B9751D297D67AC00F05037 /* GameNoteList */ = {
+			isa = PBXGroup;
+			children = (
+				D2B9751F297D774600F05037 /* GameNoteListViewController.swift */,
+			);
+			path = GameNoteList;
+			sourceTree = "<group>";
+		};
+		D2B9751E297D67B800F05037 /* GameAddNote */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = GameAddNote;
+			sourceTree = "<group>";
+		};
 		D2C504E129784EF0008A9733 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +208,8 @@
 		D2C5050529785053008A9733 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				D2B9751E297D67B800F05037 /* GameAddNote */,
+				D2B9751D297D67AC00F05037 /* GameNoteList */,
 				D2B974FC297C256400F05037 /* NewGameList */,
 				D2B974E2297AA74700F05037 /* GameFavorite */,
 				D2C50509297850C1008A9733 /* GameList */,
@@ -330,6 +349,7 @@
 				D27C129F2978C23000478DD9 /* GameDetailViewController.swift in Sources */,
 				D27C12A12978C25700478DD9 /* GameDetailViewModel.swift in Sources */,
 				D2B974F5297AFB4F00F05037 /* GameFavoriteViewModel.swift in Sources */,
+				D2B97520297D774600F05037 /* GameNoteListViewController.swift in Sources */,
 				D2B974E4297AA76900F05037 /* GameFavoriteModel.swift in Sources */,
 				D2B974E1297A12C500F05037 /* CoreDataManager.swift in Sources */,
 				D2B9750E297C2F3700F05037 /* PopularTableViewCell.swift in Sources */,

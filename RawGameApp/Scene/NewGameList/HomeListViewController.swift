@@ -18,12 +18,7 @@ class HomeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        self.tableView.reloadData()
-    }
-    
-    
-    func setupUI(){
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
@@ -41,7 +36,8 @@ class HomeListViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let detailVC = storyboard
                 .instantiateViewController(withIdentifier: "a") as? GameDetailViewController {
-                detailVC.id = userInfo["id"] as? Int
+                detailVC.id = userInfo["id"] as! Int
+                print("home:\(detailVC.id)")
                 navigationController?.pushViewController(detailVC, animated: true)
             }
 //            detailVc?.id = viewModel.gameResult[indexPath.row].id
