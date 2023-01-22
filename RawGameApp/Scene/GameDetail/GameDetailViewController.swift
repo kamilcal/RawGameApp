@@ -70,7 +70,7 @@ class GameDetailViewController: UIViewController {
         setIconFavourite()
     }
     
-    // MARK: - CoreDataManager
+    // MARK: - updateUI
     
     private func updateUI(_ item: GameDetailModel) {
         guard let url = URL(string: item.backgroundImage ?? "" ) else { return }
@@ -81,7 +81,7 @@ class GameDetailViewController: UIViewController {
         backgroundView.sd_setImage(with: url)
         titleLabel.text = item.name
         reviewsLabel.text = String(item.reviewsCount)
-        releasedLabel.text = item.released
+        releasedLabel.text = item.released ?? "-"
         downloadLabel.text = String(item.added)
         textView.text = item.gameDetailModelDescription
         

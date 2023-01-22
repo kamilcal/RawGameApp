@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class UpcomingCollectionViewCell: UICollectionViewCell {
   
@@ -28,4 +29,13 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         blurView.layer.cornerRadius = 7
         blurView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
+    
+    public func configure(with model: ResultGame) {
+        guard let url = URL(string: model.backgroundImage ?? "") else { return }
+        
+        upcomingImageView.sd_imageIndicator = SDWebImageActivityIndicator.large
+        upcomingImageView.sd_setImage(with: url)
+        upcomingTitleLabel.text = model.name
+    }
+
 }
