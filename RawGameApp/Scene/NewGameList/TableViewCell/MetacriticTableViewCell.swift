@@ -56,7 +56,7 @@ extension MetacriticTableViewCell: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let cell = collectionView.cellForItem(at: indexPath) as? MetacriticCollectionViewCell {
+        if collectionView.cellForItem(at: indexPath) is MetacriticCollectionViewCell {
             let id = viewModel.gameResult[indexPath.row].id
             print("cell:\(id)")
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "presentDetail"), object: nil, userInfo: ["id": id])

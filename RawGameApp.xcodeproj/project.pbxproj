@@ -35,6 +35,7 @@
 		D2B97524297D7CA300F05037 /* GameNoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97523297D7CA300F05037 /* GameNoteListViewModel.swift */; };
 		D2B97526297D842E00F05037 /* GameAddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97525297D842E00F05037 /* GameAddNoteViewController.swift */; };
 		D2B97528297D948C00F05037 /* MetacriticCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97527297D948C00F05037 /* MetacriticCollectionViewCell.swift */; };
+		D2B9752A297DA0C800F05037 /* UpcomingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97529297DA0C800F05037 /* UpcomingCollectionViewCell.swift */; };
 		D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C504ED29784EF0008A9733 /* AppDelegate.swift */; };
 		D2C504F529784EF0008A9733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F329784EF0008A9733 /* Main.storyboard */; };
 		D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */; };
@@ -72,6 +73,7 @@
 		D2B97523297D7CA300F05037 /* GameNoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteListViewModel.swift; sourceTree = "<group>"; };
 		D2B97525297D842E00F05037 /* GameAddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAddNoteViewController.swift; sourceTree = "<group>"; };
 		D2B97527297D948C00F05037 /* MetacriticCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetacriticCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2B97529297DA0C800F05037 /* UpcomingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2C504EA29784EF0008A9733 /* RawGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C504ED29784EF0008A9733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C504F429784EF0008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			children = (
 				D2B9750F297C2F4900F05037 /* PopularCollectionViewCell.swift */,
 				D2B97527297D948C00F05037 /* MetacriticCollectionViewCell.swift */,
+				D2B97529297DA0C800F05037 /* UpcomingCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 				D27C12A32978C26F00478DD9 /* GameDetailModel.swift in Sources */,
 				D27C12912978AD4E00478DD9 /* APIClients.swift in Sources */,
 				D27C12942978AE9700478DD9 /* GameModel.swift in Sources */,
+				D2B9752A297DA0C800F05037 /* UpcomingCollectionViewCell.swift in Sources */,
 				D2C5050D297851A8008A9733 /* GameListTableViewCell.swift in Sources */,
 				D2B97518297C40DC00F05037 /* UIView.swift in Sources */,
 				D2B97510297C2F4900F05037 /* PopularCollectionViewCell.swift in Sources */,

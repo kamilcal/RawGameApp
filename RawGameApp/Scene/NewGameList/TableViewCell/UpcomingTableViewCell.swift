@@ -9,15 +9,25 @@ import UIKit
 
 class UpcomingTableViewCell: UITableViewCell {
 
+    @IBOutlet var upcomingCollectionView: UICollectionView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        setupUI()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setupUI(){
+        upcomingCollectionView.delegate = self
+        upcomingCollectionView.dataSource = self
     }
+    
 
+}
+extension UpcomingTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "upcomingCollectionCell", for: indexPath) as! UpcomingCollectionViewCell
+        return cell
+    }
 }

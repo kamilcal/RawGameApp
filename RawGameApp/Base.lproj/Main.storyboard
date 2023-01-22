@@ -667,7 +667,7 @@
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simpra Bootcamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPN-ea-EsR">
                                                                                         <rect key="frame" x="8" y="8" width="344" height="18"/>
                                                                                         <constraints>
-                                                                                            <constraint firstAttribute="width" constant="344" id="UzR-dr-81J"/>
+                                                                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="344" id="UzR-dr-81J"/>
                                                                                         </constraints>
                                                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -804,14 +804,103 @@
                                             <outlet property="metacriticCollectionView" destination="pcv-5T-Obw" id="Qok-k5-geb"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="upcomingCell" id="zgH-jM-Hdl">
-                                        <rect key="frame" x="0.0" y="518" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="upcomingCell" rowHeight="194" id="zgH-jM-Hdl" customClass="UpcomingTableViewCell" customModule="RawGameApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="518" width="414" height="194"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zgH-jM-Hdl" id="Aac-pI-uk1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xcn-RE-1bz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="39v-Wg-lMV">
+                                                        <size key="itemSize" width="286" height="172"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="upcomingCollectionCell" id="5PI-Ws-FVw" customClass="UpcomingCollectionViewCell" customModule="RawGameApp" customModuleProvider="target">
+                                                            <rect key="frame" x="10" y="11" width="286" height="172"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="286" height="172"/>
+                                                                <autoresizingMask key="autoresizingMask"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="11v-6Z-QGg">
+                                                                        <rect key="frame" x="8" y="8" width="270" height="156"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster3" translatesAutoresizingMaskIntoConstraints="NO" id="HvJ-DV-J8w">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="270" height="156"/>
+                                                                            </imageView>
+                                                                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXO-15-ysA">
+                                                                                <rect key="frame" x="0.0" y="126" width="270" height="30"/>
+                                                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="heG-DJ-m54">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="270" height="30"/>
+                                                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                                    <subviews>
+                                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simpra Bootcamp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ln-L9-inp">
+                                                                                            <rect key="frame" x="8" y="0.0" width="254" height="30"/>
+                                                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                            <nil key="highlightedColor"/>
+                                                                                        </label>
+                                                                                    </subviews>
+                                                                                    <constraints>
+                                                                                        <constraint firstItem="0ln-L9-inp" firstAttribute="leading" secondItem="heG-DJ-m54" secondAttribute="leading" constant="8" id="B8l-cW-Ia4"/>
+                                                                                        <constraint firstAttribute="bottom" secondItem="0ln-L9-inp" secondAttribute="bottom" id="Vdk-QN-6No"/>
+                                                                                        <constraint firstAttribute="trailing" secondItem="0ln-L9-inp" secondAttribute="trailing" constant="8" id="cpU-Pp-pNL"/>
+                                                                                        <constraint firstItem="0ln-L9-inp" firstAttribute="top" secondItem="heG-DJ-m54" secondAttribute="top" id="mXY-Gh-Pnc"/>
+                                                                                    </constraints>
+                                                                                </view>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="30" id="a9V-7R-ZQo"/>
+                                                                                </constraints>
+                                                                                <blurEffect style="regular"/>
+                                                                            </visualEffectView>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="HvJ-DV-J8w" firstAttribute="leading" secondItem="11v-6Z-QGg" secondAttribute="leading" id="5Bb-2h-4RJ"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="HvJ-DV-J8w" secondAttribute="trailing" id="DaI-bb-v7W"/>
+                                                                            <constraint firstItem="HvJ-DV-J8w" firstAttribute="top" secondItem="11v-6Z-QGg" secondAttribute="top" id="bxT-An-TQf"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="eXO-15-ysA" secondAttribute="bottom" id="cr1-Jn-dg1"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="eXO-15-ysA" secondAttribute="trailing" id="vff-wY-oaB"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="HvJ-DV-J8w" secondAttribute="bottom" id="y3a-Vc-jLX"/>
+                                                                            <constraint firstItem="eXO-15-ysA" firstAttribute="leading" secondItem="11v-6Z-QGg" secondAttribute="leading" id="zpU-S2-jmk"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </view>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstItem="11v-6Z-QGg" firstAttribute="leading" secondItem="5PI-Ws-FVw" secondAttribute="leadingMargin" id="3Ip-2c-Eqg"/>
+                                                                <constraint firstItem="11v-6Z-QGg" firstAttribute="trailing" secondItem="5PI-Ws-FVw" secondAttribute="trailingMargin" id="4WK-1y-5q7"/>
+                                                                <constraint firstItem="11v-6Z-QGg" firstAttribute="top" secondItem="5PI-Ws-FVw" secondAttribute="topMargin" id="GKX-mp-9uW"/>
+                                                                <constraint firstItem="11v-6Z-QGg" firstAttribute="bottom" secondItem="5PI-Ws-FVw" secondAttribute="bottomMargin" id="wwd-hn-SrI"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="blurView" destination="eXO-15-ysA" id="sC3-j6-xHu"/>
+                                                                <outlet property="upcomingImageView" destination="HvJ-DV-J8w" id="lW1-hv-6DR"/>
+                                                                <outlet property="upcomingTitleLabel" destination="0ln-L9-inp" id="UWQ-gF-dzD"/>
+                                                                <outlet property="wrapView" destination="11v-6Z-QGg" id="jZW-3m-Nf3"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xcn-RE-1bz" firstAttribute="leading" secondItem="Aac-pI-uk1" secondAttribute="leading" id="B8O-zb-Bx8"/>
+                                                <constraint firstItem="xcn-RE-1bz" firstAttribute="top" secondItem="Aac-pI-uk1" secondAttribute="top" id="KKz-PF-ksp"/>
+                                                <constraint firstAttribute="bottom" secondItem="xcn-RE-1bz" secondAttribute="bottom" id="QVg-Ze-frR"/>
+                                                <constraint firstAttribute="trailing" secondItem="xcn-RE-1bz" secondAttribute="trailing" id="fdv-NE-IBE"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="upcomingCollectionView" destination="xcn-RE-1bz" id="Exy-IQ-dQH"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -836,7 +925,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaL-7X-sGY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1187" y="-1633"/>
+            <point key="canvasLocation" x="1186.9565217391305" y="-1633.2589285714284"/>
         </scene>
         <!--Item 1-->
         <scene sceneID="Iw4-9e-Rmc">
@@ -927,6 +1016,9 @@
         </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
