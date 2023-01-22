@@ -42,7 +42,14 @@ class GameDetailViewController: UIViewController {
         tabBarController?.tabBar.isHidden = true
         getGameDetail()
         isGameFavourited()
-
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barStyle = .black
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.isNavigationBarHidden = true
     }
     
     

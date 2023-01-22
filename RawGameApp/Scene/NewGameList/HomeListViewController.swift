@@ -18,17 +18,22 @@ class HomeListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupUI()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(presentDetailModal(notif:)), name: NSNotification.Name(rawValue: "presentDetail"), object: nil)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barStyle = .black
+    }
+    
+    func setupUI() {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.tableFooterView = UIView()
         navigationController?.navigationBar.shadowImage = UIImage()
         setNeedsStatusBarAppearanceUpdate()
-        
-        
-        
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(presentDetailModal(notif:)), name: NSNotification.Name(rawValue: "presentDetail"), object: nil)
+        navigationItem.title = "RawGameApp"
     }
     
     @objc func presentDetailModal(notif: NSNotification) {

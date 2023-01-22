@@ -448,7 +448,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="314" id="ca8-sy-XZy"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="15"/>
                                                 <color key="textColor" red="0.79607843140000001" green="0.92941176469999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -659,7 +659,10 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ERO-3c-rzd">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.95294117649999999" green="0.72549019609999998" blue="0.035294117649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="jXD-Qk-qvF" kind="relationship" relationship="viewControllers" id="pfI-bX-1qk"/>
@@ -988,6 +991,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j35-Pc-IbP">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -998,15 +1006,20 @@
             </objects>
             <point key="canvasLocation" x="278.62595419847327" y="-938.0281690140846"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="2fn-Pq-gQv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eoM-Tl-pcF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="NLZ-Pz-aMN"/>
+                    <tabBarItem key="tabBarItem" title="" image="note.text" catalog="system" id="NLZ-Pz-aMN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="21c-Ag-b4t">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1017,15 +1030,20 @@
             </objects>
             <point key="canvasLocation" x="278.62595419847327" y="407.74647887323948"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="Jdc-Ay-UJN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="isl-Xf-q2S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="YGE-vx-qur"/>
+                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="YGE-vx-qur"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3yL-zn-Ieb">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1036,15 +1054,23 @@
             </objects>
             <point key="canvasLocation" x="279" y="-275"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="Y6h-Ua-qZP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jXD-Qk-qvF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="klH-N1-y8n"/>
+                    <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" id="klH-N1-y8n"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OYh-5u-mv5">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="OYh-5u-mv5">
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.054901964960000001" green="0.1607843041" blue="0.32549020649999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1062,6 +1088,9 @@
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="chat" width="512" height="512"/>
         <image name="delete" width="47" height="47"/>
+        <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="homekit" catalog="system" width="128" height="104"/>
+        <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="poster3" width="2000" height="3000"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>

@@ -32,6 +32,10 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
         loadGameFavouritesData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.navigationBar.barStyle = .black
+    }
+    
     
     private func loadGameFavouritesData() {
         viewModel.loadFavouriteData { [weak self] (result) in
