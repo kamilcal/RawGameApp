@@ -151,13 +151,13 @@
                                 <rect key="frame" x="329" y="78" width="61" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Save">
-                                    <color key="baseForegroundColor" red="0.79607843140000001" green="0.92941176469999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseForegroundColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vu0-LM-J4w">
                                 <rect key="frame" x="20" y="158" width="116" height="23"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                                <color key="textColor" red="0.79607843140000001" green="0.92941176469999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter game name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-Tu-Nc3">
@@ -176,7 +176,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voa-m8-7KX">
                                 <rect key="frame" x="20" y="209" width="46" height="23"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                                <color key="textColor" red="0.79607843140000001" green="0.92941176469999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -984,11 +984,11 @@
             </objects>
             <point key="canvasLocation" x="1186.9565217391305" y="-1633.2589285714284"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="Iw4-9e-Rmc">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Djp-Ih-lLa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="magnifyingglass" catalog="system" id="Avu-kl-4gd"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="Avu-kl-4gd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j35-Pc-IbP">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -1008,11 +1008,11 @@
             </objects>
             <point key="canvasLocation" x="278.62595419847327" y="-938.0281690140846"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Notes-->
         <scene sceneID="2fn-Pq-gQv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eoM-Tl-pcF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="note.text" catalog="system" id="NLZ-Pz-aMN"/>
+                    <tabBarItem key="tabBarItem" title="Notes" image="note.text" catalog="system" id="NLZ-Pz-aMN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="21c-Ag-b4t">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -1032,11 +1032,11 @@
             </objects>
             <point key="canvasLocation" x="278.62595419847327" y="407.74647887323948"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Favorites-->
         <scene sceneID="Jdc-Ay-UJN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="isl-Xf-q2S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="heart" catalog="system" id="YGE-vx-qur"/>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" id="YGE-vx-qur"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3yL-zn-Ieb">
                         <rect key="frame" x="0.0" y="48" width="414" height="44"/>
@@ -1056,11 +1056,11 @@
             </objects>
             <point key="canvasLocation" x="279" y="-275"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="Y6h-Ua-qZP">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jXD-Qk-qvF" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="homekit" catalog="system" id="klH-N1-y8n"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homekit" catalog="system" id="klH-N1-y8n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="OYh-5u-mv5">
                         <rect key="frame" x="0.0" y="48" width="414" height="96"/>

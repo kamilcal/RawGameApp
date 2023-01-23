@@ -25,4 +25,16 @@ class FavoriteViewModel {
             }
         }
     }
+    func deleteFavoriteData(_ id: Int) {
+        self.dataManager.deleteFavouriteGame(id)
+//            switch result {
+//            case .success(_):
+//                completion(.success)
+//            case .failure(let error):
+//                print("\(error)")
+//                completion(.failure(error as? NetworkErrorHandling ?? .apiError))
+//            }
+        
+
+    }
 }

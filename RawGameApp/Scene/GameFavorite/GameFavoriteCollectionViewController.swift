@@ -14,7 +14,9 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     private var viewModel = FavoriteViewModel()
     var selectedMovieID: Int?
     var gameModel = [GameFavoriteModel]()
-
+    var dataManager: CoreDataManager = { return CoreDataManager() }()
+    
+    
     private let sectionInsets = UIEdgeInsets(top: 15.0,
                                              left: 2.0,
                                              bottom: 15.0,
@@ -52,8 +54,9 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
+        
+        
     }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if viewModel.gameFavouritesResult.count == 0 {
@@ -71,12 +74,20 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
         } else {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GameFavoriteCollectionViewCell
-            cell.configure(with: viewModel.gameFavouritesResult[indexPath.row])
+            let index = viewModel.gameFavouritesResult[indexPath.row]
+            cell.configure(with: index)
+            cell.favoriteBtn = { [unowned self] in
+                viewModel.deleteFavoriteData(index.id!) 
+            }
+            
             return cell
         }
         
+
+        
     }
 
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         let detailVc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "a") as? GameDetailViewController
@@ -88,9 +99,9 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-                if viewModel.gameFavouritesResult.count == 0 {
-                    return CGSize(width: collectionView.bounds.width, height: 55)
-                }
+        if viewModel.gameFavouritesResult.count == 0 {
+            return CGSize(width: collectionView.bounds.width, height: 55)
+        }
         
         let paddingSpace = sectionInsets.left * (itemsPerRow )
         let availableWidth = view.frame.width - paddingSpace
@@ -113,9 +124,5 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     
 
     
-  
     
 }
-
-    
-

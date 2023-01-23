@@ -10,6 +10,8 @@ import SDWebImage
 
 class GameDetailViewController: UIViewController {
     
+    //MARK: - Outlets and Variables
+
     @IBOutlet var backgroundView: UIImageView!
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var imageView: UIImageView!
@@ -29,17 +31,19 @@ class GameDetailViewController: UIViewController {
         }
     }
     private let viewModel = DetailViewModel()
-    private lazy var dataManager: CoreDataManager = { return CoreDataManager() }()
+    var dataManager: CoreDataManager = { return CoreDataManager() }()
     
     
-    
+    //MARK: - Lifecycle Functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.isHidden = true
-//        isGameFavourited()
     }
+
     override func viewWillAppear(_ animated: Bool) {
-        tabBarController?.tabBar.isHidden = true
+        super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = true
         getGameDetail()
         isGameFavourited()
     }
@@ -47,12 +51,14 @@ class GameDetailViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         navigationController?.navigationBar.barStyle = .black
     }
+ 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        self.navigationController?.isNavigationBarHidden = true
+        self.navigationController?.isNavigationBarHidden = false
     }
-    
-    
+
+//MARK: - fetch
+
     private func getGameDetail() {
         guard let getIdGame = id else { return }
         viewModel.fetchGamesData(id: getIdGame) { (result) in
@@ -65,7 +71,8 @@ class GameDetailViewController: UIViewController {
             }
         }
     }
-    
+//MARK: - actions
+
     @IBAction func favButtonTapped(_ sender: Any) {
         if viewModel.isFavourited {
             guard let id = id else { return }
@@ -138,11 +145,11 @@ class GameDetailViewController: UIViewController {
     }
     
     private func removeGameFavourite(_ idGame: Int) {
-        dataManager.deleteFavouriteGame(idGame) {
-            DispatchQueue.main.async {
-//                TODO: LOCAL NOT.
-            }
-        }
+        dataManager.deleteFavouriteGame(idGame)
+//            DispatchQueue.main.async {
+////                TODO: LOCAL NOT.
+//            }
+//        }
     }
     
 }
