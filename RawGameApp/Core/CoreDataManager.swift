@@ -30,6 +30,9 @@ class CoreDataManager {
         taskContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         return taskContext
     }
+    
+//    MARK: - GAME
+    
     func getFavoritesData(completion: @escaping(Result<[GameFavoriteModel], Error>) -> Void) {
         let taskContext = context()
         taskContext.perform {
@@ -125,6 +128,66 @@ class CoreDataManager {
                batchDeleteResult.result != nil {
             }
         }
+    }
+    
+//    MARK: - NOTE
+
+    func saveNote(title: String, text: String) -> Note?{
+        let taskContext = context()
+            if let entity = NSEntityDescription.entity(forEntityName: "Note", in: taskContext){
+                let note = NSManagedObject(entity: entity, insertInto: taskContext)
+                note.setValue(title, forKeyPath: "title")
+                note.setValue(text, forKeyPath: "text")
+                
+                do {
+                    try taskContext.save()
+                    return note as? Note
+                } catch let error as NSError {
+                    print("Couldn't save. \(error), \(error.userInfo)")   
+                }
+            }
+        return nil
+    }
+
+    
+    func getNotes() -> [Note] {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Note")
+        let taskContext = context()
+        do {
+            let notes = try taskContext.fetch(fetchRequest)
+            return notes as! [Note]
+        } catch let error as NSError {
+            print("Couldn't save. \(error), \(error.userInfo)")
+        }
+        return []
+    }
+    
+    
+    func deleteNote(note: Note) {
+        let taskContext = context()
+        taskContext.delete(note)
+        
+        do {
+            try taskContext.save()
+        } catch let error as NSError {
+            print("Couldn't save. \(error), \(error.userInfo)")
+        }
+    }
+    
+    func updateNote(note: Note) -> Note {
+        let taskContext = context()
+        note.setValue(note.text, forKey: "text")
+        note.setValue(note.title, forKey: "text")
+        if note.hasChanges {
+            do {
+                try taskContext.save()
+            } catch let error as NSError {
+                print("Couldn't save. \(error), \(error.userInfo)")
+            }
+            return note
+        }
+        return note
+        
     }
 }
 
