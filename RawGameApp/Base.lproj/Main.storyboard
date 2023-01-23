@@ -13,12 +13,12 @@
         <!--Item-->
         <scene sceneID="KWK-g0-cBq">
             <objects>
-                <viewController id="Ykc-Fy-R3Z" customClass="GameNoteListViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ykc-Fy-R3Z" customClass="NoteListViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bK6-rf-wj7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XhN-zi-Ce8">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="XhN-zi-Ce8">
                                 <rect key="frame" x="0.0" y="92" width="414" height="672"/>
                                 <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" systemColor="opaqueSeparatorColor"/>
@@ -53,6 +53,7 @@
                                     <constraints>
                                         <constraint firstItem="xnl-7A-Bh1" firstAttribute="top" secondItem="RR7-00-38U" secondAttribute="top" constant="8" id="5Ux-em-fiC"/>
                                         <constraint firstItem="X4b-Qe-SQ9" firstAttribute="top" secondItem="RR7-00-38U" secondAttribute="top" constant="31" id="EWn-9Y-EKq"/>
+                                        <constraint firstItem="X4b-Qe-SQ9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AOl-3c-9ya" secondAttribute="trailing" constant="8" symbolic="YES" id="L4m-MX-336"/>
                                         <constraint firstItem="AOl-3c-9ya" firstAttribute="top" secondItem="xnl-7A-Bh1" secondAttribute="bottom" id="NZV-ao-uEY"/>
                                         <constraint firstAttribute="trailing" secondItem="X4b-Qe-SQ9" secondAttribute="trailing" constant="20" symbolic="YES" id="cNv-fa-CBh"/>
                                         <constraint firstItem="AOl-3c-9ya" firstAttribute="leading" secondItem="RR7-00-38U" secondAttribute="leading" constant="8" id="lfU-qZ-Kan"/>
@@ -60,15 +61,15 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gameNoteListCell" rowHeight="60" id="rJ8-IX-Okd" customClass="GameNoteListTableViewCell" customModule="RawGameApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="133" width="414" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="gameNoteListCell" rowHeight="86" id="rJ8-IX-Okd" customClass="GameNoteListTableViewCell" customModule="RawGameApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="133" width="414" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rJ8-IX-Okd" id="OgF-4u-Rw1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Patika.dev" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tH4-Ba-PLr">
-                                                    <rect key="frame" x="48" y="15" width="334" height="20"/>
+                                                    <rect key="frame" x="48" y="23" width="334" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="0FJ-uQ-e6d"/>
                                                         <constraint firstAttribute="width" constant="350" id="SJ0-80-75J"/>
@@ -78,13 +79,13 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simpra Bootcamp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deb-2g-cYm">
-                                                    <rect key="frame" x="64" y="37" width="342" height="21"/>
+                                                    <rect key="frame" x="64" y="45" width="342" height="31"/>
                                                     <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="message" translatesAutoresizingMaskIntoConstraints="NO" id="lQq-q3-ek1">
-                                                    <rect key="frame" x="10" y="19" width="25" height="25"/>
+                                                    <rect key="frame" x="10" y="19" width="25" height="31"/>
                                                     <color key="tintColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="Wd8-j9-3uq"/>
@@ -95,10 +96,11 @@
                                             <constraints>
                                                 <constraint firstItem="deb-2g-cYm" firstAttribute="leading" secondItem="OgF-4u-Rw1" secondAttribute="leading" constant="64" id="1Wq-s3-Wyu"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="tH4-Ba-PLr" secondAttribute="trailing" constant="12" id="8K0-ib-0O0"/>
-                                                <constraint firstAttribute="bottom" secondItem="deb-2g-cYm" secondAttribute="bottom" constant="2" id="Adl-eW-Ess"/>
+                                                <constraint firstAttribute="bottom" secondItem="lQq-q3-ek1" secondAttribute="bottom" constant="36" id="A77-0Y-hO5"/>
+                                                <constraint firstAttribute="bottom" secondItem="deb-2g-cYm" secondAttribute="bottom" constant="10" id="Adl-eW-Ess"/>
                                                 <constraint firstItem="tH4-Ba-PLr" firstAttribute="leading" secondItem="OgF-4u-Rw1" secondAttribute="leadingMargin" constant="28" id="Ht3-lw-0hK"/>
                                                 <constraint firstAttribute="trailing" secondItem="deb-2g-cYm" secondAttribute="trailing" constant="8" id="bnt-Gg-Hp8"/>
-                                                <constraint firstItem="tH4-Ba-PLr" firstAttribute="top" secondItem="OgF-4u-Rw1" secondAttribute="topMargin" constant="4" id="iGl-p9-vc2"/>
+                                                <constraint firstItem="tH4-Ba-PLr" firstAttribute="top" secondItem="OgF-4u-Rw1" secondAttribute="topMargin" constant="12" id="iGl-p9-vc2"/>
                                                 <constraint firstItem="lQq-q3-ek1" firstAttribute="top" secondItem="OgF-4u-Rw1" secondAttribute="top" constant="19" id="jjq-SE-C6L"/>
                                                 <constraint firstItem="deb-2g-cYm" firstAttribute="top" secondItem="tH4-Ba-PLr" secondAttribute="bottom" constant="2" id="qSW-N5-MfR"/>
                                                 <constraint firstItem="lQq-q3-ek1" firstAttribute="leading" secondItem="OgF-4u-Rw1" secondAttribute="leading" constant="10" id="zhM-Np-2ld"/>
@@ -111,10 +113,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="Ykc-Fy-R3Z" id="uYb-xS-DWS"/>
-                                    <outlet property="delegate" destination="Ykc-Fy-R3Z" id="x4H-Cy-573"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="VxC-9H-Xng"/>
@@ -132,78 +130,72 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="noteTableView" destination="XhN-zi-Ce8" id="e2r-2b-pan"/>
-                        <segue destination="y5H-NR-hly" kind="presentation" identifier="noteToAddNote" id="Vqm-O0-Wt1"/>
+                        <segue destination="y5H-NR-hly" kind="show" identifier="noteToAddNote" id="Vqm-O0-Wt1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AQB-le-Gde" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1202.8985507246377" y="407.14285714285711"/>
         </scene>
-        <!--Game Add Note View Controller-->
+        <!--Add Note View Controller-->
         <scene sceneID="B2e-lH-wNm">
             <objects>
-                <viewController id="y5H-NR-hly" customClass="GameAddNoteViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="y5H-NR-hly" customClass="AddNoteViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s5g-Ze-af3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qb-6V-muo">
-                                <rect key="frame" x="329" y="78" width="61" height="35"/>
+                                <rect key="frame" x="329" y="122" width="61" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Save">
                                     <color key="baseForegroundColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="y5H-NR-hly" eventType="touchUpInside" id="qMz-P6-msV"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vu0-LM-J4w">
-                                <rect key="frame" x="20" y="158" width="116" height="23"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Note Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-Tu-Nc3">
+                                <rect key="frame" x="20" y="196" width="374" height="38.5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter game name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BWd-Tu-Nc3">
-                                <rect key="frame" x="158" y="152" width="236" height="34"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your note..." translatesAutoresizingMaskIntoConstraints="NO" id="pLW-GN-9F0">
-                                <rect key="frame" x="20" y="240" width="374" height="564"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pLW-GN-9F0">
+                                <rect key="frame" x="20" y="246.5" width="374" height="497.5"/>
+                                <color key="tintColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Futura-MediumItalic" family="Futura" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="voa-m8-7KX">
-                                <rect key="frame" x="20" y="209" width="46" height="23"/>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Gn-5E-dUc"/>
-                        <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.050980389119999997" green="0.109803915" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="Vu0-LM-J4w" firstAttribute="top" secondItem="4Gn-5E-dUc" secondAttribute="top" constant="110" id="0rF-xJ-wRZ"/>
-                            <constraint firstItem="pLW-GN-9F0" firstAttribute="leading" secondItem="4Gn-5E-dUc" secondAttribute="leading" constant="20" id="7wX-Gg-d1g"/>
+                            <constraint firstItem="pLW-GN-9F0" firstAttribute="top" secondItem="BWd-Tu-Nc3" secondAttribute="bottom" constant="12" id="5o0-ks-TGm"/>
+                            <constraint firstItem="BWd-Tu-Nc3" firstAttribute="leading" secondItem="4Gn-5E-dUc" secondAttribute="leading" constant="20" id="63V-qM-GM5"/>
+                            <constraint firstItem="4Gn-5E-dUc" firstAttribute="bottom" secondItem="pLW-GN-9F0" secondAttribute="bottom" constant="20" id="747-oP-sX1"/>
                             <constraint firstItem="0qb-6V-muo" firstAttribute="top" secondItem="4Gn-5E-dUc" secondAttribute="top" constant="30" id="9Ce-DC-DLC"/>
-                            <constraint firstItem="Vu0-LM-J4w" firstAttribute="leading" secondItem="4Gn-5E-dUc" secondAttribute="leading" constant="20" id="AkH-MG-z8y"/>
-                            <constraint firstItem="BWd-Tu-Nc3" firstAttribute="leading" secondItem="Vu0-LM-J4w" secondAttribute="trailing" constant="22" id="Asx-W2-LiO"/>
-                            <constraint firstItem="4Gn-5E-dUc" firstAttribute="trailing" secondItem="pLW-GN-9F0" secondAttribute="trailing" constant="20" id="FFc-Ab-9I7"/>
-                            <constraint firstItem="pLW-GN-9F0" firstAttribute="top" secondItem="voa-m8-7KX" secondAttribute="bottom" constant="8" symbolic="YES" id="Fc8-tn-UG6"/>
-                            <constraint firstItem="BWd-Tu-Nc3" firstAttribute="top" secondItem="0qb-6V-muo" secondAttribute="bottom" constant="39" id="KTW-he-eur"/>
-                            <constraint firstItem="4Gn-5E-dUc" firstAttribute="trailing" secondItem="BWd-Tu-Nc3" secondAttribute="trailing" constant="20" id="VFg-04-GL2"/>
-                            <constraint firstItem="voa-m8-7KX" firstAttribute="leading" secondItem="4Gn-5E-dUc" secondAttribute="leading" constant="20" id="WeR-DC-gAz"/>
+                            <constraint firstItem="BWd-Tu-Nc3" firstAttribute="top" secondItem="0qb-6V-muo" secondAttribute="bottom" constant="39" id="CDH-Fg-f8l"/>
+                            <constraint firstItem="pLW-GN-9F0" firstAttribute="leading" secondItem="4Gn-5E-dUc" secondAttribute="leading" constant="20" id="F2k-82-9ne"/>
+                            <constraint firstItem="4Gn-5E-dUc" firstAttribute="trailing" secondItem="pLW-GN-9F0" secondAttribute="trailing" constant="20" id="QUL-Bt-GkG"/>
+                            <constraint firstItem="4Gn-5E-dUc" firstAttribute="trailing" secondItem="BWd-Tu-Nc3" secondAttribute="trailing" constant="20" id="YXs-cn-kxu"/>
                             <constraint firstItem="4Gn-5E-dUc" firstAttribute="trailing" secondItem="0qb-6V-muo" secondAttribute="trailing" constant="24" id="nge-77-Rr7"/>
-                            <constraint firstItem="voa-m8-7KX" firstAttribute="top" secondItem="Vu0-LM-J4w" secondAttribute="bottom" constant="28" id="z17-PY-fnY"/>
-                            <constraint firstItem="4Gn-5E-dUc" firstAttribute="bottom" secondItem="pLW-GN-9F0" secondAttribute="bottom" constant="34" id="zER-Pk-qdt"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5FF-7r-VOo"/>
+                    <connections>
+                        <outlet property="detailLabel" destination="pLW-GN-9F0" id="8hy-5U-Oxd"/>
+                        <outlet property="titleLabel" destination="BWd-Tu-Nc3" id="L8A-9q-tJV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8zO-6J-28Y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2124.6376811594205" y="406.47321428571428"/>
         </scene>
-        <!--Search List View Controller-->
+        <!--Search List-->
         <scene sceneID="VR4-wF-ChE">
             <objects>
                 <viewController id="s7R-P4-J5P" customClass="SearchListViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -291,7 +283,7 @@
                             <constraint firstItem="FW2-05-fx9" firstAttribute="trailing" secondItem="0xU-41-7xe" secondAttribute="trailing" id="pmx-PC-tbC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="K5M-7O-8Sp"/>
+                    <navigationItem key="navigationItem" title="Search List" id="K5M-7O-8Sp"/>
                     <connections>
                         <outlet property="tableView" destination="0xU-41-7xe" id="DTr-ir-y5w"/>
                     </connections>
@@ -300,7 +292,7 @@
             </objects>
             <point key="canvasLocation" x="1205.3435114503816" y="-938.0281690140846"/>
         </scene>
-        <!--Game Favorite Collection View Controller-->
+        <!--Favorite List-->
         <scene sceneID="aNS-VC-OUl">
             <objects>
                 <collectionViewController id="hjA-Cv-mhp" customClass="GameFavoriteCollectionViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -357,9 +349,7 @@
                             <outlet property="delegate" destination="hjA-Cv-mhp" id="pCG-4c-yRA"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="wRc-6Z-sfR">
-                        <nil key="title"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Favorite List" id="wRc-6Z-sfR"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I36-ln-2ld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -992,13 +982,16 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Djp-Ih-lLa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="Avu-kl-4gd"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j35-Pc-IbP">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="j35-Pc-IbP">
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1040,13 +1033,16 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="isl-Xf-q2S" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Favorites" image="heart" catalog="system" id="YGE-vx-qur"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3yL-zn-Ieb">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="3yL-zn-Ieb">
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1073,7 +1069,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>

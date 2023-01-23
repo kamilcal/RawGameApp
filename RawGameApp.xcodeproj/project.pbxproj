@@ -30,12 +30,14 @@
 		D2B97514297C304D00F05037 /* UpcomingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97513297C304C00F05037 /* UpcomingTableViewCell.swift */; };
 		D2B97516297C3CD900F05037 /* HomeListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97515297C3CD900F05037 /* HomeListViewModel.swift */; };
 		D2B97518297C40DC00F05037 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97517297C40DC00F05037 /* UIView.swift */; };
-		D2B97520297D774600F05037 /* GameNoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9751F297D774600F05037 /* GameNoteListViewController.swift */; };
+		D2B97520297D774600F05037 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B9751F297D774600F05037 /* NoteListViewController.swift */; };
 		D2B97522297D7C8500F05037 /* GameNoteListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97521297D7C8500F05037 /* GameNoteListTableViewCell.swift */; };
 		D2B97524297D7CA300F05037 /* GameNoteListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97523297D7CA300F05037 /* GameNoteListViewModel.swift */; };
-		D2B97526297D842E00F05037 /* GameAddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97525297D842E00F05037 /* GameAddNoteViewController.swift */; };
+		D2B97526297D842E00F05037 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97525297D842E00F05037 /* AddNoteViewController.swift */; };
 		D2B97528297D948C00F05037 /* MetacriticCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97527297D948C00F05037 /* MetacriticCollectionViewCell.swift */; };
 		D2B9752A297DA0C800F05037 /* UpcomingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B97529297DA0C800F05037 /* UpcomingCollectionViewCell.swift */; };
+		D2BA9136297EC3D2005B6DCC /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA9135297EC3D2005B6DCC /* NoteModel.swift */; };
+		D2BA9138297EC780005B6DCC /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2BA9137297EC780005B6DCC /* AddNoteViewModel.swift */; };
 		D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C504ED29784EF0008A9733 /* AppDelegate.swift */; };
 		D2C504F529784EF0008A9733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F329784EF0008A9733 /* Main.storyboard */; };
 		D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */; };
@@ -68,12 +70,14 @@
 		D2B97513297C304C00F05037 /* UpcomingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingTableViewCell.swift; sourceTree = "<group>"; };
 		D2B97515297C3CD900F05037 /* HomeListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeListViewModel.swift; sourceTree = "<group>"; };
 		D2B97517297C40DC00F05037 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		D2B9751F297D774600F05037 /* GameNoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteListViewController.swift; sourceTree = "<group>"; };
+		D2B9751F297D774600F05037 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		D2B97521297D7C8500F05037 /* GameNoteListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteListTableViewCell.swift; sourceTree = "<group>"; };
 		D2B97523297D7CA300F05037 /* GameNoteListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameNoteListViewModel.swift; sourceTree = "<group>"; };
-		D2B97525297D842E00F05037 /* GameAddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameAddNoteViewController.swift; sourceTree = "<group>"; };
+		D2B97525297D842E00F05037 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		D2B97527297D948C00F05037 /* MetacriticCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetacriticCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2B97529297DA0C800F05037 /* UpcomingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCollectionViewCell.swift; sourceTree = "<group>"; };
+		D2BA9135297EC3D2005B6DCC /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		D2BA9137297EC780005B6DCC /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		D2C504EA29784EF0008A9733 /* RawGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C504ED29784EF0008A9733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2C504F429784EF0008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -162,7 +166,7 @@
 				D2BA9131297EB0D9005B6DCC /* ViewModel */,
 				D2BA9130297EB0D4005B6DCC /* Model */,
 				D2BA9124297EB03C005B6DCC /* View */,
-				D2B9751F297D774600F05037 /* GameNoteListViewController.swift */,
+				D2B9751F297D774600F05037 /* NoteListViewController.swift */,
 			);
 			path = GameNoteList;
 			sourceTree = "<group>";
@@ -173,7 +177,7 @@
 				D2BA9134297EB0FE005B6DCC /* Model */,
 				D2BA9133297EB0F8005B6DCC /* ViewModel */,
 				D2BA9132297EB0F2005B6DCC /* View */,
-				D2B97525297D842E00F05037 /* GameAddNoteViewController.swift */,
+				D2B97525297D842E00F05037 /* AddNoteViewController.swift */,
 			);
 			path = GameAddNote;
 			sourceTree = "<group>";
@@ -307,6 +311,7 @@
 		D2BA9133297EB0F8005B6DCC /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D2BA9137297EC780005B6DCC /* AddNoteViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 		D2BA9134297EB0FE005B6DCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D2BA9135297EC3D2005B6DCC /* NoteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -498,18 +504,20 @@
 				D2B97522297D7C8500F05037 /* GameNoteListTableViewCell.swift in Sources */,
 				D2B9750C297C2F0200F05037 /* HomeListViewController.swift in Sources */,
 				D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */,
-				D2B97526297D842E00F05037 /* GameAddNoteViewController.swift in Sources */,
+				D2B97526297D842E00F05037 /* AddNoteViewController.swift in Sources */,
 				D2C5050B29785149008A9733 /* SearchListViewController.swift in Sources */,
 				D27C129F2978C23000478DD9 /* GameDetailViewController.swift in Sources */,
 				D27C12A12978C25700478DD9 /* GameDetailViewModel.swift in Sources */,
 				D2B974F5297AFB4F00F05037 /* GameFavoriteViewModel.swift in Sources */,
-				D2B97520297D774600F05037 /* GameNoteListViewController.swift in Sources */,
+				D2B97520297D774600F05037 /* NoteListViewController.swift in Sources */,
 				D2B974E4297AA76900F05037 /* GameFavoriteModel.swift in Sources */,
 				D2B974E1297A12C500F05037 /* CoreDataManager.swift in Sources */,
 				D2B9750E297C2F3700F05037 /* PopularTableViewCell.swift in Sources */,
+				D2BA9136297EC3D2005B6DCC /* NoteModel.swift in Sources */,
 				D2C504EE29784EF0008A9733 /* AppDelegate.swift in Sources */,
 				D2B97514297C304D00F05037 /* UpcomingTableViewCell.swift in Sources */,
 				D2B97528297D948C00F05037 /* MetacriticCollectionViewCell.swift in Sources */,
+				D2BA9138297EC780005B6DCC /* AddNoteViewModel.swift in Sources */,
 				D2B974EF297AF43100F05037 /* GameFavoriteCollectionViewController.swift in Sources */,
 				D27C12A32978C26F00478DD9 /* GameDetailModel.swift in Sources */,
 				D27C12912978AD4E00478DD9 /* APIClients.swift in Sources */,

@@ -143,7 +143,7 @@ class CoreDataManager {
                     try taskContext.save()
                     return note as? Note
                 } catch let error as NSError {
-                    print("Couldn't save. \(error), \(error.userInfo)")   
+                    print("Couldn't save. \(error), \(error.userInfo)")
                 }
             }
         return nil
@@ -189,5 +189,20 @@ class CoreDataManager {
         return note
         
     }
-}
+    
+    func editNote(obj: Note, newObj: NoteModel, completion: @escaping() -> Void) {
+        let taskContext = context()
+        let newNote = context().object(with: obj.objectID)
+        newNote.setValue(newObj.text, forKey: "text")
+        newNote.setValue(newObj.title, forKey: "title")
+        
+        do {
+            try taskContext.save()
+            completion()
+        } catch let error as NSError {
+            print("Couldn't save. \(error), \(error.userInfo)")
+        }
+        }
+    }
+
 
