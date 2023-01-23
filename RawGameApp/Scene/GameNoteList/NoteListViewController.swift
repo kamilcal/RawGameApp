@@ -27,7 +27,7 @@ class NoteListViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        viewModel.getNotes()
+        viewModel.getNotes()
 
     }
     
@@ -56,6 +56,7 @@ extension NoteListViewController: NoteListViewModelDelegate {
         noteTableView.reloadData()
     }
     
+    
     func noteAdded(title: String, text: String) {
         viewModel.appendNote(title: title, text: text)
     }
@@ -72,8 +73,10 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "gameNoteListCell", for: indexPath) as! GameNoteListTableViewCell
-        cell.configure(note: (viewModel.notes?[indexPath.row])!)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "gameNoteListCell") as? GameNoteListTableViewCell,
+              let note = viewModel.getNote(at: indexPath.row) else {return UITableViewCell()}
+        
+        cell.configure(note: note)
         // TODO: force unwrap i aç
         return cell
     }

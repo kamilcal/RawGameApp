@@ -41,8 +41,7 @@ class HomeListViewController: UIViewController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             if let detailVC = storyboard
                 .instantiateViewController(withIdentifier: "a") as? GameDetailViewController {
-                detailVC.id = userInfo["id"] as! Int
-                print("home:\(detailVC.id)")
+                detailVC.id = userInfo["id"] as? Int
                 navigationController?.pushViewController(detailVC, animated: true)
             }
 //            detailVc?.id = viewModel.gameResult[indexPath.row].id

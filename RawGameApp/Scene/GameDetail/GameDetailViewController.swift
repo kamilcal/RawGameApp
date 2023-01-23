@@ -39,6 +39,7 @@ class GameDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.isHidden = true
+
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +47,8 @@ class GameDetailViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = true
         getGameDetail()
         isGameFavourited()
+//        activityIndicator.startAnimating()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -60,14 +63,17 @@ class GameDetailViewController: UIViewController {
 //MARK: - Fetch
 
     private func getGameDetail() {
+        self.showActivityIndicator()
         guard let getIdGame = id else { return }
         viewModel.fetchGamesData(id: getIdGame) { (result) in
             switch result {
             case .success(let data):
                 self.scrollView.isHidden = false
                 self.updateUI(data)
+                self.removeActivityIndicator()
             case .failure(let error):
                 print("Error on: \(error.localizedDescription)")
+                self.removeActivityIndicator()
             }
         }
     }

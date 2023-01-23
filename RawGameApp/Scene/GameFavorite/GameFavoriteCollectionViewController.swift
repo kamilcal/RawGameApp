@@ -28,6 +28,7 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,19 +43,22 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     //MARK: - Load Data
     
     private func loadGameFavouritesData() {
+        self.showActivityIndicator()
         viewModel.loadFavoriteData { [weak self] (result) in
             switch result {
-            case .success(let data):
-                print(data)
-                self?.updateTableUI()
+            case .success(_):
+            self?.updateTableUI()
+                self?.removeActivityIndicator()
             case .failure(let error):
                 print("Error on: \(error.localizedDescription)")
+                self?.removeActivityIndicator()
             }
         }
     }
     private func updateTableUI() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
+
         }
     }
     
@@ -87,6 +91,8 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
         return sectionInsets.left
     }
     
+
+    
     //MARK: - Delegate, DataSource
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -104,7 +110,6 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as! EmptyCollectionViewCell
             return cell
         } else {
-            
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GameFavoriteCollectionViewCell
             let index = viewModel.gameFavoritesResult[indexPath.row]
             cell.configure(with: index)
@@ -125,6 +130,7 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     
     
 }
+
 extension GameFavoriteCollectionViewController: FavoriteListViewModelDelegate {
     func favoriteGamesChanged() {
         if viewModel.gameFavoritesResult.count > 0{

@@ -12,7 +12,7 @@ import SDWebImage
 class GameFavoriteCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
-    
+    var a: GameFavoriteCollectionViewController?
 
     override func awakeFromNib() {
         imageView.layer.cornerRadius = 8.0

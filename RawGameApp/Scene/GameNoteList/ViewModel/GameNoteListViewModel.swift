@@ -12,6 +12,8 @@ protocol NoteListViewModelProtocol {
     func getNotes()
     func appendNote(title: String, text: String)
     func updateNote(note: Note)
+    func getNote(at index: Int) -> Note?
+
 }
 
 protocol NoteListViewModelDelegate: AnyObject {
@@ -20,13 +22,17 @@ protocol NoteListViewModelDelegate: AnyObject {
     func noteUpdated(note: Note)
 }
 
-class GameNoteListViewModel{
+class GameNoteListViewModel: NoteListViewModelProtocol{
     
     weak var delegate: NoteListViewModelDelegate?
 
     var notes: [Note]?
     private lazy var dataManager: CoreDataManager = { return CoreDataManager() }()
 
+    func getNote(at index: Int) -> Note? {
+       notes?[index]
+    }
+    
     func appendNote(title: String, text: String) {
         guard let note = dataManager.saveNote(title: title, text: text) else {return}
         notes?.append(note)

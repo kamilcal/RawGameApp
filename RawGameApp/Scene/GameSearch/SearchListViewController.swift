@@ -49,23 +49,26 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
-        if text.count > 2 {
-            timer?.invalidate()
-            timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { [weak self] _ in
-                self?.viewModel.fetchGamesData(with: self!.page, searchText: text) { result in
-                    switch result {
-                    case .success(_):
-                        DispatchQueue.main.async {
-                            self?.tableView.reloadData()
+            if text.count > 1 {
+                self.showActivityIndicator()
+                timer?.invalidate()
+                timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { [weak self] _ in
+                    self?.viewModel.fetchGamesData(with: self!.page, searchText: text) { result in
+                        switch result {
+                        case .success(_):
+                            DispatchQueue.main.async {
+                                self?.tableView.reloadData()
+                                self?.removeActivityIndicator()
+                            }
+                        case .failure(let error):
+                            print("Error on: \(error.localizedDescription)")
                         }
-                    case .failure(let error):
-                        print("Error on: \(error.localizedDescription)")
                     }
-                }
-            })
+                })
+            }
         }
     }
-}
+
 
 // MARK: - delegate- datasource
 
