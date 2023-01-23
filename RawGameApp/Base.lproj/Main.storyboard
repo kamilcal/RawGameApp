@@ -357,7 +357,9 @@
                             <outlet property="delegate" destination="hjA-Cv-mhp" id="pCG-4c-yRA"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="wRc-6Z-sfR"/>
+                    <navigationItem key="navigationItem" id="wRc-6Z-sfR">
+                        <nil key="title"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I36-ln-2ld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,7 +436,7 @@
                                     <constraint firstAttribute="height" constant="50" id="BKJ-fv-yKJ"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="324" id="jrR-jz-wSR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="22"/>
+                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>

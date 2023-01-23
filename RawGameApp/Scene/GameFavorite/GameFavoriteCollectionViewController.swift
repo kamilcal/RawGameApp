@@ -23,10 +23,11 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
                                              right: 2.0)
     private let itemsPerRow: CGFloat = 3
     
+    //MARK: - Lifecycle Functions
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,9 +39,10 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
         navigationController?.navigationBar.barStyle = .black
     }
     
+    //MARK: - Load Data
     
     private func loadGameFavouritesData() {
-        viewModel.loadFavouriteData { [weak self] (result) in
+        viewModel.loadFavoriteData { [weak self] (result) in
             switch result {
             case .success(let data):
                 print(data)
@@ -54,52 +56,15 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
         DispatchQueue.main.async {
             self.collectionView.reloadData()
         }
-        
-        
-    }
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        if viewModel.gameFavouritesResult.count == 0 {
-            return 1
-        }
-        return viewModel.gameFavouritesResult.count
     }
     
-    
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        if viewModel.gameFavouritesResult.count == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as! EmptyCollectionViewCell
-            return cell
-        } else {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GameFavoriteCollectionViewCell
-            let index = viewModel.gameFavouritesResult[indexPath.row]
-            cell.configure(with: index)
-            cell.favoriteBtn = { [unowned self] in
-                viewModel.deleteFavoriteData(index.id!) 
-            }
-            
-            return cell
-        }
-        
-
-        
-    }
-
-    
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        let detailVc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "a") as? GameDetailViewController
-        detailVc?.id = viewModel.gameFavouritesResult[indexPath.row].id
-        self.navigationController?.pushViewController(detailVc!, animated: true)
-    }
+    //MARK: - UI
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if viewModel.gameFavouritesResult.count == 0 {
+        if viewModel.gameFavoritesResult.count == 0 {
             return CGSize(width: collectionView.bounds.width, height: 55)
         }
         
@@ -122,7 +87,49 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
         return sectionInsets.left
     }
     
-
+    //MARK: - Delegate, DataSource
     
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if viewModel.gameFavoritesResult.count == 0 {
+            return 1
+        }
+        return viewModel.gameFavoritesResult.count
+    }
+    
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if viewModel.gameFavoritesResult.count == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emptyCell", for: indexPath) as! EmptyCollectionViewCell
+            return cell
+        } else {
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GameFavoriteCollectionViewCell
+            let index = viewModel.gameFavoritesResult[indexPath.row]
+            cell.configure(with: index)
+            cell.favoriteBtn = { [unowned self] in
+                viewModel.deleteFavoriteData(index.id!)
+            }
+            
+            return cell
+        }
+        
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let detailVc = UIStoryboard.init(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "a") as? GameDetailViewController
+        detailVc?.id = viewModel.gameFavoritesResult[indexPath.row].id
+        self.navigationController?.pushViewController(detailVc!, animated: true)
+    }
+    
+    
+}
+extension GameFavoriteCollectionViewController: FavoriteListViewModelDelegate {
+    func favoriteGamesChanged() {
+        if viewModel.gameFavoritesResult.count > 0{
+            self.collectionView.reloadData()
+        }
+    }
     
 }

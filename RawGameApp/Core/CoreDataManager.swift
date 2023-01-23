@@ -10,72 +10,6 @@ import CoreData
 
 class CoreDataManager {
     
-//    static let shared = CoreDataManager()
-//
-//    private let managedContext: NSManagedObjectContext!
-//
-//    private init() {
-//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-//        managedContext = appDelegate.persistentContainer.viewContext
-//    }
-//
-//
-//    func fetchFavouriteGames() -> [Favorite] {
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
-//        do {
-//            let favouriteGames = try managedContext.fetch(fetchRequest)
-//            return favouriteGames as! [Favorite]
-//        } catch let fetchErr {
-//            print("Failed to fetch favourite games: ", fetchErr)
-//            return []
-//        }
-//
-//    }
-//
-//
-//    func saveFavouriteGames(added: Int, backgroundImage: String, gameDetailModelDescription: String, id: Int, name: String, released: String, reviewsCount: Int) -> Favorite?{
-//        let entity = NSEntityDescription.entity(forEntityName: "Favorite", in: managedContext)!
-//        let game = NSManagedObject(entity: entity, insertInto: managedContext)
-//
-//        game.setValue(added, forKey: "added")
-//        game.setValue(backgroundImage, forKey: "backgroundImage")
-//        game.setValue(gameDetailModelDescription, forKey: "gameDetailModelDescription")
-//        game.setValue(id, forKey: "id")
-//        game.setValue(name, forKey: "name")
-//        game.setValue(released, forKey: "released")
-//        game.setValue(reviewsCount, forKey: "reviewsCount")
-//        do {
-//            try managedContext.save()
-//            return game as? Favorite
-//        } catch let err {
-//            print("Failed to create favourite games: ", err)
-//        }
-//        return nil
-//    }
-//
-//
-//    func isSavedGame(id: Int) -> [Favorite]{
-//        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
-//        fetchRequest.predicate = NSPredicate(format: "id == %i", id)
-//        do {
-//            let games = try managedContext.fetch(fetchRequest)
-//            return games as! [Favorite]
-//        } catch let err {
-//            print("Failed to create is saved games: ", err)
-//        }
-//        return []
-//    }
-//
-//
-//    func deleteGame(game: Favorite){
-//        managedContext.delete(game)
-//        do {
-//            try managedContext.save()
-//        } catch _ as NSError {
-//        }
-//    }
-//}
-
 
     lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "RawGameApp")
@@ -96,7 +30,7 @@ class CoreDataManager {
         taskContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
         return taskContext
     }
-    func getFavouritesData(completion: @escaping(Result<[GameFavoriteModel], Error>) -> Void) {
+    func getFavoritesData(completion: @escaping(Result<[GameFavoriteModel], Error>) -> Void) {
         let taskContext = context()
         taskContext.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
@@ -119,7 +53,7 @@ class CoreDataManager {
             }
         }
     }
-    func getFavouriteGameDetail(_ id: Int, completion: @escaping(_ fav: GameFavoriteModel) -> Void) {
+    func getFavoriteGameDetail(_ id: Int, completion: @escaping(_ fav: GameFavoriteModel) -> Void) {
         let taskContext = context()
         taskContext.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
@@ -141,7 +75,7 @@ class CoreDataManager {
             }
         }
     }
-    func addFavouriteGame(gameData: GameFavoriteModel, completion: @escaping() -> Void) {
+    func addFavoriteGame(gameData: GameFavoriteModel, completion: @escaping() -> Void) {
         let taskContext = context()
         taskContext.performAndWait {
             if let entity = NSEntityDescription.entity(forEntityName: "Favorite", in: taskContext) {
@@ -179,7 +113,7 @@ class CoreDataManager {
             }
         }
     }
-    func deleteFavouriteGame(_ id: Int) {
+    func deleteFavoriteGame(_ id: Int) {
         let taskContext = context()
         taskContext.perform {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")

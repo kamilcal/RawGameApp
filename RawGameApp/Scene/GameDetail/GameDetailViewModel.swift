@@ -7,15 +7,13 @@
 
 import UIKit
 
-protocol DetailViewModelProtocol {
-    func addToFavorites() -> Bool
-}
-
 
 class DetailViewModel {
     private let apiService: APIClients
     var gameDetailResult: GameDetailModel?
+    var dataManager: CoreDataManager = { return CoreDataManager() }()
     var isFavourited: Bool = false
+    
     private var game: GameDetailModel?
     init(apiService: APIClients = APIClients()) {
         self.apiService = apiService
@@ -33,5 +31,29 @@ class DetailViewModel {
             }
         }
     }
-
+    
+    func addToFavorite(id: Int?) -> Bool {
+        let id = id
+        let name = gameDetailResult?.name ?? ""
+        let releaseDate = gameDetailResult?.released ?? ""
+        let description = gameDetailResult?.gameDetailModelDescription ?? ""
+        let image = gameDetailResult?.backgroundImage ?? ""
+        let added = gameDetailResult?.added ?? 0
+        let reviewsCount = gameDetailResult?.reviewsCount ?? 0
+        dataManager.addFavoriteGame(gameData: GameFavoriteModel(id: id,
+                                                                 name: name,
+                                                                 gameDetailModelDescription: description,
+                                                                 backgroundImage: image,
+                                                                 added: added,
+                                                                 released: releaseDate,
+                                                                 reviewsCount: reviewsCount)) {
+        }
+        return true
+    }
+    
+    func removeToGame(id: Int?) -> Bool {
+        dataManager.deleteFavoriteGame(id ?? 0)
+        return true
+    }
+    
 }

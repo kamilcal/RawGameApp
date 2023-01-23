@@ -57,7 +57,7 @@ class GameDetailViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
     }
 
-//MARK: - fetch
+//MARK: - Fetch
 
     private func getGameDetail() {
         guard let getIdGame = id else { return }
@@ -71,20 +71,20 @@ class GameDetailViewController: UIViewController {
             }
         }
     }
-//MARK: - actions
+//MARK: - Actions
 
     @IBAction func favButtonTapped(_ sender: Any) {
         if viewModel.isFavourited {
             guard let id = id else { return }
-            removeGameFavourite(id)
+            viewModel.removeToGame(id: id)
         } else {
-            addToFavouriteGame()
+            viewModel.addToFavorite(id: id)
         }
         viewModel.isFavourited = !viewModel.isFavourited
         setIconFavourite()
     }
     
-    // MARK: - updateUI
+// MARK: - UpdateUI
     
     private func updateUI(_ item: GameDetailModel) {
         guard let url = URL(string: item.backgroundImage ?? "" ) else { return }
@@ -103,9 +103,9 @@ class GameDetailViewController: UIViewController {
         
     }
     
-    // MARK: - CoreDataManager
+// MARK: - CoreDataManager
     
-    
+    // TODO: viewmodel'a aktar.
     private func isGameFavourited() {
         guard let id = id else { return }
         dataManager.isFavoritedGame(id) { (isGameAsFavourite) in
@@ -123,33 +123,33 @@ class GameDetailViewController: UIViewController {
         }
     }
     
-    private func addToFavouriteGame() {
-        guard let id = id else { return }
-        let name = viewModel.gameDetailResult?.name ?? ""
-        let releaseDate = viewModel.gameDetailResult?.released ?? ""
-        let description = viewModel.gameDetailResult?.gameDetailModelDescription ?? ""
-        let image = viewModel.gameDetailResult?.backgroundImage ?? ""
-        let added = viewModel.gameDetailResult?.added ?? 0
-        let reviewsCount = viewModel.gameDetailResult?.reviewsCount ?? 0
-        dataManager.addFavouriteGame(gameData: GameFavoriteModel(id: id,
-                                                                 name: name,
-                                                                 gameDetailModelDescription: description,
-                                                                 backgroundImage: image,
-                                                                 added: added,
-                                                                 released: releaseDate,
-                                                                 reviewsCount: reviewsCount)) {
-            DispatchQueue.main.async {
-//                TODO: LOCAL NOT.
-            }
-        }
-    }
-    
-    private func removeGameFavourite(_ idGame: Int) {
-        dataManager.deleteFavouriteGame(idGame)
+//    private func addToFavouriteGame() {
+//        guard let id = id else { return }
+//        let name = viewModel.gameDetailResult?.name ?? ""
+//        let releaseDate = viewModel.gameDetailResult?.released ?? ""
+//        let description = viewModel.gameDetailResult?.gameDetailModelDescription ?? ""
+//        let image = viewModel.gameDetailResult?.backgroundImage ?? ""
+//        let added = viewModel.gameDetailResult?.added ?? 0
+//        let reviewsCount = viewModel.gameDetailResult?.reviewsCount ?? 0
+//        dataManager.addFavouriteGame(gameData: GameFavoriteModel(id: id,
+//                                                                 name: name,
+//                                                                 gameDetailModelDescription: description,
+//                                                                 backgroundImage: image,
+//                                                                 added: added,
+//                                                                 released: releaseDate,
+//                                                                 reviewsCount: reviewsCount)) {
 //            DispatchQueue.main.async {
 ////                TODO: LOCAL NOT.
 //            }
 //        }
-    }
+//    }
+    
+//    private func removeGameFavourite(_ idGame: Int) {
+//        dataManager.deleteFavouriteGame(idGame)
+//            DispatchQueue.main.async {
+////                TODO: LOCAL NOT.
+//            }
+//        }
+//    }
     
 }
