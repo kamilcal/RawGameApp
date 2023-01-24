@@ -16,7 +16,7 @@ class SearchListViewModel {
         self.apiService = apiService
     }
     func fetchGamesData(with page: Int,searchText: String?, completion: @escaping (Result<[ResultGame], NetworkErrorHandling>) -> Void) {
-        self.apiService.fetchGamesData(pageNumber: page, searchText: searchText) { result in
+        self.apiService.fetchSearchData(pageNumber: page, searchText: searchText) { result in
             switch result {
             case .success(let data):
                 self.gameResult = data.results

@@ -18,6 +18,7 @@ class TitleTableViewCell: UITableViewCell {
     
     func configure(title: String) {
         titleLabel.text = title
+        
     }
     
 }

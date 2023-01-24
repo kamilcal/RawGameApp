@@ -8,25 +8,39 @@
 import UIKit
 
 class PopularTableViewCell: UITableViewCell {
-
+    
     
     private let viewModel = HomeListViewModel()
-
+    var a: HomeListViewController?
     @IBOutlet var popularCollectionView: UICollectionView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        getData()
-
+        config()
     }
     
     func setupUI() {
         self.popularCollectionView.delegate = self
         self.popularCollectionView.dataSource = self
         self.popularCollectionView.backgroundColor = .clear
-
+        
     }
+    
+    func config() {
+        getData()
+        viewModel.successCallback = { [weak self] in
+            self?.popularCollectionView.reloadData()
+        }
+        print("1\(a?.filterSelection)")
+        a?.filterSelection = { [weak self] category in
+            self?.viewModel.gameCategory = category
+            self?.viewModel.gameResult.removeAll()
+            self?.viewModel.getCategory()
+            
+        }
+    }
+    
     private func getData() {
         viewModel.fetchGamesGroupedData(url: APIConstant.popularURL) { (result) in
             switch result {
@@ -38,16 +52,16 @@ class PopularTableViewCell: UITableViewCell {
         }
     }
     
-        private func updateTableUI() {
-            DispatchQueue.main.async {
-                self.popularCollectionView.reloadData()
+    private func updateTableUI() {
+        DispatchQueue.main.async {
+            self.popularCollectionView.reloadData()
             
         }
     }
-    
-
-
 }
+
+
+
 extension PopularTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

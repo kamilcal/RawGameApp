@@ -8,13 +8,13 @@
 import UIKit
 import PanModal
 
-class FilterController: UIViewController, Storyboarded {
+class FilterController: UIViewController {
     
     
     @IBOutlet weak var filterTable: UITableView!
     
     
-    var selectionCallback: ((MovieCategory)->())?
+    var selectionCallback: ((GameCategory)->())?
     let viewModel = FilterViewModel()
 
     
@@ -22,9 +22,7 @@ class FilterController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        filterTable.register(UINib(nibName: "TitleTableViewCell", bundle: nil), forCellReuseIdentifier: "TitleTableViewCell")
-
+        filterTable.register(UINib(nibName: "\(TitleTableViewCell.self)", bundle: nil), forCellReuseIdentifier: "\(TitleTableViewCell.self)")
 
     }
     
@@ -36,7 +34,7 @@ extension FilterController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TitleTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "\(TitleTableViewCell.self)", for: indexPath) as! TitleTableViewCell
         cell.configure(title: viewModel.items[indexPath.row].title)
         return cell
     }
@@ -44,6 +42,7 @@ extension FilterController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         dismiss(animated: true) { [weak self] in
             self?.selectionCallback?(self?.viewModel.items[indexPath.row].type ?? .popular)
+            print("\(self?.viewModel.items[indexPath.row].type)")
         }
     }
     
@@ -58,7 +57,7 @@ extension FilterController: PanModalPresentable {
     }
     
     var shortFormHeight: PanModalHeight {
-        return .contentHeight(312)
+        return .contentHeight(250)
     }
     
     var cornerRadius: CGFloat {

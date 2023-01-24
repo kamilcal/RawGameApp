@@ -11,7 +11,48 @@ class APIClients {
 
     private var dataTask: URLSessionTask?
     
+// MARK: - CATEGORY DATA
     
+    func getCategoryMovies(type: GameCategory, complete: @escaping ((GameModel?, Error?) -> ())) {
+        var url = ""
+        switch type {
+        case .popular:
+            url = APIConstant.popularURL
+        case .metacritic:
+            url = APIConstant.metacriticURL
+            
+        
+        guard let url = URL(string: url) else {
+            return
+        }
+        
+        dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+//                completion(.failure(error))
+                print("fetchGamesData DataTask Error: \(error.localizedDescription)")
+            }
+            guard let response = response as? HTTPURLResponse else {
+                print("fetchGamesData: Empty Response")
+                return
+            }
+            print("Response status code: \(response.statusCode)")
+            guard let data = data else {
+                print("fetchGamesData: Empty Data")
+                return
+            }
+            do {
+                let jsonData = try JSONDecoder().decode(GameModel.self, from: data)
+                DispatchQueue.main.async {
+                }
+            } catch let error {
+            }
+        }
+        dataTask?.resume()
+    }
+    }
+            
+// MARK: - HOMEVİEW DATA
+
     func fetchGroupeData(url: String, completion: @escaping (Result<GameModel, Error>) -> Void) {
         
         var url = url
@@ -46,7 +87,10 @@ class APIClients {
         dataTask?.resume()
     }
     
-    func fetchGamesData(pageNumber: Int,searchText: String?, completion: @escaping (Result<GameModel, Error>) -> Void) {
+    
+// MARK: - SEARCH DATA
+    
+    func fetchSearchData(pageNumber: Int,searchText: String?, completion: @escaping (Result<GameModel, Error>) -> Void) {
         
         guard var urlComponents = URLComponents(string: Url.sourceURL) else { return }
         urlComponents.queryItems = [
@@ -88,6 +132,8 @@ class APIClients {
         dataTask?.resume()
     }
     
+// MARK: - DETAİL DATA
+    
     func fetchGamesDetail(id: Int, completion: @escaping (Result<GameDetailModel, Error>) -> Void) {
         guard var urlcomponents = URLComponents(string: Url.sourceURL) else { return }
         urlcomponents.queryItems = [URLQueryItem(name: APIKey.key, value: APIValue.key)]
@@ -96,7 +142,8 @@ class APIClients {
         
         guard let url = urlWithPath else {
             return
-        }
+        }        
+        
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.failure(error))

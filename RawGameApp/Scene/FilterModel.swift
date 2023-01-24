@@ -9,5 +9,5 @@ import Foundation
 
 struct FilterModel {
     let title: String
-    let type: MovieCategory
+    let type: GameCategory
 }

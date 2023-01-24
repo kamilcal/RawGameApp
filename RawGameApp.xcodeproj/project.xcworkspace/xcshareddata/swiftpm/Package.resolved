@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/slackhq/PanModal.git",
       "state" : {
-        "revision" : "b012aecb6b67a8e46369227f893c12544846613f",
-        "version" : "1.2.7"
+        "branch" : "master",
+        "revision" : "b2f5bd7d169cba564d5c5b7203864f79be3fe826"
       }
     },
     {

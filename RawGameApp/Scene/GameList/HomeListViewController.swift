@@ -15,8 +15,7 @@ class HomeListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     private let dispatchGroup = DispatchGroup()
     let viewModel = HomeListViewModel()
-
-    var coordinator: HomeCoordinator?
+    var filterSelection: ((GameCategory)->())?
 
     
     override func viewDidLoad() {
@@ -32,10 +31,24 @@ class HomeListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
+
+    func showFilter() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "\(FilterController.self)") as! FilterController
+        controller.selectionCallback = { [weak self] category in
+            self?.filterSelection?(category)
+            print("\(self?.filterSelection)")
+        }
+        
+        self.presentPanModal(controller)
+    }
+    
     
     @IBAction func filterButtonTapped(_ sender: UIBarButtonItem) {
-        coordinator?.showFilter()
+       showFilter()
     }
+    
+    
     func setupUI() {
         tableView.dataSource = self
         tableView.delegate = self
