@@ -693,7 +693,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="BIU-nX-KDh">
-                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
+                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
                                 <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="popularCell" rowHeight="224" id="54a-Su-phu" customClass="PopularTableViewCell" customModule="RawGameApp" customModuleProvider="target">
@@ -983,7 +983,13 @@
                             <constraint firstItem="i8T-bZ-2YA" firstAttribute="trailing" secondItem="BIU-nX-KDh" secondAttribute="trailing" id="uOC-44-897"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="STs-T1-Eet"/>
+                    <navigationItem key="navigationItem" id="STs-T1-Eet">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="bookmark-star" id="P2O-Lo-Kqw">
+                            <connections>
+                                <action selector="filterButtonTapped:" destination="sGr-iq-GHr" id="jCY-pN-FHs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="BIU-nX-KDh" id="GCy-KT-a45"/>
                     </connections>
@@ -991,6 +997,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaL-7X-sGY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1186.9565217391305" y="-1633.2589285714284"/>
+        </scene>
+        <!--Filter Controller-->
+        <scene sceneID="HNg-PT-qNn">
+            <objects>
+                <viewController storyboardIdentifier="FilterController" id="nhK-e7-C0V" customClass="FilterController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="x5l-bo-Ssv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-aH-guO">
+                                <rect key="frame" x="24" y="60" width="366" height="790"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WrT-Wn-VCH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yDp-aH-guO" firstAttribute="leading" secondItem="WrT-Wn-VCH" secondAttribute="leading" constant="24" id="LsH-8C-Ov5"/>
+                            <constraint firstItem="yDp-aH-guO" firstAttribute="top" secondItem="WrT-Wn-VCH" secondAttribute="top" constant="12" id="QFu-NJ-HAb"/>
+                            <constraint firstItem="WrT-Wn-VCH" firstAttribute="bottom" secondItem="yDp-aH-guO" secondAttribute="bottom" constant="12" id="b3Y-mN-tdq"/>
+                            <constraint firstItem="WrT-Wn-VCH" firstAttribute="trailing" secondItem="yDp-aH-guO" secondAttribute="trailing" constant="24" id="fXC-EW-qdu"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="filterTable" destination="yDp-aH-guO" id="KQS-Wg-NiI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AUG-EU-jpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2072" y="-1633"/>
         </scene>
         <!--Search-->
         <scene sceneID="Iw4-9e-Rmc">

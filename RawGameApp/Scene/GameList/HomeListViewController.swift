@@ -14,7 +14,10 @@ class HomeListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     private let dispatchGroup = DispatchGroup()
-    
+    let viewModel = HomeListViewModel()
+
+    var coordinator: HomeCoordinator?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +33,9 @@ class HomeListViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
     
+    @IBAction func filterButtonTapped(_ sender: UIBarButtonItem) {
+        coordinator?.showFilter()
+    }
     func setupUI() {
         tableView.dataSource = self
         tableView.delegate = self
