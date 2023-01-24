@@ -79,6 +79,9 @@ class GameDetailViewController: UIViewController {
     }
 //MARK: - Actions
 
+    @IBAction func backButtonTapped(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBAction func favButtonTapped(_ sender: Any) {
         if viewModel.isFavourited {
             guard let id = id else { return }

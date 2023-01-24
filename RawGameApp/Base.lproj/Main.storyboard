@@ -204,7 +204,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0xU-41-7xe">
-                                <rect key="frame" x="0.0" y="92" width="414" height="721"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="180" id="kXU-on-nTd" customClass="SearchListTableViewCell" customModule="RawGameApp" customModuleProvider="target">
@@ -355,7 +355,7 @@
             </objects>
             <point key="canvasLocation" x="1203.8167938931297" y="-275.35211267605638"/>
         </scene>
-        <!--Item-->
+        <!--Game Detail View Controller-->
         <scene sceneID="XkG-7J-rkH">
             <objects>
                 <viewController storyboardIdentifier="a" id="0Zx-i8-EfF" customClass="GameDetailViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -386,14 +386,30 @@
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0j3-jU-q9L">
-                                                    <rect key="frame" x="18" y="18" width="378" height="264"/>
+                                                    <rect key="frame" x="18" y="40" width="378" height="242"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pmU-xO-PRW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="46" height="39"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="39" id="Cfn-5o-Gw8"/>
+                                                        <constraint firstAttribute="width" constant="46" id="bb3-VZ-szh"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain" image="arrowshape.turn.up.backward.circle" catalog="system">
+                                                        <color key="baseForegroundColor" systemColor="secondaryLabelColor"/>
+                                                    </buttonConfiguration>
+                                                    <connections>
+                                                        <action selector="backButtonTapped:" destination="0Zx-i8-EfF" eventType="touchUpInside" id="8kD-6j-4dd"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="pmU-xO-PRW" firstAttribute="top" secondItem="Qe1-tb-lQH" secondAttribute="top" id="0za-cb-3Oq"/>
                                                 <constraint firstItem="0j3-jU-q9L" firstAttribute="leading" secondItem="Qe1-tb-lQH" secondAttribute="leading" constant="18" id="2Yl-Gv-H0r"/>
+                                                <constraint firstItem="0j3-jU-q9L" firstAttribute="top" secondItem="Qe1-tb-lQH" secondAttribute="top" constant="40" id="BBh-xG-CCZ"/>
                                                 <constraint firstAttribute="bottom" secondItem="0j3-jU-q9L" secondAttribute="bottom" constant="18" id="Kea-ey-Whx"/>
                                                 <constraint firstAttribute="trailing" secondItem="0j3-jU-q9L" secondAttribute="trailing" constant="18" id="Lsz-VU-lDm"/>
-                                                <constraint firstItem="0j3-jU-q9L" firstAttribute="top" secondItem="Qe1-tb-lQH" secondAttribute="top" constant="18" id="jHN-HR-t7z"/>
+                                                <constraint firstItem="pmU-xO-PRW" firstAttribute="leading" secondItem="Qe1-tb-lQH" secondAttribute="leading" id="T7a-1N-ZKr"/>
                                             </constraints>
                                         </view>
                                         <blurEffect style="regular"/>
@@ -626,7 +642,6 @@
                             <constraint firstItem="KkO-G7-RGs" firstAttribute="leading" secondItem="Vkb-dC-qdJ" secondAttribute="leading" id="wgv-K4-Pdw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="b9a-Hr-pZE"/>
                     <navigationItem key="navigationItem" id="Ft9-XR-HkP"/>
                     <connections>
                         <outlet property="backgroundView" destination="5Xm-qA-yEU" id="LtG-K5-LO4"/>
@@ -643,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqJ-q1-W4R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2124.6376811594205" y="-559.15178571428567"/>
+            <point key="canvasLocation" x="3034.7826086956525" y="-559.15178571428567"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kkz-TQ-EIp">
@@ -1084,6 +1099,7 @@
     </scenes>
     <resources>
         <image name="arrow.down.app" catalog="system" width="128" height="114"/>
+        <image name="arrowshape.turn.up.backward.circle" catalog="system" width="128" height="123"/>
         <image name="bookmark-star" width="64" height="64"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="delete" width="47" height="47"/>
@@ -1098,6 +1114,9 @@
         <image name="suit.heart" catalog="system" width="128" height="107"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
