@@ -88,6 +88,7 @@ class GameDetailViewController: UIViewController {
             viewModel.removeToGame(id: id)
         } else {
             viewModel.addToFavorite(id: id)
+            localNotificationManager.shared.scheduleNotification(title: "askdnja", body: "dmklasdlas")
         }
         viewModel.isFavourited = !viewModel.isFavourited
         setIconFavourite()

@@ -15,6 +15,7 @@
 		D27C129F2978C23000478DD9 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C129E2978C23000478DD9 /* GameDetailViewController.swift */; };
 		D27C12A12978C25700478DD9 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */; };
 		D27C12A32978C26F00478DD9 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12A22978C26F00478DD9 /* GameDetailModel.swift */; };
+		D297AAF029800683007CF268 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AAEF29800683007CF268 /* LocalNotificationManager.swift */; };
 		D2B974E1297A12C500F05037 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974E0297A12C500F05037 /* CoreDataManager.swift */; };
 		D2B974E4297AA76900F05037 /* GameFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974E3297AA76900F05037 /* GameFavoriteModel.swift */; };
 		D2B974ED297ADD8D00F05037 /* GameFavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974EC297ADD8D00F05037 /* GameFavoriteCollectionViewCell.swift */; };
@@ -57,6 +58,7 @@
 		D27C129E2978C23000478DD9 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		D27C12A22978C26F00478DD9 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
+		D297AAEF29800683007CF268 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		D2B974E0297A12C500F05037 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D2B974E3297AA76900F05037 /* GameFavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoriteModel.swift; sourceTree = "<group>"; };
 		D2B974EC297ADD8D00F05037 /* GameFavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				D27C12902978AD4E00478DD9 /* APIClients.swift */,
 				D2B974F9297C0CE400F05037 /* APITypes.swift */,
 				D2B974E0297A12C500F05037 /* CoreDataManager.swift */,
+				D297AAEF29800683007CF268 /* LocalNotificationManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				D2E26C082980010E0079EB7D /* Decoders.swift in Sources */,
 				D2B974FA297C0CE400F05037 /* APITypes.swift in Sources */,
 				D2B97516297C3CD900F05037 /* HomeListViewModel.swift in Sources */,
+				D297AAF029800683007CF268 /* LocalNotificationManager.swift in Sources */,
 				D2B97522297D7C8500F05037 /* GameNoteListTableViewCell.swift in Sources */,
 				D2B9750C297C2F0200F05037 /* HomeListViewController.swift in Sources */,
 				D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */,
