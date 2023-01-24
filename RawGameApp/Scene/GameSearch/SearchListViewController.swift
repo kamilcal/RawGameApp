@@ -27,6 +27,12 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
 // MARK: - setupUI
     
     private func setupUI(){
@@ -61,6 +67,7 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
                                 self?.removeActivityIndicator()
                             }
                         case .failure(let error):
+                            self?.removeActivityIndicator()
                             print("Error on: \(error.localizedDescription)")
                         }
                     }
@@ -90,7 +97,6 @@ extension SearchListViewController: UITableViewDataSource, UITableViewDelegate {
         let detailVc = UIStoryboard.init(name: "Main", bundle: Bundle.main)
             .instantiateViewController(withIdentifier: "a") as? GameDetailViewController
         detailVc?.id = viewModel.gameResult[indexPath.row].id
-        print("\(detailVc?.id)")
         self.navigationController?.pushViewController(detailVc!, animated: true)
     }
     

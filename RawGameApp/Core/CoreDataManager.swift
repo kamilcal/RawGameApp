@@ -11,34 +11,23 @@ import CoreData
 class CoreDataManager {
     
 
-    lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "RawGameApp")
-        container.loadPersistentStores { _, error in
-            guard error == nil else {
-                fatalError("\(String(describing: error?.localizedDescription) )")
-            }
-        }
-        container.viewContext.automaticallyMergesChangesFromParent = false
-        container.viewContext.undoManager = nil
-        container.viewContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-        container.viewContext.shouldDeleteInaccessibleFaults = true
-        return container
-    }()
-    private func context() -> NSManagedObjectContext {
-        let taskContext = persistentContainer.newBackgroundContext()
-        taskContext.undoManager = nil
-        taskContext.mergePolicy = NSMergeByPropertyStoreTrumpMergePolicy
-        return taskContext
-    }
+    
+      static let shared = CoreDataManager()
+
+      private let managedContext: NSManagedObjectContext!
+      
+      private init() {
+          let appDelegate = UIApplication.shared.delegate as! AppDelegate
+          managedContext = appDelegate.persistentContainer.viewContext
+      }
     
 //    MARK: - GAME
     
     func getFavoritesData(completion: @escaping(Result<[GameFavoriteModel], Error>) -> Void) {
-        let taskContext = context()
-        taskContext.perform {
+        managedContext.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
             do {
-                let results = try taskContext.fetch(fetchRequest)
+                let results = try self.managedContext.fetch(fetchRequest)
                 var games: [GameFavoriteModel] = []
                 for result in results {
                     let gamesData = GameFavoriteModel(id: result.value(forKey: "id") as? Int,
@@ -57,13 +46,12 @@ class CoreDataManager {
         }
     }
     func getFavoriteGameDetail(_ id: Int, completion: @escaping(_ fav: GameFavoriteModel) -> Void) {
-        let taskContext = context()
-        taskContext.perform {
+        managedContext.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
             fetchRequest.fetchLimit = 1
             fetchRequest.predicate = NSPredicate(format: "id == \(id)")
             do {
-                if let result = try taskContext.fetch(fetchRequest).first {
+                if let result = try self.managedContext.fetch(fetchRequest).first {
                     let gameData = GameFavoriteModel(id: result.value(forKey: "id") as? Int,
                                                      name: result.value(forKey: "name") as? String,
                                                      gameDetailModelDescription: result.value(forKey: "gameDetailModelDescription") as? String,
@@ -79,10 +67,9 @@ class CoreDataManager {
         }
     }
     func addFavoriteGame(gameData: GameFavoriteModel, completion: @escaping() -> Void) {
-        let taskContext = context()
-        taskContext.performAndWait {
-            if let entity = NSEntityDescription.entity(forEntityName: "Favorite", in: taskContext) {
-                let game = NSManagedObject(entity: entity, insertInto: taskContext)
+        managedContext.performAndWait {
+            if let entity = NSEntityDescription.entity(forEntityName: "Favorite", in: managedContext) {
+                let game = NSManagedObject(entity: entity, insertInto: managedContext)
                 game.setValue(gameData.id, forKey: "id")
                 game.setValue(gameData.name, forKey: "name")
                 game.setValue(gameData.backgroundImage, forKey: "backgroundImage")
@@ -90,7 +77,7 @@ class CoreDataManager {
                 game.setValue(gameData.gameDetailModelDescription, forKey: "gameDetailModelDescription")
                 game.setValue(gameData.reviewsCount, forKey: "reviewsCount")
                 do {
-                    try taskContext.save()
+                    try managedContext.save()
                     completion()
                 } catch let error as NSError {
                     print("Couldn't save. \(error), \(error.userInfo)")
@@ -100,13 +87,12 @@ class CoreDataManager {
     }
     func isFavoritedGame(_ id: Int,
                          completion: @escaping(_ isFavourite: Bool) -> Void) {
-        let taskContext = context()
-        taskContext.perform {
+        managedContext.perform {
             let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Favorite")
             fetchRequest.fetchLimit = 1
             fetchRequest.predicate = NSPredicate(format: "id == \(id)")
             do {
-                if (try taskContext.fetch(fetchRequest).first) != nil {
+                if (try self.managedContext.fetch(fetchRequest).first) != nil {
                     completion(true)
                 } else {
                     completion(false)
@@ -117,14 +103,13 @@ class CoreDataManager {
         }
     }
     func deleteFavoriteGame(_ id: Int) {
-        let taskContext = context()
-        taskContext.perform {
+        managedContext.perform {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Favorite")
             fetchRequest.fetchLimit = 1
             fetchRequest.predicate = NSPredicate(format: "id == \(id)")
             let batchDeleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
             batchDeleteRequest.resultType = .resultTypeCount
-            if let batchDeleteResult = try? taskContext.execute(batchDeleteRequest) as? NSBatchDeleteResult,
+            if let batchDeleteResult = try? self.managedContext.execute(batchDeleteRequest) as? NSBatchDeleteResult,
                batchDeleteResult.result != nil {
             }
         }
@@ -133,14 +118,13 @@ class CoreDataManager {
 //    MARK: - NOTE
 
     func saveNote(title: String, text: String) -> Note?{
-        let taskContext = context()
-            if let entity = NSEntityDescription.entity(forEntityName: "Note", in: taskContext){
-                let note = NSManagedObject(entity: entity, insertInto: taskContext)
+            if let entity = NSEntityDescription.entity(forEntityName: "Note", in: managedContext){
+                let note = NSManagedObject(entity: entity, insertInto: managedContext)
                 note.setValue(title, forKeyPath: "title")
                 note.setValue(text, forKeyPath: "text")
                 
                 do {
-                    try taskContext.save()
+                    try managedContext.save()
                     return note as? Note
                 } catch let error as NSError {
                     print("Couldn't save. \(error), \(error.userInfo)")
@@ -152,9 +136,8 @@ class CoreDataManager {
     
     func getNotes() -> [Note] {
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Note")
-        let taskContext = context()
         do {
-            let notes = try taskContext.fetch(fetchRequest)
+            let notes = try managedContext.fetch(fetchRequest)
             return notes as! [Note]
         } catch let error as NSError {
             print("Couldn't save. \(error), \(error.userInfo)")
@@ -164,23 +147,21 @@ class CoreDataManager {
     
     
     func deleteNote(note: Note) {
-        let taskContext = context()
-        taskContext.delete(note)
+        managedContext.delete(note)
         
         do {
-            try taskContext.save()
+            try managedContext.save()
         } catch let error as NSError {
             print("Couldn't save. \(error), \(error.userInfo)")
         }
     }
     
     func updateNote(note: Note) -> Note {
-        let taskContext = context()
         note.setValue(note.text, forKey: "text")
         note.setValue(note.title, forKey: "text")
         if note.hasChanges {
             do {
-                try taskContext.save()
+                try managedContext.save()
             } catch let error as NSError {
                 print("Couldn't save. \(error), \(error.userInfo)")
             }
@@ -189,20 +170,7 @@ class CoreDataManager {
         return note
         
     }
-    
-    func editNote(obj: Note, newObj: NoteModel, completion: @escaping() -> Void) {
-        let taskContext = context()
-        let newNote = context().object(with: obj.objectID)
-        newNote.setValue(newObj.text, forKey: "text")
-        newNote.setValue(newObj.title, forKey: "title")
-        
-        do {
-            try taskContext.save()
-            completion()
-        } catch let error as NSError {
-            print("Couldn't save. \(error), \(error.userInfo)")
-        }
-        }
+
     }
 
 

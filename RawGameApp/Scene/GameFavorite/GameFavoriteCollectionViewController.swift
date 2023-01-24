@@ -14,7 +14,7 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     private var viewModel = FavoriteViewModel()
     var selectedMovieID: Int?
     var gameModel = [GameFavoriteModel]()
-    var dataManager: CoreDataManager = { return CoreDataManager() }()
+    //    var dataManager: CoreDataManager = { return CoreDataManager() }()
     
     
     private let sectionInsets = UIEdgeInsets(top: 15.0,
@@ -34,21 +34,19 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     override func viewWillAppear(_ animated: Bool) {
         collectionView.register(UINib(nibName: "EmptyCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "emptyCell")
         loadGameFavouritesData()
+        favoriteGamesChanged()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        navigationController?.navigationBar.barStyle = .black
-    }
     
     //MARK: - Load Data
     
     private func loadGameFavouritesData() {
-        self.showActivityIndicator()
+        //        self.showActivityIndicator()
         viewModel.loadFavoriteData { [weak self] (result) in
             switch result {
             case .success(_):
-            self?.updateTableUI()
-                self?.removeActivityIndicator()
+                self?.updateTableUI()
+                //                self?.removeActivityIndicator()
             case .failure(let error):
                 print("Error on: \(error.localizedDescription)")
                 self?.removeActivityIndicator()
@@ -58,7 +56,7 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     private func updateTableUI() {
         DispatchQueue.main.async {
             self.collectionView.reloadData()
-
+            
         }
     }
     
@@ -91,7 +89,7 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
         return sectionInsets.left
     }
     
-
+    
     
     //MARK: - Delegate, DataSource
     
@@ -113,8 +111,11 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GameFavoriteCollectionViewCell
             let index = viewModel.gameFavoritesResult[indexPath.row]
             cell.configure(with: index)
+            
             cell.favoriteBtn = { [unowned self] in
                 viewModel.deleteFavoriteData(index.id!)
+                collectionView.reloadData()
+                //                TODO: force
             }
             
             return cell
@@ -133,9 +134,14 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
 
 extension GameFavoriteCollectionViewController: FavoriteListViewModelDelegate {
     func favoriteGamesChanged() {
-        if viewModel.gameFavoritesResult.count > 0{
-            self.collectionView.reloadData()
-        }
+        //        if viewModel.gameFavoritesResult.count > -1{
+        updateTableUI()
+        //            self.collectionView.reloadData()
+        //        }
     }
     
+    
 }
+
+
+

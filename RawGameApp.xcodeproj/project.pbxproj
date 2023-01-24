@@ -46,6 +46,7 @@
 		D2C504FD29784EF1008A9733 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504FB29784EF1008A9733 /* LaunchScreen.storyboard */; };
 		D2C5050B29785149008A9733 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5050A29785149008A9733 /* SearchListViewController.swift */; };
 		D2C5050D297851A8008A9733 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5050C297851A8008A9733 /* SearchListTableViewCell.swift */; };
+		D2E26C082980010E0079EB7D /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E26C072980010E0079EB7D /* Decoders.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		D2C504FE29784EF1008A9733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C5050A29785149008A9733 /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
 		D2C5050C297851A8008A9733 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
+		D2E26C072980010E0079EB7D /* Decoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoders.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				D2B97517297C40DC00F05037 /* UIView.swift */,
 				D2BA9148297F479C005B6DCC /* Spinner.swift */,
+				D2E26C072980010E0079EB7D /* Decoders.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -502,6 +505,7 @@
 				D27C12962978AECB00478DD9 /* SearchListViewModel.swift in Sources */,
 				D27C129B2978B77500478DD9 /* NetworkError.swift in Sources */,
 				D2B97524297D7CA300F05037 /* GameNoteListViewModel.swift in Sources */,
+				D2E26C082980010E0079EB7D /* Decoders.swift in Sources */,
 				D2B974FA297C0CE400F05037 /* APITypes.swift in Sources */,
 				D2B97516297C3CD900F05037 /* HomeListViewModel.swift in Sources */,
 				D2B97522297D7C8500F05037 /* GameNoteListTableViewCell.swift in Sources */,

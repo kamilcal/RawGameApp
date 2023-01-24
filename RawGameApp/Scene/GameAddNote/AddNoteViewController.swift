@@ -20,16 +20,16 @@ class AddNoteViewController: UIViewController {
         configureView()
     }
     
-//    func setupUI(){
-//        if detailLabel.text == ""{
-//            detailLabel.text = "Enter your note here..."
-//            detailLabel.textColor = UIColor.secondaryLabel
-//        }
-//    }
+    func setupUI(){
+        if detailLabel.text == ""{
+            detailLabel.text = "Enter your note here..."
+            detailLabel.textColor = UIColor.secondaryLabel
+        }
+    }
 
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         if self.titleLabel.text == "" || self.detailLabel.text == ""{
-            //TODO: Alert Ekle
+            showAlertActions()
             return
         }
         if let note = viewModel.note{
@@ -40,12 +40,19 @@ class AddNoteViewController: UIViewController {
         else {
             viewModel.delegateNoteList?.noteAdded(title: self.titleLabel.text!, text: self.detailLabel.text)
         }
-        self.navigationController?.popToRootViewController(animated: true)
+        dismiss(animated: true)
     }
     func configureView(){
         titleLabel.becomeFirstResponder()
         detailLabel.text = viewModel.getNoteTitle()
         titleLabel.text = viewModel.getNoteText()
+    }
+    func showAlertActions() {
+        let alert = UIAlertController(title: "asmkdlas",
+                                      message: "dmlalşsdlas", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+        }))
+        self.present(alert, animated: true)
     }
     
     

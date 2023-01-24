@@ -27,24 +27,24 @@ class GameNoteListViewModel: NoteListViewModelProtocol{
     weak var delegate: NoteListViewModelDelegate?
 
     var notes: [Note]?
-    private lazy var dataManager: CoreDataManager = { return CoreDataManager() }()
+//    private lazy var dataManager: CoreDataManager = { return CoreDataManager() }()
 
     func getNote(at index: Int) -> Note? {
        notes?[index]
     }
     
     func appendNote(title: String, text: String) {
-        guard let note = dataManager.saveNote(title: title, text: text) else {return}
+        guard let note = CoreDataManager.shared.saveNote(title: title, text: text) else {return}
         notes?.append(note)
         self.delegate?.notesChanged()
     }
     func updateNote(note: Note) {
-        dataManager.updateNote(note: note)
+        CoreDataManager.shared.updateNote(note: note)
         self.delegate?.notesChanged()
     }
     
     func getNotes() {
-        self.notes = dataManager.getNotes()
+        self.notes = CoreDataManager.shared.getNotes()
         self.delegate?.notesChanged()
     }
     

@@ -11,7 +11,7 @@ import UIKit
 class DetailViewModel {
     private let apiService: APIClients
     var gameDetailResult: GameDetailModel?
-    var dataManager: CoreDataManager = { return CoreDataManager() }()
+//    var dataManager: CoreDataManager = { return CoreDataManager() }()
     var isFavourited: Bool = false
     
     private var game: GameDetailModel?
@@ -40,7 +40,7 @@ class DetailViewModel {
         let image = gameDetailResult?.backgroundImage ?? ""
         let added = gameDetailResult?.added ?? 0
         let reviewsCount = gameDetailResult?.reviewsCount ?? 0
-        dataManager.addFavoriteGame(gameData: GameFavoriteModel(id: id,
+        CoreDataManager.shared.addFavoriteGame(gameData: GameFavoriteModel(id: id,
                                                                  name: name,
                                                                  gameDetailModelDescription: description,
                                                                  backgroundImage: image,
@@ -52,7 +52,7 @@ class DetailViewModel {
     }
     
     func removeToGame(id: Int?) -> Bool {
-        dataManager.deleteFavoriteGame(id ?? 0)
+        CoreDataManager.shared.deleteFavoriteGame(id ?? 0)
         return true
     }
     

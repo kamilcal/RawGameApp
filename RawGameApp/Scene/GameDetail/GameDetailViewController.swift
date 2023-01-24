@@ -31,7 +31,7 @@ class GameDetailViewController: UIViewController {
         }
     }
     private let viewModel = DetailViewModel()
-    var dataManager: CoreDataManager = { return CoreDataManager() }()
+//    var dataManager: CoreDataManager = { return CoreDataManager() }()
     
     
     //MARK: - Lifecycle Functions
@@ -44,7 +44,7 @@ class GameDetailViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        self.navigationController?.isNavigationBarHidden = true
+        navigationController?.setNavigationBarHidden(true, animated: animated)
         getGameDetail()
         isGameFavourited()
 //        activityIndicator.startAnimating()
@@ -104,7 +104,7 @@ class GameDetailViewController: UIViewController {
         backgroundView.sd_setImage(with: url)
         titleLabel.text = item.name
         reviewsLabel.text = String(item.reviewsCount)
-        releasedLabel.text = item.released ?? "-"
+        releasedLabel.text = item.released?.changeDateFormat() ?? "-"
         downloadLabel.text = String(item.added)
         textView.text = item.gameDetailModelDescription
         
@@ -117,7 +117,7 @@ class GameDetailViewController: UIViewController {
     // TODO: viewmodel'a aktar.
     private func isGameFavourited() {
         guard let id = id else { return }
-        dataManager.isFavoritedGame(id) { (isGameAsFavourite) in
+        CoreDataManager.shared.isFavoritedGame(id) { (isGameAsFavourite) in
             self.viewModel.isFavourited = isGameAsFavourite
             DispatchQueue.main.async { self.setIconFavourite() }
         }
