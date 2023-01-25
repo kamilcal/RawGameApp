@@ -11,45 +11,6 @@ class APIClients {
 
     private var dataTask: URLSessionTask?
     
-// MARK: - CATEGORY DATA
-    
-    func getCategoryMovies(type: GameCategory, complete: @escaping ((GameModel?, Error?) -> ())) {
-        var url = ""
-        switch type {
-        case .popular:
-            url = APIConstant.popularURL
-        case .metacritic:
-            url = APIConstant.metacriticURL
-            
-        
-        guard let url = URL(string: url) else {
-            return
-        }
-        
-        dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-//                completion(.failure(error))
-                print("fetchGamesData DataTask Error: \(error.localizedDescription)")
-            }
-            guard let response = response as? HTTPURLResponse else {
-                print("fetchGamesData: Empty Response")
-                return
-            }
-            print("Response status code: \(response.statusCode)")
-            guard let data = data else {
-                print("fetchGamesData: Empty Data")
-                return
-            }
-            do {
-                let jsonData = try JSONDecoder().decode(GameModel.self, from: data)
-                DispatchQueue.main.async {
-                }
-            } catch let error {
-            }
-        }
-        dataTask?.resume()
-    }
-    }
             
 // MARK: - HOMEVİEW DATA
 

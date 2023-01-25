@@ -32,7 +32,7 @@ enum APIKey {
 }
 
 enum APIValue {
-    static let key = "9f30d73fb34543318f8d2d6aea8fb41d"
+    static let key = "41673d9d79af427a9faab5f57864ed50"
     static let pageLimit = "10"
 }
 

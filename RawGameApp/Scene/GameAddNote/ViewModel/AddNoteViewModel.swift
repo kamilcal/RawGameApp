@@ -7,23 +7,16 @@
 
 import Foundation
 
-
-protocol AddNoteViewModelProtocol {
-    func getNoteTitle() -> String?
-    func getNoteText() -> String?
-    
-}
-
 class AddNoteViewModel {
     var note: Note?
 
     
-    weak var delegateNoteList: NoteListViewModelDelegate?
+    weak var delegateAddNote: NoteListViewModelDelegate?
 
-    func getNoteTitle() -> String? {
+    func getTitle() -> String? {
         note?.title
     }
-    func getNoteText() -> String? {
+    func getText() -> String? {
         note?.text
     }
 }

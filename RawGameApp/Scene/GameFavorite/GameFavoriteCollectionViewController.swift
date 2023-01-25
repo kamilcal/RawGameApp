@@ -12,9 +12,7 @@ import SDWebImage
 class GameFavoriteCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     private var viewModel = FavoriteViewModel()
-    var selectedMovieID: Int?
     var gameModel = [GameFavoriteModel]()
-    //    var dataManager: CoreDataManager = { return CoreDataManager() }()
     
     
     private let sectionInsets = UIEdgeInsets(top: 15.0,
@@ -91,8 +89,8 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     
     
     
-    //MARK: - Delegate, DataSource
-    
+//MARK: - Delegate - DataSource Methods
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         if viewModel.gameFavoritesResult.count == 0 {
@@ -112,7 +110,7 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
             let index = viewModel.gameFavoritesResult[indexPath.row]
             cell.configure(with: index)
             
-            cell.favoriteBtn = { [unowned self] in
+            cell.butonTapped = { [unowned self] in
                 viewModel.deleteFavoriteData(index.id!)
                 collectionView.reloadData()
                 //                TODO: force
@@ -131,6 +129,7 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     
     
 }
+//MARK: - extension
 
 extension GameFavoriteCollectionViewController: FavoriteListViewModelDelegate {
     func favoriteGamesChanged() {

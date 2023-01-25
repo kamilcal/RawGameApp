@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--NOTES-->
+        <!--Item-->
         <scene sceneID="KWK-g0-cBq">
             <objects>
                 <viewController id="Ykc-Fy-R3Z" customClass="NoteListViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,7 +90,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="OJl-s9-9oh"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="NOTES" id="T19-1S-LzX">
+                    <navigationItem key="navigationItem" id="T19-1S-LzX">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="v9z-fK-O6W">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X4b-Qe-SQ9">
                                 <rect key="frame" x="344" y="5" width="50" height="34"/>
@@ -178,7 +178,7 @@
             </objects>
             <point key="canvasLocation" x="2124.6376811594205" y="406.47321428571428"/>
         </scene>
-        <!--Search List-->
+        <!--Search List View Controller-->
         <scene sceneID="VR4-wF-ChE">
             <objects>
                 <viewController id="s7R-P4-J5P" customClass="SearchListViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -266,7 +266,7 @@
                             <constraint firstItem="FW2-05-fx9" firstAttribute="trailing" secondItem="0xU-41-7xe" secondAttribute="trailing" id="pmx-PC-tbC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search List" id="K5M-7O-8Sp"/>
+                    <navigationItem key="navigationItem" id="K5M-7O-8Sp"/>
                     <connections>
                         <outlet property="tableView" destination="0xU-41-7xe" id="DTr-ir-y5w"/>
                     </connections>
@@ -275,7 +275,7 @@
             </objects>
             <point key="canvasLocation" x="1205.3435114503816" y="-938.0281690140846"/>
         </scene>
-        <!--Favorite List-->
+        <!--Game Favorite Collection View Controller-->
         <scene sceneID="aNS-VC-OUl">
             <objects>
                 <collectionViewController id="hjA-Cv-mhp" customClass="GameFavoriteCollectionViewController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -332,7 +332,7 @@
                             <outlet property="delegate" destination="hjA-Cv-mhp" id="pCG-4c-yRA"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Favorite List" id="wRc-6Z-sfR"/>
+                    <navigationItem key="navigationItem" id="wRc-6Z-sfR"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I36-ln-2ld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -645,7 +645,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NqJ-q1-W4R" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2825" y="-938"/>
+            <point key="canvasLocation" x="2503" y="-938"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="kkz-TQ-EIp">
@@ -990,40 +990,6 @@
             </objects>
             <point key="canvasLocation" x="1186.9565217391305" y="-1633.2589285714284"/>
         </scene>
-        <!--Filter Controller-->
-        <scene sceneID="HNg-PT-qNn">
-            <objects>
-                <viewController storyboardIdentifier="FilterController" id="nhK-e7-C0V" customClass="FilterController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x5l-bo-Ssv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-aH-guO">
-                                <rect key="frame" x="24" y="60" width="366" height="790"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="nhK-e7-C0V" id="PZW-6M-GzI"/>
-                                    <outlet property="delegate" destination="nhK-e7-C0V" id="Hdz-fw-14b"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="WrT-Wn-VCH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="yDp-aH-guO" firstAttribute="leading" secondItem="WrT-Wn-VCH" secondAttribute="leading" constant="24" id="LsH-8C-Ov5"/>
-                            <constraint firstItem="yDp-aH-guO" firstAttribute="top" secondItem="WrT-Wn-VCH" secondAttribute="top" constant="12" id="QFu-NJ-HAb"/>
-                            <constraint firstItem="WrT-Wn-VCH" firstAttribute="bottom" secondItem="yDp-aH-guO" secondAttribute="bottom" constant="12" id="b3Y-mN-tdq"/>
-                            <constraint firstItem="WrT-Wn-VCH" firstAttribute="trailing" secondItem="yDp-aH-guO" secondAttribute="trailing" constant="24" id="fXC-EW-qdu"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="filterTable" destination="yDp-aH-guO" id="KQS-Wg-NiI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AUG-EU-jpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2072" y="-1633"/>
-        </scene>
         <!--Search-->
         <scene sceneID="Iw4-9e-Rmc">
             <objects>
@@ -1036,7 +1002,7 @@
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1090,7 +1056,7 @@
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

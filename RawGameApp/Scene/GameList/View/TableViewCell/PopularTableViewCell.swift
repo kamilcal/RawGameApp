@@ -9,16 +9,19 @@ import UIKit
 
 class PopularTableViewCell: UITableViewCell {
     
-    
+
     private let viewModel = HomeListViewModel()
-    var a: HomeListViewController?
     @IBOutlet var popularCollectionView: UICollectionView!
     
+//MARK: - Lifecycle Functions
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
         config()
     }
+    
+//MARK: - SetupUI
     
     func setupUI() {
         self.popularCollectionView.delegate = self
@@ -26,21 +29,15 @@ class PopularTableViewCell: UITableViewCell {
         self.popularCollectionView.backgroundColor = .clear
         
     }
-    
     func config() {
         getData()
         viewModel.successCallback = { [weak self] in
             self?.popularCollectionView.reloadData()
         }
-        print("1\(a?.filterSelection)")
-        a?.filterSelection = { [weak self] category in
-            self?.viewModel.gameCategory = category
-            self?.viewModel.gameResult.removeAll()
-            self?.viewModel.getCategory()
-            
-        }
+        
     }
-    
+//MARK: - FetchData
+
     private func getData() {
         viewModel.fetchGamesGroupedData(url: APIConstant.popularURL) { (result) in
             switch result {
@@ -60,7 +57,7 @@ class PopularTableViewCell: UITableViewCell {
     }
 }
 
-
+//MARK: - Delegate - DataSource Methods
 
 extension PopularTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     

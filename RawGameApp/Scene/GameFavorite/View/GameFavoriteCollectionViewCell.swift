@@ -13,16 +13,18 @@ class GameFavoriteCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var imageView: UIImageView!
     
-    
+//MARK: - Lifecycle Functions
+
     override func awakeFromNib() {
         imageView.layer.cornerRadius = 8.0
         imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = true
     }
     
-    var favoriteBtn: (() -> ())?
+    var butonTapped: (() -> ())?
     
-    
+//MARK: - Configure Functions
+
     public func configure(with model: GameFavoriteModel) {
         guard let url = URL(string: model.backgroundImage ?? "") else { return }
         
@@ -31,7 +33,7 @@ class GameFavoriteCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func deleteButton(_ sender: UIButton) {
-        favoriteBtn?()
+        butonTapped?()
         
         
     }

@@ -17,9 +17,9 @@ protocol NoteListViewModelProtocol {
 }
 
 protocol NoteListViewModelDelegate: AnyObject {
-    func notesChanged()
-    func noteAdded(title: String, text: String)
-    func noteUpdated(note: Note)
+    func changed()
+    func added(title: String, text: String)
+    func updated(note: Note)
 }
 
 class GameNoteListViewModel: NoteListViewModelProtocol{
@@ -31,15 +31,18 @@ class GameNoteListViewModel: NoteListViewModelProtocol{
     func getNote(at index: Int) -> Note? {
        notes?[index]
     }
-    
+    func getNotes() {
+        self.notes = CoreDataManager.shared.getNotes()
+        self.delegate?.changed()
+    }
     func appendNote(title: String, text: String) {
         guard let note = CoreDataManager.shared.saveNote(title: title, text: text) else {return}
         notes?.append(note)
-        self.delegate?.notesChanged()
+        self.delegate?.changed()
     }
     func updateNote(note: Note) {
         CoreDataManager.shared.updateNote(note: note)
-        self.delegate?.notesChanged()
+        self.delegate?.changed()
     }
     
     func deleteNote(at index: Int) {
@@ -48,10 +51,7 @@ class GameNoteListViewModel: NoteListViewModelProtocol{
         notes?.remove(at: index)
     }
     
-    func getNotes() {
-        self.notes = CoreDataManager.shared.getNotes()
-        self.delegate?.notesChanged()
-    }
+
     
     
 }

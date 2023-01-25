@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Image references" minToolsVersion="12.0"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -24,46 +23,9 @@
                                 <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="separatorColor" systemColor="opaqueSeparatorColor"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <view key="tableHeaderView" contentMode="scaleToFill" id="RR7-00-38U">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="83"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RawGameApp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-7A-Bh1">
-                                            <rect key="frame" x="8" y="8" width="114" height="23"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
-                                            <color key="textColor" systemColor="opaqueSeparatorColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4b-Qe-SQ9">
-                                            <rect key="frame" x="344" y="31" width="50" height="34"/>
-                                            <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system">
-                                                <color key="baseForegroundColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </buttonConfiguration>
-                                            <connections>
-                                                <action selector="addNoteButton:" destination="Ykc-Fy-R3Z" eventType="touchUpInside" id="Wgc-1C-uSr"/>
-                                            </connections>
-                                        </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GAME NOTES" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AOl-3c-9ya">
-                                            <rect key="frame" x="8" y="31" width="270" height="52"/>
-                                            <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
-                                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstItem="xnl-7A-Bh1" firstAttribute="top" secondItem="RR7-00-38U" secondAttribute="top" constant="8" id="5Ux-em-fiC"/>
-                                        <constraint firstItem="X4b-Qe-SQ9" firstAttribute="top" secondItem="RR7-00-38U" secondAttribute="top" constant="31" id="EWn-9Y-EKq"/>
-                                        <constraint firstItem="X4b-Qe-SQ9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AOl-3c-9ya" secondAttribute="trailing" constant="8" symbolic="YES" id="L4m-MX-336"/>
-                                        <constraint firstItem="AOl-3c-9ya" firstAttribute="top" secondItem="xnl-7A-Bh1" secondAttribute="bottom" id="NZV-ao-uEY"/>
-                                        <constraint firstAttribute="trailing" secondItem="X4b-Qe-SQ9" secondAttribute="trailing" constant="20" symbolic="YES" id="cNv-fa-CBh"/>
-                                        <constraint firstItem="AOl-3c-9ya" firstAttribute="leading" secondItem="RR7-00-38U" secondAttribute="leading" constant="8" id="lfU-qZ-Kan"/>
-                                        <constraint firstItem="xnl-7A-Bh1" firstAttribute="leading" secondItem="RR7-00-38U" secondAttribute="leading" constant="8" id="tpr-Ax-x4B"/>
-                                    </constraints>
-                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="gameNoteListCell" rowHeight="86" id="rJ8-IX-Okd" customClass="GameNoteListTableViewCell" customModule="RawGameApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="133" width="414" height="86"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="86"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rJ8-IX-Okd" id="OgF-4u-Rw1">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="86"/>
@@ -127,7 +89,20 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="OJl-s9-9oh"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="T19-1S-LzX"/>
+                    <navigationItem key="navigationItem" id="T19-1S-LzX">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zWe-zu-ojb">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X4b-Qe-SQ9">
+                                <rect key="frame" x="344" y="5" width="50" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plus.circle.fill" catalog="system">
+                                    <color key="baseForegroundColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="addNoteButton:" destination="Ykc-Fy-R3Z" eventType="touchUpInside" id="Wgc-1C-uSr"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="noteTableView" destination="XhN-zi-Ce8" id="e2r-2b-pan"/>
@@ -978,25 +953,13 @@
                                     <outlet property="delegate" destination="sGr-iq-GHr" id="0fN-4r-D5W"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFA-FC-GRM">
-                                <rect key="frame" x="346" y="92" width="48" height="34"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system">
-                                    <color key="baseForegroundColor" name="greenColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="categoriesButton:" destination="sGr-iq-GHr" eventType="touchUpInside" id="MKC-GK-H8M"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i8T-bZ-2YA"/>
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="mFA-FC-GRM" firstAttribute="top" secondItem="i8T-bZ-2YA" secondAttribute="top" id="M82-Gs-8dU"/>
                             <constraint firstItem="BIU-nX-KDh" firstAttribute="leading" secondItem="i8T-bZ-2YA" secondAttribute="leading" id="MHE-FL-5gv"/>
                             <constraint firstItem="i8T-bZ-2YA" firstAttribute="bottom" secondItem="BIU-nX-KDh" secondAttribute="bottom" id="SAe-AR-K62"/>
                             <constraint firstItem="BIU-nX-KDh" firstAttribute="top" secondItem="i8T-bZ-2YA" secondAttribute="top" id="ZSn-jT-o1L"/>
-                            <constraint firstItem="i8T-bZ-2YA" firstAttribute="trailing" secondItem="mFA-FC-GRM" secondAttribute="trailing" constant="20" id="hpe-J9-4ob"/>
                             <constraint firstItem="i8T-bZ-2YA" firstAttribute="trailing" secondItem="BIU-nX-KDh" secondAttribute="trailing" id="uOC-44-897"/>
                         </constraints>
                     </view>
@@ -1008,40 +971,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HaL-7X-sGY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1186.9565217391305" y="-1633.2589285714284"/>
-        </scene>
-        <!--Filter Controller-->
-        <scene sceneID="HNg-PT-qNn">
-            <objects>
-                <viewController storyboardIdentifier="FilterController" id="nhK-e7-C0V" customClass="FilterController" customModule="RawGameApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="x5l-bo-Ssv">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yDp-aH-guO">
-                                <rect key="frame" x="24" y="60" width="366" height="790"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="nhK-e7-C0V" id="PZW-6M-GzI"/>
-                                    <outlet property="delegate" destination="nhK-e7-C0V" id="Hdz-fw-14b"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="WrT-Wn-VCH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="yDp-aH-guO" firstAttribute="leading" secondItem="WrT-Wn-VCH" secondAttribute="leading" constant="24" id="LsH-8C-Ov5"/>
-                            <constraint firstItem="yDp-aH-guO" firstAttribute="top" secondItem="WrT-Wn-VCH" secondAttribute="top" constant="12" id="QFu-NJ-HAb"/>
-                            <constraint firstItem="WrT-Wn-VCH" firstAttribute="bottom" secondItem="yDp-aH-guO" secondAttribute="bottom" constant="12" id="b3Y-mN-tdq"/>
-                            <constraint firstItem="WrT-Wn-VCH" firstAttribute="trailing" secondItem="yDp-aH-guO" secondAttribute="trailing" constant="24" id="fXC-EW-qdu"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="filterTable" destination="yDp-aH-guO" id="KQS-Wg-NiI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AUG-EU-jpK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2072" y="-1633"/>
         </scene>
         <!--Search-->
         <scene sceneID="Iw4-9e-Rmc">
@@ -1055,10 +984,10 @@
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1076,12 +1005,15 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eoM-Tl-pcF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Notes" image="note.text" catalog="system" id="NLZ-Pz-aMN"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="21c-Ag-b4t">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="21c-Ag-b4t">
+                        <rect key="frame" x="0.0" y="48" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="barTintColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
@@ -1106,10 +1038,10 @@
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.37647059560000001" green="0.8156862855" blue="0.49803921579999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1163,7 +1095,6 @@
         <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
         <image name="poster3" width="2000" height="3000"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="suit.heart" catalog="system" width="128" height="107"/>
         <namedColor name="greenColor">

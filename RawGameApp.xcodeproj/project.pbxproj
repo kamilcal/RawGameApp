@@ -16,13 +16,6 @@
 		D27C12A12978C25700478DD9 /* GameDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */; };
 		D27C12A32978C26F00478DD9 /* GameDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27C12A22978C26F00478DD9 /* GameDetailModel.swift */; };
 		D297AAF029800683007CF268 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AAEF29800683007CF268 /* LocalNotificationManager.swift */; };
-		D297AAF429801917007CF268 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AAF329801917007CF268 /* FilterViewController.swift */; };
-		D297AAF629801935007CF268 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AAF529801935007CF268 /* FilterViewModel.swift */; };
-		D297AB0029801AE2007CF268 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AAFE29801AE2007CF268 /* TitleTableViewCell.swift */; };
-		D297AB0129801AE2007CF268 /* TitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D297AAFF29801AE2007CF268 /* TitleTableViewCell.xib */; };
-		D297AB0529802B59007CF268 /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AB0429802B59007CF268 /* FilterModel.swift */; };
-		D297AB1B29806E38007CF268 /* FilterModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AB1A29806E38007CF268 /* FilterModel2.swift */; };
-		D297AB1E29807353007CF268 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = D297AB1D29807353007CF268 /* PanModal */; };
 		D297AB2029808796007CF268 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AB1F29808796007CF268 /* UISearchBar.swift */; };
 		D297AB292980B87C007CF268 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D297AB2B2980B87C007CF268 /* Localizable.strings */; };
 		D2B974E1297A12C500F05037 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974E0297A12C500F05037 /* CoreDataManager.swift */; };
@@ -67,12 +60,6 @@
 		D27C12A02978C25700478DD9 /* GameDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewModel.swift; sourceTree = "<group>"; };
 		D27C12A22978C26F00478DD9 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		D297AAEF29800683007CF268 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
-		D297AAF329801917007CF268 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
-		D297AAF529801935007CF268 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
-		D297AAFE29801AE2007CF268 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
-		D297AAFF29801AE2007CF268 /* TitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleTableViewCell.xib; sourceTree = "<group>"; };
-		D297AB0429802B59007CF268 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
-		D297AB1A29806E38007CF268 /* FilterModel2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel2.swift; sourceTree = "<group>"; };
 		D297AB1F29808796007CF268 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
 		D297AB252980B719007CF268 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = tr; path = tr.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D297AB2A2980B87C007CF268 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -117,7 +104,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D297AB1E29807353007CF268 /* PanModal in Frameworks */,
 				D27C12992978B1F500478DD9 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -128,7 +114,6 @@
 		D27C12922978AE6500478DD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				D27C12932978AE9700478DD9 /* GameModel.swift */,
 				D27C129A2978B77500478DD9 /* NetworkError.swift */,
 			);
 			path = Models;
@@ -190,10 +175,10 @@
 		D2B9751D297D67AC00F05037 /* GameNoteList */ = {
 			isa = PBXGroup;
 			children = (
+				D2B9751F297D774600F05037 /* NoteListViewController.swift */,
 				D2BA9131297EB0D9005B6DCC /* ViewModel */,
 				D2BA9130297EB0D4005B6DCC /* Model */,
 				D2BA9124297EB03C005B6DCC /* View */,
-				D2B9751F297D774600F05037 /* NoteListViewController.swift */,
 			);
 			path = GameNoteList;
 			sourceTree = "<group>";
@@ -201,10 +186,10 @@
 		D2B9751E297D67B800F05037 /* GameAddNote */ = {
 			isa = PBXGroup;
 			children = (
+				D2B97525297D842E00F05037 /* AddNoteViewController.swift */,
 				D2BA9134297EB0FE005B6DCC /* Model */,
 				D2BA9133297EB0F8005B6DCC /* ViewModel */,
 				D2BA9132297EB0F2005B6DCC /* View */,
-				D2B97525297D842E00F05037 /* AddNoteViewController.swift */,
 			);
 			path = GameAddNote;
 			sourceTree = "<group>";
@@ -229,6 +214,7 @@
 		D2BA9125297EB04A005B6DCC /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D27C12932978AE9700478DD9 /* GameModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,12 +383,6 @@
 				D2B974E2297AA74700F05037 /* GameFavorite */,
 				D2B9751E297D67B800F05037 /* GameAddNote */,
 				D2B9751D297D67AC00F05037 /* GameNoteList */,
-				D297AAF329801917007CF268 /* FilterViewController.swift */,
-				D297AAF529801935007CF268 /* FilterViewModel.swift */,
-				D297AAFE29801AE2007CF268 /* TitleTableViewCell.swift */,
-				D297AAFF29801AE2007CF268 /* TitleTableViewCell.xib */,
-				D297AB1A29806E38007CF268 /* FilterModel2.swift */,
-				D297AB0429802B59007CF268 /* FilterModel.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -470,7 +450,6 @@
 			name = RawGameApp;
 			packageProductDependencies = (
 				D27C12982978B1F500478DD9 /* SDWebImage */,
-				D297AB1D29807353007CF268 /* PanModal */,
 			);
 			productName = RawGameApp;
 			productReference = D2C504EA29784EF0008A9733 /* RawGameApp.app */;
@@ -502,7 +481,6 @@
 			mainGroup = D2C504E129784EF0008A9733;
 			packageReferences = (
 				D27C12972978B1F500478DD9 /* XCRemoteSwiftPackageReference "SDWebImage" */,
-				D297AB1C29807353007CF268 /* XCRemoteSwiftPackageReference "PanModal" */,
 			);
 			productRefGroup = D2C504EB29784EF0008A9733 /* Products */;
 			projectDirPath = "";
@@ -519,7 +497,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D297AB292980B87C007CF268 /* Localizable.strings in Resources */,
-				D297AB0129801AE2007CF268 /* TitleTableViewCell.xib in Resources */,
 				D2C504FA29784EF1008A9733 /* Assets.xcassets in Resources */,
 				D2B974F3297AF89100F05037 /* EmptyCollectionViewCell.xib in Resources */,
 				D2C504F529784EF0008A9733 /* Main.storyboard in Resources */,
@@ -540,12 +517,9 @@
 				D2B974FA297C0CE400F05037 /* APIConstant.swift in Sources */,
 				D297AB2029808796007CF268 /* UISearchBar.swift in Sources */,
 				D2B97516297C3CD900F05037 /* HomeListViewModel.swift in Sources */,
-				D297AAF629801935007CF268 /* FilterViewModel.swift in Sources */,
 				D297AAF029800683007CF268 /* LocalNotificationManager.swift in Sources */,
 				D2B97522297D7C8500F05037 /* GameNoteListTableViewCell.swift in Sources */,
 				D2B9750C297C2F0200F05037 /* HomeListViewController.swift in Sources */,
-				D297AB0029801AE2007CF268 /* TitleTableViewCell.swift in Sources */,
-				D297AB0529802B59007CF268 /* FilterModel.swift in Sources */,
 				D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */,
 				D2B97526297D842E00F05037 /* AddNoteViewController.swift in Sources */,
 				D2C5050B29785149008A9733 /* SearchListViewController.swift in Sources */,
@@ -571,10 +545,8 @@
 				D2B97510297C2F4900F05037 /* PopularCollectionViewCell.swift in Sources */,
 				D2B974F2297AF89100F05037 /* EmptyCollectionViewCell.swift in Sources */,
 				D2B97512297C303C00F05037 /* MetacriticTableViewCell.swift in Sources */,
-				D297AB1B29806E38007CF268 /* FilterModel2.swift in Sources */,
 				D2B974ED297ADD8D00F05037 /* GameFavoriteCollectionViewCell.swift in Sources */,
 				D2BA9149297F479C005B6DCC /* Spinner.swift in Sources */,
-				D297AAF429801917007CF268 /* FilterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -804,14 +776,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		D297AB1C29807353007CF268 /* XCRemoteSwiftPackageReference "PanModal" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/slackhq/PanModal.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -819,11 +783,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D27C12972978B1F500478DD9 /* XCRemoteSwiftPackageReference "SDWebImage" */;
 			productName = SDWebImage;
-		};
-		D297AB1D29807353007CF268 /* PanModal */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D297AB1C29807353007CF268 /* XCRemoteSwiftPackageReference "PanModal" */;
-			productName = PanModal;
 		};
 /* End XCSwiftPackageProductDependency section */
 

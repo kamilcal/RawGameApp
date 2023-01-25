@@ -9,22 +9,28 @@ import UIKit
 
 class MetacriticTableViewCell: UITableViewCell {
     
-    
+
     private let viewModel = HomeListViewModel()
     
     @IBOutlet var metacriticCollectionView: UICollectionView!
     
+    
+//MARK: - Lifecycle Functions
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
         getData()
     }
     
+//MARK: - SetupUI
+
     private func setupUI(){
         metacriticCollectionView.delegate = self
         metacriticCollectionView.dataSource = self
     }
-    
+//MARK: - FetchData
+
     private func getData() {
         viewModel.fetchGamesGroupedData(url: APIConstant.metacriticURL) { (result) in
             switch result {
@@ -39,11 +45,10 @@ class MetacriticTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.metacriticCollectionView.reloadData()
             
-        }
-        
+        } 
     }
 }
-
+//MARK: - Delegate - DataSource Methods
 extension MetacriticTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

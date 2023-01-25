@@ -8,20 +8,28 @@
 import UIKit
 
 class UpcomingTableViewCell: UITableViewCell {
+    
 
     private let viewModel = HomeListViewModel()
 
     @IBOutlet var upcomingCollectionView: UICollectionView!
     
+//MARK: - Lifecycle Functions
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
         getData()
     }
+//MARK: - SetupUI
+
     func setupUI(){
         upcomingCollectionView.delegate = self
         upcomingCollectionView.dataSource = self
     }
+    
+//MARK: - FetchData
+
     private func getData() {
         viewModel.fetchGamesGroupedData(url: APIConstant.upcomingURL) { (result) in
             switch result {
@@ -36,12 +44,11 @@ class UpcomingTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.upcomingCollectionView.reloadData()
             
-        }
-        
+        }        
     }
-    
-
 }
+//MARK: - Delegate - DataSource Methods
+
 extension UpcomingTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.gameResult.count

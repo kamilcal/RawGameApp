@@ -19,7 +19,8 @@ class PopularCollectionViewCell: UICollectionViewCell {
     
     var id: String?
 
-    
+//MARK: - Lifecycle Functions
+
     override func awakeFromNib() {
         super.awakeFromNib()
         posterImageView.addRoundedCorners()
@@ -31,7 +32,8 @@ class PopularCollectionViewCell: UICollectionViewCell {
         popularGradientView.layer.cornerRadius = 7
         popularGradientView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
-    
+//MARK: - Configure Functions
+
     public func configure(with model: ResultGame) {
         guard let url = URL(string: model.backgroundImage ?? "") else { return }
         

@@ -9,21 +9,30 @@ import UIKit
 
 class NoteListViewController: UIViewController {
     
-    @IBOutlet var noteTableView: UITableView!{
-        didSet {
-            noteTableView.delegate = self
-            noteTableView.dataSource = self
-        }
-    }
+    @IBOutlet var noteTableView: UITableView!
+
+    
     
     private var viewModel = GameNoteListViewModel()
     
+//MARK: - Lifecycle Functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+    }
+    
+//MARK: - setupUI
+    func setupUI(){
+        noteTableView.delegate = self
+        noteTableView.dataSource = self
         viewModel.delegate = self
         viewModel.getNotes()
         navigationItem.title = NSLocalizedString("Notes", comment: "Notes")
     }
+    
+//MARK: - Action
+
  
     @IBAction func addNoteButton(_ sender: Any) {
         performSegue(withIdentifier: "noteToAddNote", sender: nil)
@@ -31,7 +40,7 @@ class NoteListViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier  == "noteToAddNote" {
             let destination = segue.destination as! AddNoteViewController
-            destination.viewModel.delegateNoteList = self
+            destination.viewModel.delegateAddNote = self
             guard let sender else {return}
             destination.viewModel.note = sender as? Note
             
@@ -41,20 +50,8 @@ class NoteListViewController: UIViewController {
     
 }
 
-extension NoteListViewController: NoteListViewModelDelegate {
-    
-    
-    func notesChanged() {
-        noteTableView.reloadData()
-    }
-    func noteAdded(title: String, text: String) {
-        viewModel.appendNote(title: title, text: text)
-    }
-    func noteUpdated(note: Note) {
-        viewModel.updateNote(note: note)
-    }
-    
-}
+
+//MARK: - Delegate - DataSource Methods
 
 extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -71,7 +68,8 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "noteToAddNote", sender: viewModel.getNote(at: indexPath.row))
-        
+        tableView.deselectRow(at: indexPath, animated: true)
+
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
@@ -97,3 +95,18 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 
+extension NoteListViewController: NoteListViewModelDelegate {
+    
+    
+    func changed() {
+        noteTableView.reloadData()
+    }
+    func updated(note: Note) {
+        viewModel.updateNote(note: note)
+    }
+    
+    func added(title: String, text: String) {
+        viewModel.appendNote(title: title, text: text)
+    }
+ 
+}

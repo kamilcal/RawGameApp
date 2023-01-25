@@ -22,11 +22,11 @@ class AddNoteViewController: UIViewController {
             titleLabel.placeholder = NSLocalizedString("NoteTitle", comment: "Note Title")
         }
     }
-    
     @IBOutlet var detailLabel: UITextView!
     
     var viewModel = AddNoteViewModel()
     
+//MARK: - Lifecycle Functions
 
 
     override func viewDidLoad() {
@@ -34,12 +34,14 @@ class AddNoteViewController: UIViewController {
         configureView()
     }
 
-    
+//MARK: - Configure Func
+
     func configureView(){
         titleLabel.becomeFirstResponder()
-        detailLabel.text = viewModel.getNoteTitle()
-        titleLabel.text = viewModel.getNoteText()
+        detailLabel.text = viewModel.getTitle()
+        titleLabel.text = viewModel.getText()
     }
+//MARK: - Action
 
     @IBAction func saveButtonTapped(_ sender: UIButton) {
         if self.titleLabel.text == "" || self.detailLabel.text == ""{
@@ -49,10 +51,10 @@ class AddNoteViewController: UIViewController {
         if let note = viewModel.note{
             note.text = self.titleLabel.text
             note.title = self.detailLabel.text
-            viewModel.delegateNoteList?.noteUpdated(note: note)
+            viewModel.delegateAddNote?.updated(note: note)
         }
         else {
-            viewModel.delegateNoteList?.noteAdded(title: self.titleLabel.text!, text: self.detailLabel.text)
+            viewModel.delegateAddNote?.added(title: self.titleLabel.text!, text: self.detailLabel.text)
         }
         dismiss(animated: true)
     }

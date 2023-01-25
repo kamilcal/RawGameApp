@@ -15,16 +15,17 @@ class SearchListTableViewCell: UITableViewCell {
     @IBOutlet var genreLabel: UILabel!
     @IBOutlet var ratingLabel: UILabel!
     
+//MARK: - Lifecycle Functions
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         posterImageView.layer.cornerRadius = 10
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    
+//MARK: - Configure Functions
 
-        // Configure the view for the selected state
-    }
     public func configure(with model: ResultGame) {
         guard let url = URL(string: model.backgroundImage ?? "") else { return }
         

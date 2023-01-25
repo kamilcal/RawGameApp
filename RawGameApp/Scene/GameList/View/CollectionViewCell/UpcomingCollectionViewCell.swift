@@ -15,12 +15,14 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var blurView: UIView!
     @IBOutlet weak var upcomingTitleLabel: UILabel!
     
-    
+//MARK: - Lifecycle Functions
+
     override func awakeFromNib() {
         super.awakeFromNib()
         setupViews()
     }
-    
+//MARK: - SetupUI
+
     func setupViews() {
         upcomingImageView.addRoundedCorners()
         wrapView.addShadow()
@@ -30,6 +32,8 @@ class UpcomingCollectionViewCell: UICollectionViewCell {
         blurView.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
     }
     
+//MARK: - Configure Functions
+
     public func configure(with model: ResultGame) {
         guard let url = URL(string: model.backgroundImage ?? "") else { return }
         

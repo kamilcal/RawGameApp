@@ -10,7 +10,6 @@ import SDWebImage
 
 class GameDetailViewController: UIViewController {
     
-    //MARK: - Outlets and Variables
     @IBOutlet var reviews: UILabel!{
         didSet{
             reviews.text = NSLocalizedString("reviewsLabel", comment: "Reviews")
@@ -61,7 +60,6 @@ class GameDetailViewController: UIViewController {
         navigationItem.hidesBackButton = true
         getGameDetail()
         isGameFavourited()
-//        activityIndicator.startAnimating()
 
     }
     

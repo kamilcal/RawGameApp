@@ -7,17 +7,13 @@
 
 import UIKit
 
-
-
-
 class HomeListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-    private let dispatchGroup = DispatchGroup()
     let viewModel = HomeListViewModel()
-    var filterSelection: ((GameCategory)->())?
 
-    
+//MARK: - Lifecycle Functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -31,25 +27,9 @@ class HomeListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
     }
+    
+//MARK: - SetupUI
 
-    func showFilter() {
-        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyBoard.instantiateViewController(withIdentifier: "\(FilterController.self)") as! FilterController
-        controller.selectionCallback = { [weak self] category in
-            self?.filterSelection?(category)
-            print("\(self?.filterSelection)")
-        }
-        
-        self.presentPanModal(controller)
-    }
-    
-    
-    @IBAction func categoriesButton(_ sender: UIButton) {
-        showFilter()
-        print("a")
-    }
-    
-    
     func setupUI() {
         tableView.dataSource = self
         tableView.delegate = self
@@ -58,6 +38,9 @@ class HomeListViewController: UIViewController {
         setNeedsStatusBarAppearanceUpdate()
     }
     
+
+//MARK: - NotificationCenter
+
     @objc func presentDetailModal(notif: NSNotification) {
         if let userInfo = notif.userInfo {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -70,6 +53,9 @@ class HomeListViewController: UIViewController {
         }
     }
 }
+
+//MARK: - Delegate - DataSource Methods
+
 extension HomeListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -97,7 +83,8 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource{
         return UITableViewCell()
     }
     
-    
+//MARK: - SetupUI
+
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var titleText: String?
         if section == 0 {

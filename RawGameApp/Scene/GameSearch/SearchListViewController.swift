@@ -18,11 +18,11 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     private let viewModel = SearchListViewModel()
     var gameResult = [ResultGame]()
     
-// MARK: - lifecycle
+    //MARK: - Lifecycle Functions
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        navigationItem.title = NSLocalizedString("SearchList", comment: "Search")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,10 +39,11 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     
     private func setupUI(){
         tableView.delegate = self
-        tableView.dataSource = self        
+        tableView.dataSource = self
+        navigationItem.title = NSLocalizedString("SearchList", comment: "Search")
     }
 
-// MARK: - searchbar
+// MARK: - Searchbar
 
     private func setupSearchController(){
         let search = UISearchController(searchResultsController: nil)
@@ -81,7 +82,7 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     }
 
 
-// MARK: - delegate- datasource
+//MARK: - Delegate - DataSource Methods
 
 
 extension SearchListViewController: UITableViewDataSource, UITableViewDelegate {
