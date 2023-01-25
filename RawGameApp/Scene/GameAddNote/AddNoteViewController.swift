@@ -7,12 +7,16 @@
 
 import UIKit
 
+
+
 class AddNoteViewController: UIViewController {
 
     @IBOutlet var titleLabel: UITextField!
     @IBOutlet var detailLabel: UITextView!
     
     var viewModel = AddNoteViewModel()
+    
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +29,12 @@ class AddNoteViewController: UIViewController {
             detailLabel.text = "Enter your note here..."
             detailLabel.textColor = UIColor.secondaryLabel
         }
+    }
+    
+    func configureView(){
+        titleLabel.becomeFirstResponder()
+        detailLabel.text = viewModel.getNoteTitle()
+        titleLabel.text = viewModel.getNoteText()
     }
 
     @IBAction func saveButtonTapped(_ sender: UIButton) {
@@ -42,11 +52,7 @@ class AddNoteViewController: UIViewController {
         }
         dismiss(animated: true)
     }
-    func configureView(){
-        titleLabel.becomeFirstResponder()
-        detailLabel.text = viewModel.getNoteTitle()
-        titleLabel.text = viewModel.getNoteText()
-    }
+
     func showAlertActions() {
         let alert = UIAlertController(title: "asmkdlas",
                                       message: "dmlalşsdlas", preferredStyle: .alert)

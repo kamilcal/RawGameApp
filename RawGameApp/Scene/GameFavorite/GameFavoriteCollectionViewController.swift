@@ -134,10 +134,9 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
 
 extension GameFavoriteCollectionViewController: FavoriteListViewModelDelegate {
     func favoriteGamesChanged() {
-        //        if viewModel.gameFavoritesResult.count > -1{
-        updateTableUI()
-        //            self.collectionView.reloadData()
-        //        }
+                if viewModel.gameFavoritesResult.count > -1{
+                    self.collectionView.reloadData()
+                }
     }
     
     

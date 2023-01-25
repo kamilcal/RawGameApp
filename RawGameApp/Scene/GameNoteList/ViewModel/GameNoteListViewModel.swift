@@ -27,7 +27,6 @@ class GameNoteListViewModel: NoteListViewModelProtocol{
     weak var delegate: NoteListViewModelDelegate?
 
     var notes: [Note]?
-//    private lazy var dataManager: CoreDataManager = { return CoreDataManager() }()
 
     func getNote(at index: Int) -> Note? {
        notes?[index]
@@ -41,6 +40,12 @@ class GameNoteListViewModel: NoteListViewModelProtocol{
     func updateNote(note: Note) {
         CoreDataManager.shared.updateNote(note: note)
         self.delegate?.notesChanged()
+    }
+    
+    func deleteNote(at index: Int) {
+        guard let note = self.getNote(at: index) else {return}
+        CoreDataManager.shared.deleteNote(note: note)
+        notes?.remove(at: index)
     }
     
     func getNotes() {

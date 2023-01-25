@@ -44,8 +44,9 @@ class HomeListViewController: UIViewController {
     }
     
     
-    @IBAction func filterButtonTapped(_ sender: UIBarButtonItem) {
-       showFilter()
+    @IBAction func categoriesButton(_ sender: UIButton) {
+        showFilter()
+        print("a")
     }
     
     
@@ -55,7 +56,6 @@ class HomeListViewController: UIViewController {
         tableView.tableFooterView = UIView()
         navigationController?.navigationBar.shadowImage = UIImage()
         setNeedsStatusBarAppearanceUpdate()
-        navigationItem.title = "RawGameApp"
     }
     
     @objc func presentDetailModal(notif: NSNotification) {
@@ -114,9 +114,9 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource{
         
         
         let label = UILabel(frame: CGRect(x: 20, y: 0, width: 200, height: 35))
-        label.font = UIFont.systemFont(ofSize: 20, weight: .heavy)
+        label.font = UIFont.systemFont(ofSize: 22, weight: .heavy)
         label.text = titleText
-        label.textColor = .white
+        label.textColor = UIColor(named: "greenColor")
         view.addSubview(label)
         
         return view

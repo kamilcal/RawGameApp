@@ -45,6 +45,7 @@ class GameDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: animated)
+        navigationItem.hidesBackButton = true
         getGameDetail()
         isGameFavourited()
 //        activityIndicator.startAnimating()

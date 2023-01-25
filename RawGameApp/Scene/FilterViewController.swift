@@ -52,15 +52,17 @@ extension FilterController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension FilterController: PanModalPresentable {
+    
     var panScrollable: UIScrollView? {
         nil
     }
     
     var shortFormHeight: PanModalHeight {
-        return .contentHeight(250)
+        return .contentHeight(200)
     }
     
     var cornerRadius: CGFloat {
-        16
+        20
     }
+
 }
