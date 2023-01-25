@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lag-OF-vCr">
                         <rect key="frame" x="0.0" y="0.0" width="379" height="55"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no movies saved at this time." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-uT-utY">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no games saved at this time." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-uT-utY">
                                 <rect key="frame" x="12" y="0.0" width="355" height="55"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="19"/>
@@ -44,6 +44,9 @@
                 <constraint firstItem="lag-OF-vCr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="MaJ-hh-F9A"/>
                 <constraint firstItem="lag-OF-vCr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="c9V-0A-1XK"/>
             </constraints>
+            <connections>
+                <outlet property="emptyLabel" destination="EAq-uT-utY" id="iz4-Ah-oLy"/>
+            </connections>
             <point key="canvasLocation" x="-69" y="20"/>
         </collectionViewCell>
     </objects>

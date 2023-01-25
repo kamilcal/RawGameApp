@@ -28,7 +28,7 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.delegate = self
-        
+        navigationItem.title = NSLocalizedString("FavoriList", comment: "Favorites")
     }
     
     override func viewWillAppear(_ animated: Bool) {

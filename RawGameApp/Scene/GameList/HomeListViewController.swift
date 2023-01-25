@@ -66,7 +66,6 @@ class HomeListViewController: UIViewController {
                 detailVC.id = userInfo["id"] as? Int
                 navigationController?.pushViewController(detailVC, animated: true)
             }
-//            detailVc?.id = viewModel.gameResult[indexPath.row].id
 
         }
     }
@@ -102,11 +101,11 @@ extension HomeListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         var titleText: String?
         if section == 0 {
-            titleText = "Popular"
+            titleText = NSLocalizedString("Popular", comment: "Popular")
         } else if section == 1 {
-            titleText = "Metacritic"
+            titleText = NSLocalizedString("Metacritic", comment: "Metacritic")
         } else if section == 2 {
-            titleText = "Upcoming"
+            titleText = NSLocalizedString("Upcoming", comment: "Upcoming")
         }
         
         var view: UIView

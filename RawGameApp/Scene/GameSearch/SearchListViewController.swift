@@ -22,6 +22,7 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        navigationItem.title = NSLocalizedString("SearchList", comment: "Search")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,7 +49,7 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
         search.searchResultsUpdater = self
         search.obscuresBackgroundDuringPresentation = false
         search.searchBar.tintColor = .white
-        search.searchBar.placeholder = "Enter game name to search"
+        search.searchBar.placeholder = NSLocalizedString("SearchPlaceholder", comment: "Enter game name to search")
         search.searchBar.barTintColor = .white
         navigationItem.searchController = search
         search.searchBar.setNewcolor(color: .white)

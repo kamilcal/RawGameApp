@@ -1,0 +1,102 @@
+
+/* Class = "UILabel"; text = "Simpra Bootcamp"; ObjectID = "0ln-L9-inp"; */
+"0ln-L9-inp.text" = "Simpra Bootcamp";
+
+/* Class = "UIButton"; configuration.title = "Save"; ObjectID = "0qb-6V-muo"; */
+"0qb-6V-muo.configuration.title" = "Save";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0qb-6V-muo"; */
+"0qb-6V-muo.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Patika.dev"; ObjectID = "1VI-uE-Wua"; */
+"1VI-uE-Wua.text" = "Patika.dev";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5tU-jm-KQB"; */
+"5tU-jm-KQB.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "6nQ-aL-3Ru"; */
+"6nQ-aL-3Ru.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Simpra Bootcamp 238"; ObjectID = "83l-Jg-4I2"; */
+"83l-Jg-4I2.text" = "Simpra Bootcamp 238";
+
+/* Class = "UILabel"; text = "GAME NOTES"; ObjectID = "AOl-3c-9ya"; */
+"AOl-3c-9ya.text" = "GAME NOTES";
+
+/* Class = "UITabBarItem"; title = "Search"; ObjectID = "Avu-kl-4gd"; */
+"Avu-kl-4gd.title" = "Search";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "BFz-jp-XbP"; */
+"BFz-jp-XbP.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UITextField"; placeholder = "Note Title"; ObjectID = "BWd-Tu-Nc3"; */
+"BWd-Tu-Nc3.placeholder" = "Note Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "DhM-2A-0e4"; */
+"DhM-2A-0e4.text" = "Label";
+
+/* Class = "UILabel"; text = "5/5"; ObjectID = "ETy-2n-5sI"; */
+"ETy-2n-5sI.text" = "5/5";
+
+/* Class = "UINavigationItem"; title = "Search List"; ObjectID = "K5M-7O-8Sp"; */
+"K5M-7O-8Sp.title" = "Search List";
+
+/* Class = "UILabel"; text = "Simpra Bootcamp"; ObjectID = "LPN-ea-EsR"; */
+"LPN-ea-EsR.text" = "Simpra Bootcamp";
+
+/* Class = "UITabBarItem"; title = "Notes"; ObjectID = "NLZ-Pz-aMN"; */
+"NLZ-Pz-aMN.title" = "Notes";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "OJl-s9-9oh"; */
+"OJl-s9-9oh.title" = "Item";
+
+/* Class = "UILabel"; text = "Released"; ObjectID = "Rq3-GL-heH"; */
+"Rq3-GL-heH.text" = "Released";
+
+/* Class = "UINavigationItem"; title = "RawGame"; ObjectID = "STs-T1-Eet"; */
+"STs-T1-Eet.title" = "RawGame";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Tg9-kI-Ezq"; */
+"Tg9-kI-Ezq.text" = "Label";
+
+/* Class = "UILabel"; text = "Simpra Bootcamp"; ObjectID = "W4m-Qp-70X"; */
+"W4m-Qp-70X.text" = "Simpra Bootcamp";
+
+/* Class = "UITabBarItem"; title = "Favorites"; ObjectID = "YGE-vx-qur"; */
+"YGE-vx-qur.title" = "Favorites";
+
+/* Class = "UILabel"; text = "Reviews"; ObjectID = "bkz-It-kGU"; */
+"bkz-It-kGU.text" = "Reviews";
+
+/* Class = "UILabel"; text = "Simpra Bootcamp"; ObjectID = "deb-2g-cYm"; */
+"deb-2g-cYm.text" = "Simpra Bootcamp";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "klH-N1-y8n"; */
+"klH-N1-y8n.title" = "Home";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "mFA-FC-GRM"; */
+"mFA-FC-GRM.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Patika.dev"; ObjectID = "oGt-w2-AMq"; */
+"oGt-w2-AMq.text" = "Patika.dev";
+
+/* Class = "UILabel"; text = "Downloads"; ObjectID = "p7G-hK-rro"; */
+"p7G-hK-rro.text" = "Downloads";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "pmU-xO-PRW"; */
+"pmU-xO-PRW.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Patika.dev"; ObjectID = "tH4-Ba-PLr"; */
+"tH4-Ba-PLr.text" = "Patika.dev";
+
+/* Class = "UILabel"; text = "Overview"; ObjectID = "wKS-c3-6D6"; */
+"wKS-c3-6D6.text" = "Overview";
+
+/* Class = "UINavigationItem"; title = "Favorite List"; ObjectID = "wRc-6Z-sfR"; */
+"wRc-6Z-sfR.title" = "Favorite List";
+
+/* Class = "UILabel"; text = "RawGameApp"; ObjectID = "xnl-7A-Bh1"; */
+"xnl-7A-Bh1.text" = "RawGameApp";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "z1W-78-yDu"; */
+"z1W-78-yDu.text" = "Label";

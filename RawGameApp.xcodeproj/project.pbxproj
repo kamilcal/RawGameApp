@@ -24,6 +24,7 @@
 		D297AB1B29806E38007CF268 /* FilterModel2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AB1A29806E38007CF268 /* FilterModel2.swift */; };
 		D297AB1E29807353007CF268 /* PanModal in Frameworks */ = {isa = PBXBuildFile; productRef = D297AB1D29807353007CF268 /* PanModal */; };
 		D297AB2029808796007CF268 /* UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D297AB1F29808796007CF268 /* UISearchBar.swift */; };
+		D297AB292980B87C007CF268 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = D297AB2B2980B87C007CF268 /* Localizable.strings */; };
 		D2B974E1297A12C500F05037 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974E0297A12C500F05037 /* CoreDataManager.swift */; };
 		D2B974E4297AA76900F05037 /* GameFavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974E3297AA76900F05037 /* GameFavoriteModel.swift */; };
 		D2B974ED297ADD8D00F05037 /* GameFavoriteCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B974EC297ADD8D00F05037 /* GameFavoriteCollectionViewCell.swift */; };
@@ -52,7 +53,6 @@
 		D2C504F529784EF0008A9733 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F329784EF0008A9733 /* Main.storyboard */; };
 		D2C504F829784EF0008A9733 /* RawGameApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */; };
 		D2C504FA29784EF1008A9733 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2C504F929784EF1008A9733 /* Assets.xcassets */; };
-		D2C504FD29784EF1008A9733 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2C504FB29784EF1008A9733 /* LaunchScreen.storyboard */; };
 		D2C5050B29785149008A9733 /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5050A29785149008A9733 /* SearchListViewController.swift */; };
 		D2C5050D297851A8008A9733 /* SearchListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5050C297851A8008A9733 /* SearchListTableViewCell.swift */; };
 		D2E26C082980010E0079EB7D /* Decoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E26C072980010E0079EB7D /* Decoders.swift */; };
@@ -74,6 +74,10 @@
 		D297AB0429802B59007CF268 /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
 		D297AB1A29806E38007CF268 /* FilterModel2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterModel2.swift; sourceTree = "<group>"; };
 		D297AB1F29808796007CF268 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
+		D297AB252980B719007CF268 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = tr; path = tr.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D297AB2A2980B87C007CF268 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D297AB2C2980B87E007CF268 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		D297AB2D2980B946007CF268 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2B974E0297A12C500F05037 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		D2B974E3297AA76900F05037 /* GameFavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoriteModel.swift; sourceTree = "<group>"; };
 		D2B974EC297ADD8D00F05037 /* GameFavoriteCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFavoriteCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -100,10 +104,8 @@
 		D2BA9148297F479C005B6DCC /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		D2C504EA29784EF0008A9733 /* RawGameApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RawGameApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2C504ED29784EF0008A9733 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D2C504F429784EF0008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2C504F729784EF0008A9733 /* RawGameApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RawGameApp.xcdatamodel; sourceTree = "<group>"; };
 		D2C504F929784EF1008A9733 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D2C504FC29784EF1008A9733 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2C504FE29784EF1008A9733 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2C5050A29785149008A9733 /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
 		D2C5050C297851A8008A9733 /* SearchListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListTableViewCell.swift; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 				D2B974F9297C0CE400F05037 /* APIConstant.swift */,
 				D2B974E0297A12C500F05037 /* CoreDataManager.swift */,
 				D297AAEF29800683007CF268 /* LocalNotificationManager.swift */,
+				D297AB2B2980B87C007CF268 /* Localizable.strings */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -419,7 +422,6 @@
 		D2C505072978506A008A9733 /* App */ = {
 			isa = PBXGroup;
 			children = (
-				D2C504FB29784EF1008A9733 /* LaunchScreen.storyboard */,
 				D2C504ED29784EF0008A9733 /* AppDelegate.swift */,
 				D2C504FE29784EF1008A9733 /* Info.plist */,
 				D2C504F629784EF0008A9733 /* RawGameApp.xcdatamodeld */,
@@ -495,7 +497,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				tr,
 			);
 			mainGroup = D2C504E129784EF0008A9733;
 			packageReferences = (
@@ -516,8 +518,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D297AB292980B87C007CF268 /* Localizable.strings in Resources */,
 				D297AB0129801AE2007CF268 /* TitleTableViewCell.xib in Resources */,
-				D2C504FD29784EF1008A9733 /* LaunchScreen.storyboard in Resources */,
 				D2C504FA29784EF1008A9733 /* Assets.xcassets in Resources */,
 				D2B974F3297AF89100F05037 /* EmptyCollectionViewCell.xib in Resources */,
 				D2C504F529784EF0008A9733 /* Main.storyboard in Resources */,
@@ -579,20 +581,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		D297AB2B2980B87C007CF268 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D297AB2A2980B87C007CF268 /* tr */,
+				D297AB2C2980B87E007CF268 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		D2C504F329784EF0008A9733 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D2C504F429784EF0008A9733 /* Base */,
+				D297AB252980B719007CF268 /* tr */,
+				D297AB2D2980B946007CF268 /* en */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D2C504FB29784EF1008A9733 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2C504FC29784EF1008A9733 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -602,6 +606,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -662,6 +667,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

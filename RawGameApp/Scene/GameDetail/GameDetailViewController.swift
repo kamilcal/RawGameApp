@@ -11,7 +11,21 @@ import SDWebImage
 class GameDetailViewController: UIViewController {
     
     //MARK: - Outlets and Variables
-
+    @IBOutlet var reviews: UILabel!{
+        didSet{
+            reviews.text = NSLocalizedString("reviewsLabel", comment: "Reviews")
+        }
+    }
+    @IBOutlet var released: UILabel!{
+        didSet{
+            released.text = NSLocalizedString("releasedLabel", comment: "Released")
+        }
+    }
+    @IBOutlet var download: UILabel!{
+        didSet{
+            download.text = NSLocalizedString("downloadLabel", comment: "Download")
+    }
+}
     @IBOutlet var backgroundView: UIImageView!
     @IBOutlet var blurView: UIVisualEffectView!
     @IBOutlet var imageView: UIImageView!
@@ -23,15 +37,14 @@ class GameDetailViewController: UIViewController {
     @IBOutlet var textView: UITextView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var favButton: UIButton!
+    @IBOutlet var overviewLabel: UILabel!
+    
     
     var id: Int? {
         didSet {
-            print("detail:\(id)")
-            
         }
     }
     private let viewModel = DetailViewModel()
-//    var dataManager: CoreDataManager = { return CoreDataManager() }()
     
     
     //MARK: - Lifecycle Functions
@@ -39,7 +52,7 @@ class GameDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.scrollView.isHidden = true
-
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -89,7 +102,7 @@ class GameDetailViewController: UIViewController {
             viewModel.removeToGame(id: id)
         } else {
             viewModel.addToFavorite(id: id)
-            localNotificationManager.shared.scheduleNotification(title: "askdnja", body: "dmklasdlas")
+            localNotificationManager.shared.scheduleNotification(title: NSLocalizedString("NotificationTitle", comment: "You Have Games On Your Favorite List"), body: NSLocalizedString("NotificationBody", comment: "Watch It Now Right Now!"))
         }
         viewModel.isFavourited = !viewModel.isFavourited
         setIconFavourite()
@@ -133,34 +146,5 @@ class GameDetailViewController: UIViewController {
             
         }
     }
-    
-//    private func addToFavouriteGame() {
-//        guard let id = id else { return }
-//        let name = viewModel.gameDetailResult?.name ?? ""
-//        let releaseDate = viewModel.gameDetailResult?.released ?? ""
-//        let description = viewModel.gameDetailResult?.gameDetailModelDescription ?? ""
-//        let image = viewModel.gameDetailResult?.backgroundImage ?? ""
-//        let added = viewModel.gameDetailResult?.added ?? 0
-//        let reviewsCount = viewModel.gameDetailResult?.reviewsCount ?? 0
-//        dataManager.addFavouriteGame(gameData: GameFavoriteModel(id: id,
-//                                                                 name: name,
-//                                                                 gameDetailModelDescription: description,
-//                                                                 backgroundImage: image,
-//                                                                 added: added,
-//                                                                 released: releaseDate,
-//                                                                 reviewsCount: reviewsCount)) {
-//            DispatchQueue.main.async {
-////                TODO: LOCAL NOT.
-//            }
-//        }
-//    }
-    
-//    private func removeGameFavourite(_ idGame: Int) {
-//        dataManager.deleteFavouriteGame(idGame)
-//            DispatchQueue.main.async {
-////                TODO: LOCAL NOT.
-//            }
-//        }
-//    }
     
 }

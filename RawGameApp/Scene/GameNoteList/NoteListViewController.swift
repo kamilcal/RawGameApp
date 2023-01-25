@@ -22,7 +22,7 @@ class NoteListViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.getNotes()
-        
+        navigationItem.title = NSLocalizedString("Notes", comment: "Notes")
     }
  
     @IBAction func addNoteButton(_ sender: Any) {
@@ -76,17 +76,17 @@ extension NoteListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
-        let alertController = UIAlertController(title: "Dikkat",
-                                                message: "Tüm Listeyi Silmek İstediğinizden Emin Misiniz ? ",
+        let alertController = UIAlertController(title: NSLocalizedString("alertTitle", comment: "Warning!"),
+                                                message: NSLocalizedString("alertTitleDetail", comment: "Are you sure you want to delete?"),
                                                 preferredStyle: .alert)
-        let defaultAction = UIAlertAction(title: "Evet",
+        let defaultAction = UIAlertAction(title: NSLocalizedString("alertOkDetail", comment: "Yes"),
                                           style: .default) { _ in
             if editingStyle == .delete {
                 self.viewModel.deleteNote(at: indexPath.row)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
         }
-        let cancelAction = UIAlertAction(title: "Vazgeç",
+        let cancelAction = UIAlertAction(title: NSLocalizedString("cancelAction", comment: "Give up"),
                                          style: .cancel)
         
         alertController.addAction(defaultAction)

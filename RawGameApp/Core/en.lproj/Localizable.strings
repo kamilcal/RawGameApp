@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  RawGameApp
+
+  Created by kamilcal on 25.01.2023.
+  
+*/
+// MARK: - Global
+
+"alertTitle" = "Warning!";
+"okAction" = "Ok";
+"cancelAction" = "Give up";
+
+// MARK: - Paga Title
+"SearchList" = "Search";
+"FavoriList" = "Favorites";
+"Notes" = "Notes";
+
+// MARK: - Home
+
+
+"Popular" = "Popular";
+"Metacritic" = "Metacritic";
+"Upcoming" = "Upcoming";
+
+
+// MARK: - Detail
+
+
+"NotificationTitle" = "You Have Games On Your Favorite List";
+"NotificationBody" = "Watch It Now Right Now!";
+"releasedLabel" = "Released";
+"downloadLabel" = "Download";
+"reviewsLabel" = "Reviews";
+"overviewLabel" = "Overview";
+
+// MARK: - Detail
+
+"SearchPlaceholder" = "Enter game name to search";
+
+
+// MARK: - Favori
+
+"EmptyCollection" = "There are no games saved at this time.";
+
+
+// MARK: - Note Add
+
+"alertMessage" = "Note title or text cannot be blank";
+"NoteTitle" = "Note Title";
+"SaveButton" = "Save";
+
+// MARK: - Note Detail
+
+
+"alertTitleDetail" = "Are you sure you want to delete?";
+"alertOkDetail" = "Yes";
+

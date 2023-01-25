@@ -1,0 +1,58 @@
+/* 
+  Localizable.strings
+  RawGameApp
+
+  Created by kamilcal on 25.01.2023.
+  
+*/
+
+// MARK: - Global
+"alertTitle" = "Dikkat!";
+"okAction" = "Tamam";
+"cancelAction" = "Vazgeç";
+
+// MARK: - Paga Title
+"SearchList" = "Arama";
+"FavoriList" = "Favoriler";
+"Notes" = "Notlar";
+
+// MARK: - Home
+
+
+"Popular" = "Popüler";
+"Metacritic" = "Metacritic";
+"Upcoming" = "Yaklaşan";
+
+
+// MARK: - Detail
+
+
+"NotificationTitle" = "Favori Listende Oyunlar Var";
+"NotificationBody" = "Şimdi Hemen İzle!";
+"releasedLabel" = "Yayınlanma";
+"downloadLabel" = "Yüklenme";
+"reviewsLabel" = "Yorumlar";
+"overviewLabel" = "Kısa Özet";
+
+// MARK: - Detail
+
+"SearchPlaceholder" = "Aramak için oyun adını girin";
+
+
+// MARK: - Favori
+
+"EmptyCollection" = "Kaydedilmiş oyun bulunmamakta.";
+
+
+// MARK: - Note Add
+
+"alertMessage" = "Not başlığı veya metni boş bırakılamaz.";
+"NoteTitle" = "Not Başlığı";
+"SaveButton" = "Kaydet";
+
+// MARK: - Note Detail
+
+
+"alertTitleDetail" = "Silmek istediğinizden emin misiniz?";
+"alertOkDetail" = "Evet";
+
