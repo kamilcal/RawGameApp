@@ -256,6 +256,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="Rf1-xG-y32">
+                                <rect key="frame" x="0.0" y="426" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.45490196350000001" green="0.6784313917" blue="0.31372550129999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FW2-05-fx9"/>
                         <color key="backgroundColor" red="0.050980389119999997" green="0.109803915" blue="0.13725490870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -268,12 +273,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="K5M-7O-8Sp"/>
                     <connections>
+                        <outlet property="spinner" destination="Rf1-xG-y32" id="YEz-mb-ftU"/>
                         <outlet property="tableView" destination="0xU-41-7xe" id="DTr-ir-y5w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qa5-3b-Yxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1205.3435114503816" y="-938.0281690140846"/>
+            <point key="canvasLocation" x="1204.3478260869565" y="-938.16964285714278"/>
         </scene>
         <!--Game Favorite Collection View Controller-->
         <scene sceneID="aNS-VC-OUl">

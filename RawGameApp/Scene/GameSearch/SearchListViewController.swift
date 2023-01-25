@@ -12,6 +12,7 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     @IBOutlet var tableView: UITableView!
     var timer: Timer?
 
+    @IBOutlet var spinner: UIActivityIndicatorView!
     private var page = 1
     private var searchText: String?
 
@@ -23,6 +24,7 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        spinner.hidesWhenStopped = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,25 +61,24 @@ class SearchListViewController: UIViewController, UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else { return }
-//            if text.count > 1 {
                 timer?.invalidate()
                 timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false, block: { [weak self] _ in
-                    self?.showActivityIndicator()
+                    self?.spinner.startAnimating()
                     self?.viewModel.fetchGamesData(with: self!.page, searchText: text) { result in
                         switch result {
                         case .success(_):
                             DispatchQueue.main.async {
-                                self?.removeActivityIndicator()
+                                self?.spinner.stopAnimating()
                                 self?.tableView.reloadData()
                             }
                         case .failure(let error):
-                            self?.removeActivityIndicator()
+                            DispatchQueue.main.async {
+                                self?.spinner.stopAnimating()
+                            }
                             print("Error on: \(error.localizedDescription)")
                         }
                     }
                 })
-//            }
-//        tableView.reloadData()
         }
     }
 

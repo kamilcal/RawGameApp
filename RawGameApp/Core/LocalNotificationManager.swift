@@ -41,7 +41,7 @@ class localNotificationManager: LocalNotificationManagerProtocol {
                 content.body = body
 
 
-                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+                let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
                 let identifier = "FavoritesNotification"
 
                 let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
