@@ -110,11 +110,10 @@ class GameFavoriteCollectionViewController: UICollectionViewController, UICollec
             let index = viewModel.gameFavoritesResult[indexPath.row]
             cell.configure(with: index)
             
-            cell.butonTapped = { [unowned self] in
-                viewModel.deleteFavoriteData(index.id!)
-                collectionView.reloadData()
-                //                TODO: force
-            }
+//            cell.butonTapped = { [unowned self] in
+//                viewModel.deleteFavoriteData(index.id!)
+//                collectionView.reloadData()
+//            }
             
             return cell
         }

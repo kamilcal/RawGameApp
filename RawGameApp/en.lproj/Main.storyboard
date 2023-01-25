@@ -91,7 +91,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="OJl-s9-9oh"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="T19-1S-LzX">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="v9z-fK-O6W">
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="v9z-fK-O6W">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X4b-Qe-SQ9">
                                 <rect key="frame" x="344" y="5" width="50" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -300,23 +300,9 @@
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rYl-4S-t9O">
                                             <rect key="frame" x="8" y="8" width="128" height="192"/>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6j-hO-tek">
-                                            <rect key="frame" x="119" y="0.0" width="25" height="25"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="25" id="6xc-5X-V6a"/>
-                                                <constraint firstAttribute="height" constant="25" id="jWU-GB-I5q"/>
-                                            </constraints>
-                                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                            <state key="normal" image="delete"/>
-                                            <connections>
-                                                <action selector="deleteButton:" destination="bET-uA-Tcb" eventType="touchUpInside" id="Nfo-EW-bW2"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="i6j-hO-tek" firstAttribute="top" secondItem="bET-uA-Tcb" secondAttribute="top" id="Blu-0T-GUr"/>
-                                    <constraint firstAttribute="trailing" secondItem="i6j-hO-tek" secondAttribute="trailing" id="Ho7-aM-BZY"/>
                                     <constraint firstAttribute="trailing" secondItem="rYl-4S-t9O" secondAttribute="trailing" constant="8" id="Vbv-Fc-74e"/>
                                     <constraint firstAttribute="bottom" secondItem="rYl-4S-t9O" secondAttribute="bottom" constant="8" id="fbt-AW-jzH"/>
                                     <constraint firstItem="rYl-4S-t9O" firstAttribute="leading" secondItem="bET-uA-Tcb" secondAttribute="leading" constant="8" id="oLa-DA-w7i"/>
@@ -353,7 +339,7 @@
                                     <constraint firstAttribute="height" constant="300" id="KKv-aQ-J1v"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poster3" translatesAutoresizingMaskIntoConstraints="NO" id="5Xm-qA-yEU">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Xm-qA-yEU">
                                 <rect key="frame" x="0.0" y="48" width="414" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="vwf-4C-Coe"/>
@@ -959,25 +945,13 @@
                                     <outlet property="delegate" destination="sGr-iq-GHr" id="0fN-4r-D5W"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mFA-FC-GRM">
-                                <rect key="frame" x="346" y="92" width="48" height="34"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="square.and.arrow.up" catalog="system">
-                                    <color key="baseForegroundColor" name="greenColor"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="categoriesButton:" destination="sGr-iq-GHr" eventType="touchUpInside" id="MKC-GK-H8M"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="i8T-bZ-2YA"/>
                         <color key="backgroundColor" red="0.050980392159999999" green="0.10980392160000001" blue="0.13725490200000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="mFA-FC-GRM" firstAttribute="top" secondItem="i8T-bZ-2YA" secondAttribute="top" id="M82-Gs-8dU"/>
                             <constraint firstItem="BIU-nX-KDh" firstAttribute="leading" secondItem="i8T-bZ-2YA" secondAttribute="leading" id="MHE-FL-5gv"/>
                             <constraint firstItem="i8T-bZ-2YA" firstAttribute="bottom" secondItem="BIU-nX-KDh" secondAttribute="bottom" id="SAe-AR-K62"/>
                             <constraint firstItem="BIU-nX-KDh" firstAttribute="top" secondItem="i8T-bZ-2YA" secondAttribute="top" id="ZSn-jT-o1L"/>
-                            <constraint firstItem="i8T-bZ-2YA" firstAttribute="trailing" secondItem="mFA-FC-GRM" secondAttribute="trailing" constant="20" id="hpe-J9-4ob"/>
                             <constraint firstItem="i8T-bZ-2YA" firstAttribute="trailing" secondItem="BIU-nX-KDh" secondAttribute="trailing" id="uOC-44-897"/>
                         </constraints>
                     </view>
@@ -1105,15 +1079,12 @@
         <image name="arrowshape.turn.up.backward.circle" catalog="system" width="128" height="123"/>
         <image name="bookmark-star" width="64" height="64"/>
         <image name="calendar" catalog="system" width="128" height="107"/>
-        <image name="delete" width="47" height="47"/>
         <image name="heart" catalog="system" width="128" height="107"/>
         <image name="homekit" catalog="system" width="128" height="104"/>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
         <image name="message" width="512" height="512"/>
         <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="123"/>
-        <image name="poster3" width="2000" height="3000"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="suit.heart" catalog="system" width="128" height="107"/>
         <namedColor name="greenColor">

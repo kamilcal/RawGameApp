@@ -21,7 +21,7 @@ class GameFavoriteCollectionViewCell: UICollectionViewCell {
         imageView.layer.masksToBounds = true
     }
     
-    var butonTapped: (() -> ())?
+//    var butonTapped: (() -> ())?
     
 //MARK: - Configure Functions
 
@@ -32,9 +32,9 @@ class GameFavoriteCollectionViewCell: UICollectionViewCell {
         imageView.sd_setImage(with: url)
     }
     
-    @IBAction func deleteButton(_ sender: UIButton) {
-        butonTapped?()
+//    @IBAction func deleteButton(_ sender: UIButton) {
+//        butonTapped?()
         
         
     }
-}
+

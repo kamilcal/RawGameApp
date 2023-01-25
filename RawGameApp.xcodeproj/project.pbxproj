@@ -61,7 +61,6 @@
 		D27C12A22978C26F00478DD9 /* GameDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailModel.swift; sourceTree = "<group>"; };
 		D297AAEF29800683007CF268 /* LocalNotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationManager.swift; sourceTree = "<group>"; };
 		D297AB1F29808796007CF268 /* UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchBar.swift; sourceTree = "<group>"; };
-		D297AB252980B719007CF268 /* tr */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = tr; path = tr.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D297AB2A2980B87C007CF268 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D297AB2C2980B87E007CF268 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		D297AB2D2980B946007CF268 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -111,14 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D27C12922978AE6500478DD9 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D27C129A2978B77500478DD9 /* NetworkError.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
 		D2B974E2297AA74700F05037 /* GameFavorite */ = {
 			isa = PBXGroup;
 			children = (
@@ -357,7 +348,6 @@
 			isa = PBXGroup;
 			children = (
 				D2C505072978506A008A9733 /* App */,
-				D27C12922978AE6500478DD9 /* Models */,
 				D2C5050629785063008A9733 /* Core */,
 				D2C5050529785053008A9733 /* Scene */,
 				D2C505042978503C008A9733 /* Util */,
@@ -394,6 +384,7 @@
 				D2B974F9297C0CE400F05037 /* APIConstant.swift */,
 				D2B974E0297A12C500F05037 /* CoreDataManager.swift */,
 				D297AAEF29800683007CF268 /* LocalNotificationManager.swift */,
+				D27C129A2978B77500478DD9 /* NetworkError.swift */,
 				D297AB2B2980B87C007CF268 /* Localizable.strings */,
 			);
 			path = Core;
@@ -565,7 +556,6 @@
 		D2C504F329784EF0008A9733 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D297AB252980B719007CF268 /* tr */,
 				D297AB2D2980B946007CF268 /* en */,
 			);
 			name = Main.storyboard;

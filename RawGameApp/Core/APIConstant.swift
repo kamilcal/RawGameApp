@@ -16,7 +16,7 @@ struct APIConstant {
     static let metacriticURL = "\(baseURL)/\(games)key=\(apıKey)&dates=2000-01-01,2023-01-15&ordering=-metacritic&page_size=50"
     static let popularURL =
     "\(baseURL)/\(games)key=\(apıKey)&dates=2022-01-01,2022-12-31&ordering=-added"
-    static let upcomingURL = "\(baseURL)/\(games)key=\(apıKey)&dates=2023-01-15,2025-12-31&ordering=-added&page_size=50"
+    static let upcomingURL = "\(baseURL)/\(games)key=\(apıKey)&dates=2023-01-25,2025-12-31&ordering=-added&page_size=50"
     
 }
     
