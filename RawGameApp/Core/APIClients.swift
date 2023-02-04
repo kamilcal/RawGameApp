@@ -16,7 +16,7 @@ class APIClients {
 
     func fetchGroupeData(url: String, completion: @escaping (Result<GameModel, Error>) -> Void) {
         
-        var url = url
+        let url = url
         
         guard let url = URL(string: url) else {
             return
@@ -53,17 +53,12 @@ class APIClients {
     
     func fetchSearchData(pageNumber: Int,searchText: String?, completion: @escaping (Result<GameModel, Error>) -> Void) {
         
-        guard var urlComponents = URLComponents(string: Url.sourceURL) else { return }
-        urlComponents.queryItems = [
-            URLQueryItem(name: APIKey.key, value: APIValue.key),
-            URLQueryItem(name: APIKey.pageLimit, value: APIValue.pageLimit),
-            URLQueryItem(name: APIKey.page, value: String(pageNumber))
-        ]
-        if let searchText = searchText {
-            let searchQueryItem = URLQueryItem(name: APIKey.search, value: searchText)
-            urlComponents.queryItems?.append(searchQueryItem)
+        var urlString = "\(APIConstant.baseURL)/games?key=\(APIConstant.apıKey)&page_size=20"
+        if let searchText = searchText{
+            urlString = urlString + "&search=\(searchText)"
         }
-        guard let url = urlComponents.url else {
+        
+        guard let url = URL(string: urlString) else {
             return
         }
         
@@ -96,14 +91,12 @@ class APIClients {
 // MARK: - DETAİL DATA
     
     func fetchGamesDetail(id: Int, completion: @escaping (Result<GameDetailModel, Error>) -> Void) {
-        guard var urlcomponents = URLComponents(string: Url.sourceURL) else { return }
-        urlcomponents.queryItems = [URLQueryItem(name: APIKey.key, value: APIValue.key)]
         
-        let urlWithPath = urlcomponents.url?.appendingPathComponent(String(id))
+        let urlString = "\(APIConstant.baseURL)/games/\(id)?key=\(APIConstant.apıKey)"
         
-        guard let url = urlWithPath else {
+        guard let url = URL(string: urlString) else {
             return
-        }        
+        }
         
         dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
